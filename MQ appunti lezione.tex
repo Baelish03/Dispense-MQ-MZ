@@ -28,6 +28,16 @@
 
 \usepackage{makecell} %testo accanto immagini float
 
+\usepackage{bbm} %simbolo identità
+
+% comandi fai da te
+\newcommand\bra[2][\normalsize]{#1\langle #2 #1|}
+\newcommand\ket[2][\normalsize]{#1| #2 #1\rangle}
+\newcommand\braket[3][\normalsize]{#1\langle #2 #1| #3 #1\rangle}
+
+
+
+
 \usetikzlibrary{shapes}
 
 %prevent mathmode breaking
@@ -43,6 +53,9 @@
 \setlength{\parindent}{0cm}
 
 \numberwithin{equation}{section}
+
+\everymath{\displaystyle}
+
 
 \begin{document}
 
@@ -110,7 +123,7 @@ $\Psi_{1}$, $\Psi_{2}$ soluzioni $\Rightarrow (\lambda_{1}\Psi_{1} + \lambda_{2}
 L'esistenza dei fotoni implica che la MQ non possa essere deterministica, cio\'e i risultati di una misura non possono essere determinati, come in MC, dalla massima informazione possibile che possiamo acquisire sperimentalmente sul sistema. Per capire meglio questo concetto, consideriamo un filtro polarizzatore ideale nel piano $xy$, il cui asse di trasmissione coincida con l'asse $x$, investito da luce monocromatica che si propaga lungo l'asse $z$: la luce polarizzata lungo l'asse $x$ viene totalmente trasmessa, mentre quella polarizzata lungo l'asse $y$ viene totalmente assorbita.
 
 \begin{center}
-	\includegraphics[width=0.2\linewidth]{5_image_0.png}
+	\includegraphics[width=0.2\linewidth]{immagini/5_image_0.png}
 \end{center}
 
 Immaginiamo adesso che il fascio luminoso sia polarizzato linearmente lungo una direzione che forma un angolo $\alpha$ con l'asse $x$. In MC trascurando la fase oscillante $(kz - \omega t)$ che non gioca alcun ruolo in quello che vogliamo discutere, possiamo semplicemente decomporre l'ampiezza del campo elettrico incidente in

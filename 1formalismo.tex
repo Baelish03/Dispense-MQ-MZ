@@ -26,7 +26,7 @@ In MC la descrizione dello stato di un sistema 'e completamente determinata nel 
 
 $$[q_i(t_0), p_i(t_0)]_{i=1, \ldots, N}$$
 
-Sappiamo dal formalismo hamiltoniano classico che, note queste condizioni iniziali, lo stato del sistema a qualsiasi istante successivo *t > t*0 'e completamente determinato attraverso le equazioni del moto
+Sappiamo dal formalismo hamiltoniano classico che, note queste condizioni iniziali, lo stato del sistema a qualsiasi istante successivo $t > t_0$ \'e completamente determinato attraverso le equazioni del moto
 
 \begin{equation}
 	{\dot{q}}_{i}={\frac{\partial H}{\partial p_{i}}}\qquad\qquad{\dot{p}}_{i}=-{\frac{\partial H}{\partial q_{i}}}
@@ -61,146 +61,182 @@ Osserviamo che se $\Psi(x)$ descrive lo stato di un sistema, anche $\alpha\Psi(x
 Dato che $L_2(\mathbb{R})$ \'e uno \textit{spazio di Hilbert}, richiamiamo alcuni concetti fondamentali su questi spazi. $\mathcal{H}$ \'e uno \textit{spazio vettoriale complesso}, i cui vettori si indicano con il simbolo di \textit{ket} $|\Psi\rangle$; questo significa che presi due vettori in esso, anche la loro combinazione lineare appartiene a $\mathcal{H}$
 
 $$\alpha,\beta\in\mathbb{C}\quad \text{e}\quad(|\Psi\rangle\,,|\Phi\rangle)\in\mathcal{H}\quad\longrightarrow\quad(\alpha\,|\Psi\rangle+\beta\,|\Phi\rangle\,)\in\mathcal{H}\,$$
-ci'o 'e necessario per la linearit'a della MQ che fa valere il principio di sovrapposizione. Poi, 'e presente un *prodotto* scalare definito positivo, cio'e possiamo associare a due vettori uno specifico numero complesso
+ci'o 'e necessario per la linearit\'a della MQ che fa valere il principio di sovrapposizione. Poi, 'e presente un *prodotto* scalare definito positivo, cio'e possiamo associare a due vettori uno specifico numero complesso
 
 $$(\left|\Psi\right\rangle,\left|\Phi\right\rangle)\in{\mathcal{H}}\quad\longrightarrow\quad\left\langle\Psi|\Phi\right\rangle\in{\mathbb{C}}$$
 
-che gode delle ben note propriet'a:
+che gode delle ben note propriet\'a:
 
 $$\langle\Psi|\Phi\rangle=\langle\Phi|\Psi\rangle^{*}$$
-hΦ|λ1ψ1 + λ2ψ2i = λ1 hΦ|Ψ1i + λ2 hΦ|Ψ2i hλ1Ψ1 + λ2Ψ2|Φi = λ ∗ 1 hΨ1|Φi + λ ∗ 2 hΨ2|Φi ||Ψ||2 = hΨ|Ψi ≥ 0 = 0 ⇔ |Ψi = 0 Inoltre H 'e completo, cio'e ogni successione di Cauchy {|Ψni} converge in H:
+$$\braket{\Phi}{\lambda_{1}\Psi_1 + \lambda_{2}\Psi_2} = \lambda_{1}\braket{\Phi}{\Psi_{1}} + \lambda_{2}\braket{\Phi}{\Psi_{2}} \qquad\qquad 
+\braket{\lambda_{1}\Psi_{1} + \lambda_{2}\Psi_{2}}{\Phi} = \lambda_{1}^* \braket{\Psi_{1}}{\Phi} + \lambda_{2}^* \braket{\Psi_{2}}{\Phi}$$
+$$||\Psi||2 = \braket{\Psi}{\Psi} \geq 0 \qquad\qquad = 0 \iff \ket{\Psi} = 0$$
+
+Inoltre $\mathcal{H}$ \'e \textit{completo}, cio'\e ogni successione di Cauchy $\{\ket{\Psi_n}\}$ converge in $\mathcal{H}$:
+
 $$\operatorname*{lim}_{m,n\to\infty}||\Psi_{m}-\Psi_{n}||=0\quad\exists\,|\Psi\rangle\in{\mathcal{H}}\quad\left|\quad\operatorname*{lim}_{n\to\infty}||\Psi-\Psi_{n}||=0\right.$$
 
-Infine 'e *separabile*, quindi esistite una base numerabile e densa ovunque per i vettori di H, e non 'e restrittivo prenderla ortonormale {|uni}. Questo ci consente di scrivere ogni vettore dello spazio di Hilbert come combinazione
-lineare dei vettori di base
+Infine \'e \textit{separabile}, quindi esistite una base numerabile e densa ovunque per i vettori di $\mathcal{H}$, e non \'e restrittivo prenderla ortonormale $\{\ket{u_n}\}$. Questo ci consente di scrivere ogni vettore dello spazio di Hilbert come combinazione lineare dei vettori di base
+
 $$|\Psi\rangle=\sum_{n}c_{n}\,|u_{n}\rangle\qquad\langle u_{n}|u_{m}\rangle=\delta_{m n}$$
-n e moltiplicando a destra per il bra hun| (un bra altro non 'e che il complesso coniugato di un vettore) otteniamo la relazione
+
+e moltiplicando a destra per il \textit{bra} $\bra{u_n}$ (un \textit{bra} altro non \'e che il complesso coniugato di un vettore) otteniamo la relazione
 
 $$\langle u_{n}|\Psi\rangle=c_{n}\quad\longrightarrow\quad|\Psi\rangle=\sum_{n}|u_{n}\rangle\,\langle u_{n}|\Psi\rangle$$
 
-Ci'o che abbiamo fatto ha un importante risvolto pratico che scopriremo proseguendo nello studio della MQ,
-infatti la quantit'a Pn |unihun| rappresenta l'operatore identit'a e si chiama *relazione di completezza* dello spazio hilbertiano, si usa spessissimo nell'ambito degli operatori.
+Ci\'o che abbiamo fatto ha un importante risvolto pratico che scopriremo proseguendo nello studio della MQ,
+infatti la quantit\'a $\sum_n \ket{u_n}\bra{u_n}$ rappresenta l'operatore identit\'a e si chiama \textit{relazione di completezza} dello spazio hilbertiano, si usa spessissimo nell'ambito degli operatori.
 
-Notiamo che se prendiamo un'arbitraria combinazione lineare dei vettori di base dello spazio di Hilbert, infinita e numerabile, non 'e detto che il vettore corrispondente sia in L2, perch´e 'e necessario verificare che abbia norma finita, cio'e che i suoi coefficienti soddisfino
+Notiamo che se prendiamo un'arbitraria combinazione lineare dei vettori di base dello spazio di Hilbert, infinita e numerabile, non \'e detto che il vettore corrispondente sia in $L_2$, perch\'e \'e necessario verificare che abbia norma finita, cio\'e che i suoi coefficienti soddisfino
 
 $$\langle\Psi|\Psi\rangle=\sum_{n}|c_{n}|^{2}<\infty$$
-$${\tilde{\Psi}}(p)=\left[L_{2}(\mathbb{R})\right]_{p}$$
 
-Tutta l'informazione fornita da Ψ(x) 'e reperibile anche dalla sua trasformata di Fourier, Ψ( ˜ p) = -L2(R)p
+Tutta l'informazione fornita da $\Psi(x)$ \'e reperibile anche dalla sua trasformata di Fourier, 
 
-Ψ( ˜ p) = 1 √2π~ Zdx Ψ(x)e −i px ~ con Ψ(x) = 1 √2π~ Zdp Ψ( ˜ p)e i px ~ antitrasformata
-il cui spazio di appartenenza 'e isomorfo L2(R). La presenza di ~ come fattore di normalizzazione e come fattore dell'esponenziale 'e dovuto al fatto che nella definizione rigorosa 'e presente il vettore d'onda k, legato al momento dalla relazione k =
-p
-~
+${\tilde{\Psi}}(p)=\left[L_{2}(\mathbb{R})\right]_{p}$
 
-. La trasformata 'e una funzione definita nello spazio delle p da cui 'e possibile ricavare la densit'a di probabilit'a di trovare una particella in un intorno di un determinato valore dell'impulso, in modo analogo a quanto fatto per la funzione nello spazio delle coordinate
+$$\tilde{\Psi}(p) = \frac{1}{\sqrt{2\pi\hbar}} \int \mathrm{d}x \Psi(x) e^{-i\frac{px}{\hbar}} \qquad\qquad \text{con} \Psi(x) = \frac{1}{\sqrt{2\pi\hbar}} \int \mathrm{d}p \tilde{\Psi} e^{i\frac{px}{\hbar}} \text{ antitrasformata}$$
+
+il cui spazio di appartenenza \'e isomorfo $L_2(\mathbb{R})$. La presenza di $\hbar$ come fattore di normalizzazione e come fattore dell'esponenziale \'e dovuto al fatto che nella definizione rigorosa \'e presente il vettore d'onda $k$, legato al momento dalla relazione $k = \frac{p}{\hbar}$. La trasformata \'e una funzione definita nello spazio delle $p$ da cui \'e possibile ricavare la densit\'a di probabilit\'a di trovare una particella in un intorno di un determinato valore dell'impulso, in modo analogo a quanto fatto per la funzione nello spazio delle coordinate
 
 $$P(p)=\frac{|\tilde{\Psi}(p)|^{2}}{||\tilde{\Psi}(p)||^{2}}$$
-$=\;||\bar{\Psi}||^2$  . 
-Tra trasformata e antitrasformata vale l'*identit'a di Parseval*, per la quale descrivere il sistema in un modo o nell'altro 'e del tutto equivalente ||Ψ||2 = ||Ψ˜ ||2 Quanto appena detto deriva dal fatto che possiamo dimostrare che tutti gli spazi di Hilbert che hanno la stessa cardinalit'a sono isomorfi tra loro; questo fatto ci suggerisce di sviluppare un formalismo in cui lo stato del sistema non sia legato alla particolare scelta della variabile da cui dipende la funzione d'onda, ma che ci sia un *vettore* astratto di uno spazio di Hilbert, poi se risulta necessario potremo specificare una *rappresentazione concreta*.
+
+Tra trasformata e antitrasformata vale l'\textit{identit\'a di Parseval}, per la quale descrivere il sistema in un modo o nell'altro \'e del tutto equivalente 
+
+$$||\Psi||^2 = ||\tilde{\Psi}||^2$$
+
+Quanto appena detto deriva dal fatto che possiamo dimostrare che tutti gli spazi di Hilbert che hanno la stessa cardinalit\'a sono isomorfi tra loro; questo fatto ci suggerisce di sviluppare un formalismo in cui lo stato del sistema non sia legato alla particolare scelta della variabile da cui dipende la funzione d'onda, ma che ci sia un \textit{vettore astratto} di uno spazio di Hilbert, poi se risulta necessario potremo specificare una \textit{rappresentazione concreta}.
 
 Detto questo, enunciamo il primo postulato della MQ:
-Postulato 1. *Degli stati* Ogni sistema quantistico S pu'o essere associato ad uno spazio di Hilbert astratto H, e ogni stato (puro) Σ del sistema pu'o essere associato a un raggio vettore complesso Ψˆ ∈ H.
 
-Introduciamo quindi la nozione importante di *raggio vettore*, che 'e definito come la classe di equivalenza dei vettori che puntano nella stessa direzione
+\textbf{\textit{Postulato 1. Degli stati}} 
 
-$${\hat{\Psi}}=\{\lambda\,|\Psi\rangle\quad|\quad\lambda\in\mathbb{C}-0\}$$
+\textit{Ogni sistema quantistico $\mathcal{S}$ pu\'o essere associato ad uno spazio di Hilbert astratto $\mathcal{H}$, e ogni stato (puro) $\Sigma$ del sistema pu\'o essere associato a un raggio vettore complesso $\hat{\Psi} \in \mathcal{H}$.}
 
-infatti come abbiamo detto in precedenza, tutti i λ |Ψi rappresentano lo stesso stato. Per rappresentare un raggio vettore possiamo scegliere un qualsiasi elemento rappresentativo della classe, solamente per comodit'a lo prendiamo normalizzato, nel caso non lo fosse non dobbiamo dimenticare il fattore di normalizzazione necessario nella definizione di probabilit'a.
+Introduciamo quindi la nozione importante di \textit{raggio vettore}, che \'e definito come la classe di equivalenza dei vettori che puntano nella stessa direzione
 
-Notiamo alcune cose: la prima 'e che la presenza della costante λ include la possibilit'a di avere una fase arbitraria pur essendo presente la normalizzazione, la seconda 'e che nel postulato valgono le implicazioni opposte, cio'e a uno spazio di Hilbert 'e associabile un sistema quantistico e ad una raggio vettore uno stato puro, tranne in alcuni casi particolari che non tratteremo.
+$${\hat{\Psi}}=\{\lambda\,|\Psi\rangle\quad\big|\quad\lambda\in\mathbb{C}-0\}$$
 
-## Rappresentazioni X E P
+infatti come abbiamo detto in precedenza, tutti i $\lambda \ket{Psi}$ rappresentano lo stesso stato. Per rappresentare un raggio vettore possiamo scegliere un qualsiasi elemento rappresentativo della classe, solamente per comodit\'a lo prendiamo normalizzato, nel caso non lo fosse non dobbiamo dimenticare il fattore di normalizzazione necessario nella definizione di probabilit\'a.
+
+Notiamo alcune cose: la prima \'e che la presenza della costante $\lambda$ include la possibilit\'a di avere una fase arbitraria pur essendo presente la normalizzazione, la seconda \'e che nel postulato valgono le implicazioni opposte, cio\'e a uno spazio di Hilbert \'e associabile un sistema quantistico e ad una raggio vettore uno stato puro, tranne in alcuni casi particolari che non tratteremo.
+
+
+\chapter{\textbf{Rappresentazioni $x$ e $p$}}
 
 Quando in MC abbiamo parlato di onde, abbiamo detto che quelle piane monocromatiche, che sono infinitamente estese, non sono realizzabili fisicamente ma le abbiamo comunque sfruttate per determinare la struttura matematica dei pacchetti, che invece hanno estensione ed energia finite, mediante integrale di Fourier.
 
-Ora siamo di fronte allo stesso tipo di problema e la soluzione finale avr'a la stessa struttura logica: abbiamo scritto Ψ(x) come l'integrale di Fourier di esponenziali pesati da opportuni coefficienti dati dalla trasformata:
+Ora siamo di fronte allo stesso tipo di problema e la soluzione finale avr\'a la stessa struttura logica: abbiamo scritto $\Psi(x)$ come l'integrale di Fourier di esponenziali pesati da opportuni coefficienti dati dalla trasformata:
 
 $$u_{p}(x)={\frac{1}{\sqrt{2\pi\hbar}}}e^{i{\frac{p x}{\hbar}}}\ \ \ \ \notin L_{2}(\mathbb{R})$$
 
-Notiamo subito che questo tipo di funzioni non sono modulo quadro integrabili, tuttavia ci'o non ci impedisce di interpretare questo insieme di oggetti come una *base ortonormale generalizzata nel senso delle distribuzioni*, per le quali vale la relazione di ortonormalit'a generalizzata (con la δ di Dirac) e di completezza
+Notiamo subito che questo tipo di funzioni non sono modulo quadro integrabili, tuttavia ci\'o non ci impedisce di interpretare questo insieme di oggetti come una \textit{base ortonormale generalizzata nel senso delle distribuzioni}, per le quali vale la relazione di ortonormalit\'a generalizzata (con la $\delta$ di Dirac) e di completezza
 
 $$u_{p}u_{p}^{\prime}=\int\mathrm{d}x\,u_{p}^{*}(x)u_{p^{\prime}}(x)=\frac{1}{2\pi}\int\frac{d x}{\hbar}e^{-i\,\frac{x}{\hbar}(p-p^{\prime})}=\delta(p-p^{\prime})$$
 
 $$\int\mathrm{d}x\,u_{p}^{*}(x^{\prime})u_{p}(x)=\frac{1}{2\pi}\int\frac{d x}{\hbar}e^{-i\frac{p}{\hbar}(x-x^{\prime})}d x=\delta(x-x^{\prime})$$
 
-Allo stesso modo possiamo introdurre una base generalizzata con indici continui legati alla posizione della particella: ξx0
-(x) = δ(x − x0) ∈/ L2(R)
+Allo stesso modo possiamo introdurre una base generalizzata con indici continui legati alla posizione della particella: $\xi_{x_0} (x) = \delta(x − x_0) \notin L_2(\mathbb{R})$
 
 $$(\xi_{x_{0}},\xi_{x_{0}^{\prime}})=\int\mathrm{d}x\,\delta(x-x_{0})\delta(x-x_{0}^{\prime})=\delta(x_{0}-x_{0}^{\prime})$$
-$$\int\mathrm{d}x_{0}\,\xi_{x_{0}}^{*}(x^{\prime})\xi_{x_{0}}(x)=\int\mathrm{d}x_{0}\,\delta(x_{0}-x^{\prime})\delta(x_{0}-x)=\delta(x-x^{\prime})$$  let possiamo associaire i *ket* generalizzati $|x_{0}\rangle\,,|p_{0}\rangle$ e scrivere le. 
-A queste basi generalizzate possiamo associare i ket generalizzati |x0i, |p0i e scrivere le relazioni di completezza
-generalizzate $$\begin{matrix}\langle x_0|x'_0\rangle=\delta(x_0-x'_0)&\int\mathrm{d}x_0\,|x_0\rangle\langle x_0|=1\\ \langle p_0|p_0\rangle=\delta(p_0-p_0')&\int\mathrm{d}p_0\,|p_0\rangle\langle p_0|=1\end{matrix}$$ grazie alle qual possiamov serve la funczione d'onda in modo estremannente intuitivo ed efficace. 
-$$\langle x|\Psi\rangle=\langle x|1|\Psi\rangle=\int\mathrm{d}x\,\langle x|x_{0}\rangle\,\langle x_{0}|\Psi\rangle=\delta(x-x_{0})\int\mathrm{d}x^{\prime}\,\xi_{x_{0}}^{*}(x^{\prime})\Psi(x^{\prime})=\int\mathrm{d}x^{\prime}\,\delta(x-x^{\prime})\Psi(x^{\prime})=\Psi(x)\,.$$
+$$\int\mathrm{d}x_{0}\,\xi_{x_{0}}^{*}(x^{\prime})\xi_{x_{0}}(x)=\int\mathrm{d}x_{0}\,\delta(x_{0}-x^{\prime})\delta(x_{0}-x)=\delta(x-x^{\prime})$$  
+
+A queste basi possiamo associare i \textit{ket} generalizzati $|x_{0}\rangle\,,|p_{0}\rangle$ e scrivere le relazioni di completezza generalizzate 
+
+$$\begin{matrix}\langle x_0|x'_0\rangle=\delta(x_0-x'_0)&\int\mathrm{d}x_0\,|x_0\rangle\langle x_0|=1\\ \langle p_0|p_0\rangle=\delta(p_0-p_0')&\int\mathrm{d}p_0\,|p_0\rangle\langle p_0|=1\end{matrix}$$ 
+
+grazie alle qual possiamo scrivere la funzione d'onda in modo estremamente intuitivo ed efficace
+ 
+$$\langle x|\Psi\rangle=\langle x|\mathbbm{1}|\Psi\rangle=\int\mathrm{d}x\,\langle x|x_{0}\rangle\,\langle x_{0}|\Psi\rangle=\delta(x-x_{0})\int\mathrm{d}x^{\prime}\,\xi_{x_{0}}^{*}(x^{\prime})\Psi(x^{\prime})=\int\mathrm{d}x^{\prime}\,\delta(x-x^{\prime})\Psi(x^{\prime})=\Psi(x)\,.$$
 $$\langle p|\Psi\rangle=\ldots={\tilde{\Psi}}(p)$$
 
-## 1.2 Descrizione Delle Osservabili
+\subsection{Descrizione delle osservabili}
 
-Le osservabili sono tutte quelle quantit'a che possiamo misurare con operazioni fisicamente eseguibili sul sistema, come per esempio l'energia, la velocit'a, la posizione, ecc. Tutto ci'o che possiamo sperare di misurare in laboratorio sulle osservabili 'e il valor medio in un dato stato.
+Le osservabili sono tutte quelle quantit\'a che possiamo misurare con operazioni fisicamente eseguibili sul sistema, come per esempio l'energia, la velocit\'a, la posizione, ecc. Tutto ci\'o che possiamo sperare di misurare in laboratorio sulle osservabili \'e il valore medio in un dato stato.
 
-## 1.2.1 Spettro Di Un'Osservabile
+\subsubsection{Spettro di un'osservabile}
 
-In generale dobbiamo distinguere tra l'osservabile fisica e l'operatore matematico che la descrive, quindi chiamiamo A la prima e A il secondo. Possiamo per'o identificare i due oggetti in base al postulato 3 che enunceremo in seguito, quindi la maggior parte delle volte verr'a meno la distinzione tra i due.
+In generale dobbiamo distinguere tra l'osservabile fisica e l'operatore matematico che la descrive, quindi chiamiamo A la prima e A il secondo. Possiamo per\'o identificare i due oggetti in base al postulato 3 che enunceremo in seguito, quindi la maggior parte delle volte verr\'a meno la distinzione tra i due.
 
-Misurando questa osservabile, otteniamo certi valori che racchiudiamo in un insieme chiamato *spettro*:
-Definizione 1. Lo spettro di un'osservabile, che scriviamo come σ(A), 'e l'insieme dei valori che possiamo ottenere con una misura di A *prendendo in considerazione tutti i possibili stati del sistema.*
-Ovviamente si deve verificare che σ(A) ⊆ R dato che stiamo parlando di misure fisicamente eseguibili (di certo non potremmo trovare un valore complesso). Lo spettro di un'osservabile pu'o essere sia *puramente discreto*
-(come per esempio quello per una particella senza spin in una buca di potenziale infinita), oppure *puramente* continuo (per una particella libera); in alcune occasioni pu'o presentarsi uno *spettro misto* dato dalla somma di una parte discreta e di una continua ('e il caso della particella in una buca di potenziale di profondit'a finita),
-quindi in generale scriviamo σ(A) = σd(A) + σc(A)
-Vediamo ora cosa possiamo dire sul valor medio dell'osservabile A nello stato Σ. Diamone una definizione matematica operativa Definizione 2. Consideriamo un numero N molto grande di copie del sistema nello stesso stato 1*, ed effettuiamo* N misure dell'osservabile A che forniscono un certo risultato, allora il valor medio di A 'e:
+Misurando questa osservabile, otteniamo certi valori che racchiudiamo in un insieme chiamato \textit{spettro}:
+
+\textbf{Definizione 1.} \textit{Lo spettro di un'osservabile, che scriviamo come $\sigma(\mathcal{A})$, \'e l'insieme dei valori che possiamo ottenere con una misura di $\mathcal{A}$ prendendo in considerazione tutti i possibili stati del sistema}.
+
+Ovviamente si deve verificare che $\sigma \mathcal{A} \subseteq \mathbb{R}$ dato che stiamo parlando di misure fisicamente eseguibili (di certo non potremmo trovare un valore complesso). Lo spettro di un'osservabile pu\'o essere sia \textit{puramente discreto} (come per esempio quello per una particella senza spin in una buca di potenziale infinita), oppure \textit{puramente continuo} (per una particella libera); in alcune occasioni pu\'o presentarsi uno \textit{spettro misto} dato dalla somma di una parte discreta e di una continua (\'e il caso della particella in una buca di potenziale di profondit\'a finita),
+quindi in generale scriviamo 
+
+$$\sigma(\mathcal{A}) = \sigma_d(\mathcal{A}) + \sigma_{c}(\mathcal{A})$$
+
+Vediamo ora cosa possiamo dire sul valore medio dell'osservabile $\mathcal{A}$ nello stato $\Sigma$. Diamone una definizione matematica operativa 
+
+\textbf{Definizione 2.} \textit{Consideriamo un numero $N$ molto grande di copie del sistema nello stesso stato}\footnote{Questo concetto \'e piuttosto sottile, non \'e totalmente corretto dire che si effettuano $N$ misure sullo stesso sistema nello stesso stato, questo perch\'e lo studio degli effetti della misura in MQ \'e una questione delicata e tutt'ora non risolta}
+\textit{, ed effettuiamo $N$ misure dell'osservabile $\mathcal{A}$ che forniscono un certo risultato, allora il valore medio di $\mathcal{A}$ \'e:}
 
 $$\langle A\rangle_{\Sigma}\equiv\operatorname*{lim}_{N\rightarrow\infty}{\frac{a_{1}+...+a_{N}}{N}}$$
 
-Accanto al valor medio possiamo considerare anche la fluttuazione quadratica media attorno un certo numero arbitrario reale, definita come
-(∆A)a ≡ph(A − a)
-2i 1Questo concetto 'e piuttosto sottile, non 'e totalmente corretto dire che si effettuano N misure sullo stesso sistema nello stesso stato, questo perch´e lo studio degli effetti della misura in MQ 'e una questione delicata e tutt'ora non risolta
+\textit{Accanto al valore medio possiamo considerare anche la fluttuazione quadratica media attorno un certo numero arbitrario reale, definita come}
 
-## 1.2.2 Osservabili In Mc
+$$(\Delta\mathcal{A})_{a} \equiv \sqrt{\langle (\mathcal{A} - a)^2 \rangle}$$
 
-Nella MC, sappiamo che lo stato fisico iniziale del sistema 'e descritto matematicamente dalle coordinate generalizzate e dagli impulsi generalizzati (q0, p0) ad un certo istante t0; poi da questo punto nello spazio delle fasi possiamo ricavare lo stato a qualsiasi istante di tempo successivo tramite le equazioni della meccanica hamiltoniana; questo vale anche per qualsiasi funzione di (*q, p*), che sappiamo rappresentare un'osservabile: una misura di A dar'a sempre lo stesso risultato perch´e non 'e contemplata alcuna fluttuazione dei valori misurati.
 
-Quindi possiamo dire che lo spettro di un'osservabile in MC 'e semplicemente il codominio della funzione che la descrive, cio'e i valori che questa funzione pu'o assumere quando facciamo variare le coordinate nel loro intervallo di validit'a.
 
-## 1.2.3 Osservabili In Mq
+\subsubsection{Osservabili in MC}
 
-In MQ la trattazione assume un aspetto pi'u complicato perch´e non possiamo trascurare l'interpretazione probabilistica e le relazioni di indeterminazione che ci impediscono di conoscere con precisione arbitraria variabili tra loro coniugate, per non parlare poi della quantizzazione di certe osservabili.
+Nella MC, sappiamo che lo stato fisico iniziale del sistema \'e descritto matematicamente dalle coordinate generalizzate e dagli impulsi generalizzati $(q_0, p_0)$ ad un certo istante $t_0$; poi da questo punto nello spazio delle fasi possiamo ricavare lo stato a qualsiasi istante di tempo successivo tramite le equazioni della meccanica hamiltoniana; questo vale anche per qualsiasi funzione di $(q, p)$, che sappiamo rappresentare un'osservabile: una misura di A dar\'a sempre lo stesso risultato perch\'e non \'e contemplata alcuna fluttuazione dei valori misurati.
 
-Iniziamo la trattazione sullo spettro vedendo un esempio semplice. Consideriamo una particella priva di spin che si muove lungo la direzione x. Il suo stato 'e descritto dalla funzione Ψ(x) ∈ L2(R) e le osservabili fondamentali sono la posizione X e la corrispondente componente dell'impulso PX, a cui sappiamo sono associati degli operatori che agiscono su una funzione come:
+Quindi possiamo dire che \textit{lo spettro di un'osservabile in MC \'e semplicemente il codominio della funzione che la descrive, cio\'e i valori che questa funzione pu\'o assumere quando facciamo variare le coordinate nel loro intervallo di validit\'a}.
 
-$$X\left|\Psi\right\rangle=x\left|\Psi\right\rangle\longrightarrow X\Psi(x)=x\Psi(x)\qquad\qquad P\left|\Psi\right\rangle=p\left|\Psi\right\rangle\longrightarrow P_{x}\Psi(x)=-i\hbar\frac{\mathrm{d}\Psi(x)}{\mathrm{d}x}\tag{1.4}$$
+
+\subsubsection{Osservabili in MQ}
+
+In MQ la trattazione assume un aspetto pi\'u complicato perch\'e non possiamo trascurare l'interpretazione probabilistica e le relazioni di indeterminazione che ci impediscono di conoscere con precisione arbitraria variabili tra loro coniugate, per non parlare poi della quantizzazione di certe osservabili.
+
+Iniziamo la trattazione sullo spettro vedendo un esempio semplice. Consideriamo una particella priva di spin che si muove lungo la direzione $x$. Il suo stato \'e descritto dalla funzione $\Psi(x) \in L_2(\mathbb{R})$ e le osservabili fondamentali sono la posizione $X$ e la corrispondente componente dell'impulso $P_X$, a cui sappiamo sono associati degli operatori che agiscono su una funzione come:
+
+\begin{equation}
+	X\left|\Psi\right\rangle=x\left|\Psi\right\rangle\longrightarrow X\Psi(x)=x\Psi(x)\qquad\qquad P\left|\Psi\right\rangle=p\left|\Psi\right\rangle\longrightarrow P_{x}\Psi(x)=-i\hbar\frac{\mathrm{d}\Psi(x)}{\mathrm{d}x}
+\end{equation}
 
 A partire da questi due operatori possiamo esprimere qualsiasi altra grandezza mediante delle opportune funzioni, per esempio l'hamiltoniano (indipendente dal tempo)
 
-$$H={\frac{P^{2}}{2m}}+V(X)$$
-$$(1.5)$$
-+ V (X) (1.5)
+\begin{equation}
+	H={\frac{P^{2}}{2m}}+V(X)
+\end{equation}
+
 che rappresenta l'energia totale della particella nella sua componente cinetica e potenziale.
 
-Postulato 2. *Delle osservabili* Ad ogni osservabile A *del sistema quantistico sar'a associato un operatore lineare e autoaggiunto che chiamiamo* A ∈ H. Il valor medio di questa osservabile nello stato Σ 'e dato partendo da un qualsiasi vettore Ψ nello spazio di Hilbert che rappresenta lo stato
+
+\textbf{Postulato 2. \textit{Delle osservabili}} \textit{Ad ogni osservabile $\mathcal{A}$ del sistema quantistico sar\'a associato un operatore lineare e autoaggiunto che chiamiamo $A \in \mathcal{H}$. Il valor medio di questa osservabile nello stato $\Sigma$ \'e dato partendo da un qualsiasi vettore $\Psi$ nello spazio di Hilbert che rappresenta lo stato}
 
 $$\langle A\rangle_{\Sigma}=\frac{\langle\Psi|A|\Psi\rangle}{\langle\Psi|\Psi\rangle}$$
 
 Dopo aver ricordato che un operatore 'e autoaggiunto se 'e uguale al suo aggiunto, cio'e se si verifica che
 
-$\forall\left|\Psi\right\rangle,\left|\Phi\right\rangle\in\mathcal{D}(A)$$\left\langle\Psi|A\Phi\right\rangle=\left\langle A\Psi|\Phi\right\rangle$$con$$\mathcal{D}$
-$${\mathcal{D}}(A)={\mathcal{D}}(A^{+})$$
+$$\forall\left|\Psi\right\rangle,\left|\Phi\right\rangle\in\mathcal{D}(A) \qquad\qquad \left\langle\Psi|A\Phi\right\rangle=\left\langle A\Psi|\Phi\right\rangle \qquad\qquad \text{ con } {\mathcal{D}}(A)={\mathcal{D}}(A^{+})$$
+
 elenchiamo alcune caratteristiche che devono avere gli operatori associati alle osservabili secondo questo postulato le seguenti:
-1. A deve essere un operatore lineare perch´e vogliamo che valga il principio di sovrapposizione
+\begin{enumerate}
+\item $A$ deve essere un operatore lineare perch\'e vogliamo che valga il principio di sovrapposizione
 
 $$A(\lambda_{1}\Psi_{1}+\lambda_{2}\Psi_{2})=\lambda_{1}A\Psi_{1}+\lambda_{2}A\Psi_{2}$$
 
-Questo fatto 'e importante perch´e il valor medio dell'osservabile rimanga lo stesso anche se moltiplichiamo il vettore di stato per una costante diversa da zero.
+Questo fatto \'e importante perch\'e il valore medio dell'osservabile rimanga lo stesso anche se moltiplichiamo il vettore di stato per una costante diversa da zero.
 
-2. Il dominio D(A) di A deve essere denso in H. Questa richiesta 'e necessaria perch´e non tutti gli operatori sono definiti su tutto lo spazio di Hilbert: per spazi di Hilbert di dimensione finita non ci sono problemi perch´e il dominio dell'operatore 'e tutto H, ma per operatori illimitati in spazi di Hilbert di dimensione infinita questo non 'e automatico. Dobbiamo chiedere qualcosa in meno della relazione D(A) = H, cio'e dobbiamo chiedere almeno che D(A) sia denso in H, questo ci permette di "approssimare bene quanto vogliamo" un qualsiasi vettore nello spazio di Hilbert, che potr'a essere scritto come limite di una successione di stati che appartengono a D(A)
+\item Il dominio $\mathcal{D}(A)$ di $A$ deve essere denso in $\mathcal{H}$. Questa richiesta \'e necessaria perch\'e non tutti gli operatori sono definiti su tutto lo spazio di Hilbert: per spazi di Hilbert di dimensione finita non ci sono problemi perch\'e il dominio dell'operatore \'e tutto $\mathcal{H}$, ma per operatori illimitati in spazi di Hilbert di dimensione infinita questo non \'e automatico. Dobbiamo chiedere qualcosa in meno della relazione $\mathcal{D}(A) = \mathcal{H}$, cio\'e dobbiamo chiedere almeno che $\mathcal{D}(A)$ sia denso in $\mathcal{H}$, questo ci permette di "approssimare bene quanto vogliamo" un qualsiasi vettore nello spazio di Hilbert, che potr\'a essere scritto come limite di una successione di stati che appartengono a $\mathcal{D}(A)$
 
-$\forall\Psi\in\mathcal{H},\exists\{\Psi_{n}\}\subset\mathcal{D}(A)\quad\left|\quad\lim_{n\to\infty}||\Psi_{n}-\Psi||=0\quad\longrightarrow\quad\langle\mathcal{A}\rangle=\lim_{n\to\infty}\frac{\langle\Psi|A|\Psi_{n}\rangle}{\langle\Psi|\Psi\rangle}\right|$
-3. A 'e hermitiano, cio'e per ogni coppia di vettori |Ψi, |Φ*i ∈ D*(A) vale hΦ|AΨi = hAΨ|Φi E importante che questa condizione venga rispettata perch´e 'e quella necessaria e sufficiente perch´e i valori ´
-medi siano reali, e come sappiamo ci'o 'e fondamentale per un operatore che ha la pretesa di descrivere osservabili fisiche. Dimostriamo che un operatore 'e hermitiano se e solo se ha valori medi reali.
+$$\forall\Psi\in\mathcal{H},\exists\{\Psi_{n}\}\subset\mathcal{D}(A)\quad\left|\quad\lim_{n\to\infty}||\Psi_{n}-\Psi||=0\quad\longrightarrow\quad\langle\mathcal{A}\rangle=\lim_{n\to\infty}\frac{\langle\Psi|A|\Psi_{n}\rangle}{\langle\Psi|\Psi\rangle}\right|$$
 
-Dimostrazione. Consideriamo il caso semplificato |Ψi = |Φi che non fa perdere di generalit'a, e dimostriamo che hΨ|A|Ψi ∈ R
-hΨ|AΨi = hAΨ|Ψi
-∗prop.t'a prodotto scalare hΨ|AΨi = hAΨ|Ψi definizione di hermitiano*−→ h*AΨ|Ψi
-∗ = hAΨ|Ψi definizione di valor medio reale Mostriamo ora il viceversa, cio'e che a valori medi reali corrispondono operatori hermitiani. Consideriamo uno stato |Ψi e scriviamolo come combinazione di altri due stati di cui uno moltiplicato per un fattore di fase non banale
+\item $A$ \'e hermitiano, cio\'e per ogni coppia di vettori $\ket{\Psi}, \ket{\Phi} \in \mathcal{D}(A)$ vale
+
+$$\braket{\phi}{A\Psi} = \braket{A\Psi}{\Phi}$$
+
+\'E importante che questa condizione venga rispettata perch\'e \'e quella necessaria e sufficiente perch\'e i valori medi siano reali, e come sappiamo ci\'o \'e fondamentale per un operatore che ha la pretesa di descrivere osservabili fisiche. Dimostriamo che un operatore \'e hermitiano se e solo se ha valori medi reali.
+
+\begin{comment}
+Dimostrazione. Consideriamo il caso semplificato |\Psii = |Φi che non fa perdere di generalit'a, e dimostriamo che h\Psi|A|\Psii ∈ R
+h\Psi|A\Psii = hA\Psi|\Psii
+∗prop.t'a prodotto scalare h\Psi|A\Psii = hA\Psi|\Psii definizione di hermitiano*−→ h*A\Psi|\Psii
+∗ = hA\Psi|\Psii definizione di valor medio reale Mostriamo ora il viceversa, cio'e che a valori medi reali corrispondono operatori hermitiani. Consideriamo uno stato |\Psii e scriviamolo come combinazione di altri due stati di cui uno moltiplicato per un fattore di fase non banale
 
 $$|\Psi\rangle=|f\rangle+e^{i\alpha}\,|g\rangle\qquad|f\rangle\,,|g\rangle\in{\mathcal{D}}(A)$$
 
@@ -223,11 +259,11 @@ $$O\left|\Psi\right\rangle=\left|\Psi^{\prime}\right\rangle$$
 
 che 'e la condizione di hermiticit'a per un operatore.
 
-Passiamo ora a dare la rappresentazione matriciale di un operatore. Data la base ortonormale {|µni}, possiamo scrivere il vettore Ψn grazie alla rappresentazione *bra-ket*: Ψn = hµn|Ψi. Da ci'o deduciamo che il generico vettore |Ψi 'e dato dalla somma delle proiezioni lungo i vettori di base mediante la relazione di completezza di cui avevamo parlato in precedenza
+Passiamo ora a dare la rappresentazione matriciale di un operatore. Data la base ortonormale {|µni}, possiamo scrivere il vettore \Psin grazie alla rappresentazione *bra-ket*: \Psin = hµn|\Psii. Da ci'o deduciamo che il generico vettore |\Psii 'e dato dalla somma delle proiezioni lungo i vettori di base mediante la relazione di completezza di cui avevamo parlato in precedenza
 
 $$|\Psi\rangle=\sum_{n}|\mu_{n}\rangle\,\langle\mu_{n}|\Psi\rangle$$
 
-Consideriamo anche un operatore O che agisce su Ψ come O |Ψi = |Ψ0i, allora
+Consideriamo anche un operatore O che agisce su \Psi come O |\Psii = |\Psi0i, allora
 
 $$\Psi_{m}^{\prime}=\langle\mu_{m}|\Psi^{\prime}\rangle=\langle\mu_{m}|O|\Psi\rangle=\sum_{n}\,\langle\mu_{m}|O|\mu_{n}\rangle\,\Psi_{m}=\sum_{m n}O_{m n}\Psi_{n}\,,$$
 
@@ -235,7 +271,7 @@ In via pi'u in generale, avendo a disposizione anche un altro vettore |Φi, vale
 
 $$|\Psi\rangle=\sum_{m}\Psi_{m}\,|\mu_{m}\rangle\quad|\Phi\rangle=\sum_{n}\Phi_{n}\,|\mu_{n}\rangle\quad\longrightarrow\quad\langle\Psi|O|\Phi\rangle=\sum_{m n}\Psi_{m}^{*}O_{m n}\Phi_{n}=\Psi^{*}O\Phi\,.$$
 
-Il termine Omn 'e chiamato elemento di matrice dell'osservabile O fra |Ψi e |Φi, infatti formalmente un operatore
+Il termine Omn 'e chiamato elemento di matrice dell'osservabile O fra |\Psii e |Φi, infatti formalmente un operatore
 'e ben rappresentato da una matrice i cui elementi sono proprio questi termini, che in questo caso sono posizionati nella m-esima riga e n-esima colonna.
 
 Postulato 3. *Possibili risultati delle misure* Gli unici risultati possibili per una misura dell'osservabile A *sono tutti e soli gli autovalori dell'operatore* A,
@@ -252,9 +288,9 @@ e in questo contesto possiamo anche dimostrare che gli autovalori di un operator
 $\left(a_{m}-a_{n}\right)\left\langle a_{m}|a_{n}\right\rangle=\left\langle Aa_{m}|a_{n}\right\rangle-\left\langle a_{m}|Aa_{n}\right\rangle=\left\langle Aa_{m}|a_{n}\right\rangle-\left\langle Aa_{m}|a_{n}\right\rangle=0\quad\Longleftrightarrow\quad\left\langle a_{m}|a_{n}\right\rangle=0$
 per definizione di A hermitiano.
 
-Diremo che A 'e *non degenere* se non esistono due autovettori relativi allo stesso autovalore linearmente indipendenti; invece diremo che 'e *degenere con grado di degenerazione* d quando esistono d autovettori {Ψiα
+Diremo che A 'e *non degenere* se non esistono due autovettori relativi allo stesso autovalore linearmente indipendenti; invece diremo che 'e *degenere con grado di degenerazione* d quando esistono d autovettori {\Psiiα
 }i=1*,...,d* linearmente indipendenti relativi allo stesso autovalore, questi autovettori formano uno spazio di Hilbert Hd ⊂ H
-di dimensione d. Postulato 4. *Probabilit'a di ottenere un dato risultato da una misura* La probabilit'a che una misura di A nello stato |Ψi dia come risultato ak ∈ σd(A)*, con* hak|aki = 1 e A |aki =
+di dimensione d. Postulato 4. *Probabilit'a di ottenere un dato risultato da una misura* La probabilit'a che una misura di A nello stato |\Psii dia come risultato ak ∈ σd(A)*, con* hak|aki = 1 e A |aki =
 ak |aki*, 'e data da*
 
 $$w(a_{k})={\frac{\mid\langle a_{k}|\Psi\rangle\mid^{2}}{\langle\Psi|\Psi\rangle}}$$
@@ -268,12 +304,12 @@ $$|\Psi\rangle=\sum_{n}c_{n}\,|a_{n}\rangle\quad\longrightarrow\quad w(a_{k})={\
 
 $$|\Psi\rangle=\sum_{R}\sum_{i=1}^{d_{R}}c_{k,i}\,|a_{k,i}\rangle\quad\longrightarrow\quad w(a_{k})=\sum_{i=1}^{d_{R}}\frac{|\,\langle a_{k,i}|\Psi\rangle\,|^{2}}{||\Psi||^{2}}=\sum_{i=1}^{d_{R}}\frac{|c_{k,i}|^{2}}{||\Psi||^{2}}\,.$$
 
-- Se siamo di fronte ad uno spettro continuo, la base generalizzata sar'a {|ai} che rispetta le condizioni ha 0|ai = δ(a − a 0) e c(a) = ha|Ψi, e il vettore si scriver'a |Ψi =Rc(a)|ai da. In questo caso ha senso domandarsi qual 'e la probabilit'a di trovare A in un range (anche infinitesimo) a ± da attorno all'autovalore 2, e possiamo anche ricavare la funzione densit'a di probabilit'a:
+- Se siamo di fronte ad uno spettro continuo, la base generalizzata sar'a {|ai} che rispetta le condizioni ha 0|ai = δ(a − a 0) e c(a) = ha|\Psii, e il vettore si scriver'a |\Psii =Rc(a)|ai da. In questo caso ha senso domandarsi qual 'e la probabilit'a di trovare A in un range (anche infinitesimo) a ± da attorno all'autovalore 2, e possiamo anche ricavare la funzione densit'a di probabilit'a:
 
 $$d w(a)=\rho(a)d a={\frac{\mid\langle a|\Psi\rangle\mid^{2}}{||\Psi||^{2}}}\,\mathrm{d}a={\frac{|c(a)|^{2}}{||\Psi||^{2}}}\,\mathrm{d}a\quad\longrightarrow\quad\rho(a)={\frac{|c(a)|^{2}}{||\Psi||^{2}}}\,\mathrm{d}a$$
 
 Proseguiamo lo studio delle osservabili enunciando un teorema di cui non diamo la dimostrazione:
-Teorema 1.2.1. *Teorema spettrale* Dato un operatore autoaggiunto A associato ad una certa osservabile A, ogni stato |Ψi dello spazio di Hilbert si pu'o decomporre in una base ortonormale costituita tutta da autovettori di questo operatore. Quindi nel caso di spettro discreto la base ortonormale sar'a |ak,ii
+Teorema 1.2.1. *Teorema spettrale* Dato un operatore autoaggiunto A associato ad una certa osservabile A, ogni stato |\Psii dello spazio di Hilbert si pu'o decomporre in una base ortonormale costituita tutta da autovettori di questo operatore. Quindi nel caso di spettro discreto la base ortonormale sar'a |ak,ii
 
 $$|\Psi\rangle=\sum_{k}\sum_{i=1}^{d_{k}}c_{k}^{i}\,|a_{k,i}\rangle$$
 
@@ -285,238 +321,296 @@ Questo risultato 'e importante perch´e ci permette di arrivare facilmente a pre
 
 2Dato che lo strumento non sar'a infinitamente preciso, non possiamo chiedere la probabilit'a di trovare esattamente il valore a
 
-## 1.2.4 Relazioni Di Indeterminazione
+\end{comment}
+
+\subsubsection{Relazioni di indeterminazione}
 
 Ora abbiamo gli strumenti per dimostrare le relazioni di indeterminazione in modo generale, per poi calarci nel caso particolare di posizione-impulso del principio di indeterminazione di Heisenberg.
 
-Consideriamo due operatori autoaggiunti *A, B* e due numeri reali qualsiasi *a, b* ∈ R, vogliamo dimostrare che il prodotto delle fluttuazioni quadratiche medie nello stato rappresentato dal vettore Ψ soddisfa
+Consideriamo due operatori autoaggiunti $A, B$ e due numeri reali qualsiasi $a, b \in \mathbb{R}$, vogliamo dimostrare che il prodotto delle fluttuazioni quadratiche medie nello stato rappresentato dal vettore $\Psi$ soddisfa
 
 $$(\Delta A)_{\Psi,a}(\Delta B)_{\Psi,b}\geq\frac{1}{2}\vert\left<[A,B]\right>_{\Psi}\vert$$
 
-Dimostrazione. Incominciamo definendo due nuovi operatori
+\textit{Dimostrazione}. Incominciamo definendo due nuovi operatori
 
-$$\hat{A}=A-\,\mathbb{1}a\qquad\hat{B}=B-\,\mathbb{1}b$$
+$$\hat{A}=A-\,\mathbbm{1}a\qquad\hat{B}=B-\,\mathbbm{1}b$$
 
-'e evidente come anche questi siano autoaggiunti hermitiani, dato che a e b sono reali. Calcoliamo la fluttuazione quadratica media per l'operatore A, sapendo che poi varr'a lo stesso per B
+\'e evidente come anche questi siano autoaggiunti hermitiani, dato che $a$ e $b$ sono reali. Calcoliamo la fluttuazione quadratica media per l'operatore A, sapendo che poi varr\'a lo stesso per B
 
-$$(\Delta A)^{2}_{\Psi,n}\equiv\frac{\langle\Psi|(A-a)^{2}|\Psi\rangle}{\langle\Psi|\Psi\rangle}=\frac{\langle\Psi|\hat{A}^{2}|\Psi\rangle}{||\Psi||^{2}}=\frac{\langle\hat{A}\Psi|\hat{A}\Psi\rangle}{||\Psi||^{2}}=\frac{||\hat{A}\Psi||^{2}}{||\Psi||^{2}}\qquad\qquad(\Delta B)^{2}_{\Psi,b}=\frac{||\hat{B}\Psi||^{2}}{||\Psi||^{2}}$$  $$\longrightarrow\quad(\Delta A)^{2}_{\Psi,a}(\Delta B)^{2}_{\Psi,b}=\frac{||\hat{A}\Psi||^{2}}{||\Psi||^{2}}\frac{||\hat{B}\Psi||^{2}}{||\Psi||^{2}}$$  
+$$(\Delta A)^{2}_{\Psi,n}\equiv\frac{\langle\Psi|(A-a)^{2}|\Psi\rangle}{\langle\Psi|\Psi\rangle}=\frac{\langle\Psi|\hat{A}^{2}|\Psi\rangle}{||\Psi||^{2}}=\frac{\langle\hat{A}\Psi|\hat{A}\Psi\rangle}{||\Psi||^{2}}=\frac{||\hat{A}\Psi||^{2}}{||\Psi||^{2}}\qquad\qquad(\Delta B)^{2}_{\Psi,b}=\frac{||\hat{B}\Psi||^{2}}{||\Psi||^{2}}$$ 
 
-for any possible $\hat{A}$, $\hat{A}$, \(\hat{
-	Introduciamo per semplicit'a altri due operatori e dimostriamo che sono hermitiani
-	$$C=-i[A,B]=-i[\hat{A},\hat{B}]\qquad\qquad\{\hat{A},\hat{B}\}=\hat{A}\hat{B}+\hat{B}\hat{A}\quad\mathrm{(anticommutator)}.$$
-	$$C^+=\big(\,-\,i[A,B]\big)^+=+i(AB-BA)^+=+i(B^+A^+-A^+B^+)=+i(BA-AB)=\big(\,-\,i[A,B]\big)=C^+=\big(\,\hat{A},\hat{B}\big)^+=\big(\hat{A}\hat{B}+\hat{B}\hat{A}\big)^+=\hat{B}^+\hat{A}^++\hat{A}^+\hat{B}^+=\{\hat{A},\hat{B}\}$$  In a well-known example, the expression of a valid sequence 
-	Giungiamo alla dimostrazione che ci eravamo prefissati di dare
-	
-	||AˆΨ||2||BˆΨ||2(a) ≥ DAˆΨ BˆΨ E 2 (b) =  DΨ AˆBˆΨ E 2 (c) =  Ψ  {A, B} 2  Ψ + i 2 hΨ|C|Ψi  2 (d) =14 | hΨ|{A, B}|Ψi |2 + | hΨ|C|Ψi |2 (e) ≥ 1 4 | hΨ|C|Ψi |2 =14 | hΨ|[A, B]|Ψi |2 ∆A∆Bψ≥12 | hΨ|[A, B]|Ψi | ||Ψ||2= 1 2 | h[A, B]iΨ |
-	in cui nel passaggio (a) abbiamo usato la disuguaglianza di Schwartz, in (b) la propriet'a di autoaggiuntezza, in
-	(c) abbiamo riscritto il prodotto dei due operatori come somma del loro commutatore e anticommutatore, in (d) abbiamo sfruttato il fatto che il quadrato della somma di due numeri di cui uno reale e l'altro puramente immaginario 'e dato dalla somma dei quadrati perch´e sono ortogonali nel piano complesso, infine in (e) abbiamo minorato semplicemente togliendo opportunamente uno dei due addendi.
-	
-	Nel caso particolare in cui consideriamo gli operatori posizione e momento dobbiamo fare le sostituzioni A → X
-	e B → PX, inoltre sappiamo gi'a che [*X, P*] = i~, quindi si ricava facilmente che
-	
-	$$(\Delta X\Delta P)\geq{\frac{\hbar}{2}}$$
-	
-	Calcoliamo quando tale relazione satura come uguaglianza (nel caso particolare in cui x = p = 0). La prima disuguaglianza da considerare 'e quella di Schwarz:
-	
-	$||X\Psi||^{2}||P\Psi||^{2}\stackrel{{!}}{{=}}|\left\langle X\Psi|P\Psi\right\rangle|^{2}\quad\Longleftrightarrow\quad P\left|\Psi\right\rangle=\Gamma X\left|\Psi\right\rangle\quad\Gamma\in\mathbb{C}$
-	cio'e vale l'uguaglianza quando i due vettori sono paralleli (uno 'e multiplo dell'altro mediante una costante moltiplicativa complessa). La seconda disuguaglianza 'e quella in cui si annulla l'anticommutatore tra le osservabili
-	
-	$\left|\left\langle\Psi|\{X,P\}\Psi\right\rangle|^{2}+\left|\left\langle\Psi|[X,P]\Psi\right\rangle|^{2}\right.\right.\right.\right.$
-	e sfruttando il risultato precedente ΨΓX2Ψ= −ΓX2ΨΨ⇒ ΓΨX2Ψ= −Γ ∗X2ΨΨ= −Γ ∗ΨX2Ψ⇒ ⇒ Γ = −Γ ∗ ⇒ Γ = iγ (γ ∈ R)
-	cio'e il fattore moltiplicativo deve essere puramente immaginario. Gli stati per cui questa relazione 'e soddisfatta
-	si calcolano facilmente considerando l'equazione agli autovalori per l'operatore P:
-	PΨ = iγXΨ ⇒ −i~ dΨ dx = iγxΨ ⇒dΨ dx = − γx ~ Ψ
-	
-	limitandoci ai soli γ ≥ 0 per i quali la funzione d'onda 'e accettabile, cio'e Ψ ∈ L2(R), otteniamo l'equazione di una gaussiana in una dimensione la cui larghezza 'e modulata da un fattore moltiplicativo ∝ γ
-	
-	$$\Psi(x)=A e^{-{\frac{\gamma x^{2}}{2\hbar}}}$$
-	
-	## 1.2.5 Operatore Posizione X
-	
-	Per definire questo basilare operatore della MQ, vediamo come agisce quando viene applicato ad una funzione d'onda, cio'e consideriamo la sua equazione agli autovalori che abbiamo scritto in 1.4.
-	
-	Immaginiamo che il nostro sistema fisico sia definito in un certo intervallo [*a, b*] ⊆ R del tutto generale (pu'o anche essere [−∞, +∞] andando a coprire tutto R), in questo caso lo spazio di Hilbert 'e L2([*a, b*]).
-	
-	Il dominio di questo operatore D(X), per'o, non pu'o essere solamente l'insieme di tutte le funzioni modulo quadro integrabili, infatti questa richiesta non 'e sufficiente a garantire che anche xΨ(x) sia modulo quadro integrabile, dobbiamo essere pi'u specifici. Come sappiamo, quello che sicuramente possiamo dire 'e che D(X) 'e denso in H qualsiasi sia l'intervallo [*a, b*] (se per esempio la funzione ha supporto compatto, anche se moltiplicata per x risulta avere supporto compatto), perch´e si tratta di una richiesta necessaria nella definizione di osservabile fisica. Inoltre X 'e anche hermitiano: se prendiamo due vettori |Ψi, |Φi, allora il prodotto scalare soddisfa
-	
-	$$\langle\Psi|X\Phi\rangle=\int_{a}^{b}\mathrm{d}x\;\Phi^{*}(x)X\Phi(x)=\int_{a}^{b}\mathrm{d}x\;(X\Psi(x))^{*}\Phi(x)=\langle X\Psi|\Phi\rangle$$  We dado e the e ancho di dominio denso, ne consegue de e simetrico; si puo dimestrare che e autongiuto e.  
-	quindi vale anche l'uguaglianza del dominio con il suo aggiunto D(X) = D(X+).
-	Affrontiamo ora il problema agli autovalori. Vogliamo trovare i ket |x0i che soddisfano l'equazione
-	Dato che in questo caso l'operatore ha spettro continuo, l'equazione agli autovalori non fornisce soluzioni perch´e
-	$$X\left|x_{0}\right\rangle=x_{0}\left|x_{0}\right\rangle$$
-	l'autovettore risultante non 'e in H. Per trattare il problema in maniera rigorosa dovremmo discretizzare lo
-	spazio dividendo l'asse reale in intervalli di larghezza ε e prendere poi il limite in cui questa grandezza tende a 0.
-	Operiamo comunque sfruttando la densit'a del dominio dell'operatore; consideriamo la scrittura
-	$$\forall x_{0}\in[a,b]\quad\exists\Psi_{x_{0},n}\text{successince}\subset\mathcal{D}(X)\quad\bigg{|}\quad\lim_{n\to\infty}\frac{\|(X-x_{0})\Psi_{x_{0},n}\|}{\|\Psi_{x_{0},n}\|^{2}}=0\tag{1.6}$$  in $x_{0}$ the soddisfa a questa relacione di limite, apparterega automatisamente allo spectro
-	ci chiediamo se un x0 che soddisfa a questa relazione di limite, appartenga automaticamente allo spettro dell'operatore X. Per dimostrare quanto abbiamo appena detto caliamoci nel caso specifico (che non fa perdere generalit'a) di [*a, b*] = R e prendiamo come termine generico della successione
-	
-	$$\Psi_{x_{0},n}(x)={\left\{\begin{array}{l l}{n}&{|x-x_{0}|\leq{\frac{1}{2n}}}\\ {0}&{a l t r o v e}\end{array}\right.}$$
-	
-	in questo modo l'area sotto la funzione non cambia al variare di n, ed 'e evidente come tutte queste funzioni appartengano al dominio di X, dato che la loro norma assume un valore finito
-	
-	$$||\Psi_{x_{0},n}||^{2}=\int\mathrm{d}x\,|\Psi_{x_{0},n}|^{2}=\int_{-\frac{1}{2n}}^{+\frac{1}{2n}}\mathrm{d}n\,n^{2}=n$$
-	
-	Allora
-	
-	$$||(x-x_{0})\Psi_{x_{0},n}||^{2}=\int\mathrm{d}x\,(x-x_{0})^{2}|\Psi_{x_{0},n}|^{2}=\int_{-\frac{1}{2\pi}}^{+\frac{1}{2\pi}}\mathrm{d}x\,(x-x_{0})^{2}n^{2}$$ $$\leq\int_{-\frac{1}{2\pi}}^{+\frac{1}{2\pi}}\mathrm{d}x\,x^{2}n^{2}=\frac{1}{12n}=\frac{1}{12n^{2}}n=\frac{1}{12n^{2}}||\Psi_{x_{0},n}||^{2}\leq\frac{1}{4n^{2}}||\Psi_{x_{0},n}||^{2}$$ $$\lim_{n\to\infty}\frac{||(X-x_{0})\Psi_{x_{0},n}||}{||\Psi_{x_{0},n}||^{2}}\leq\lim_{n\to\infty}\frac{1}{2n}=0$$
-	
-	Quindi x0 appartiene formalmente allo spettro dell'operatore X. Quanto dimostrato pu'o essere considerato come una definizione: x0 appartiene allo spettro continuo dell'operatore in questione se riusciamo a trovare una successione di stati nel dominio dell'operatore tali che il limite in 1.6 tende a 0. Tuttavia non 'e possibile definire lo stato limite che soddisfa all'equazione agli autovalori, infatti proprio per questo caso la norma non converge ad un elemento dello spazio di Hilbert, n´e a un elemento del dominio
-	
-	$$||\Psi_{x_{0},n}||={\sqrt{n}}\quad\longrightarrow\quad\operatorname*{lim}_{n\longrightarrow\infty}||\Psi_{x_{0},n}||=\infty$$
-	
-	Il problema viene completamente risolto introducendo la teoria delle distribuzioni, che ci permette di definire una convergenza pi'u debole per la norma. Possiamo definire un funzionale lineare continuo che appartiene allo spazio delle distribuzioni Ψx0,n ∈ S0e che agisce su una funzione di prova Φ appartenente allo spazio S (come sappiamo le funzioni di prova sono delle funzioni sufficientemente regolari che decrescono con una certa velocit'a all'infinito). Questa combinazione permette al seguente integrale di convergere
-	
-	$$\Psi_{x_{0},n}(\Phi)=\langle\Psi_{x_{0},n}|\Phi\rangle=\int_{-\infty}^{+\infty}\mathrm{d}x\,\Psi_{x_{0},n}^{*}(x)\Psi(x)\ ,$$
-	
-	Per questi tre spazi introdotti finora, vale la catena di inclusioni *S ⊂ H ⊂ S*0.
-	
-	In questo contesto possiamo considerare il limite 1.6 sotto una nuova luce
-	
-	$$\operatorname*{lim}_{n\to\infty}\langle\Psi_{x_{0},n}|\Phi\rangle=\langle\delta_{x_{0}}|\Phi\rangle=\int\mathrm{d}x\,\delta(x-x_{0})\Phi(x)=\Phi(x_{0})$$
-	
-	Non 'e difficile estendere l'azione di X allo spazio pi'u ampio delle distribuzioni S
-	0, imponendo formalmente ci'o che abbiamo detto per lo spettro discreto, e cio'e che
-	
-	$$\langle X\Psi|\Phi\rangle=\langle\Psi|X\Phi\rangle$$
-	hXΨ|Φi = hΨ|XΦi X |Ψi = x |Ψ*i −→ |*Ψi = |δx0
-	$$X\left|\Psi\right\rangle=x\left|\Psi\right\rangle\quad\longrightarrow\quad\left|\Psi\right\rangle=\left|\delta_{x_{0}}\right\rangle=\left|x_{0}\right\rangle$$
-	
-	chiamiamo la soluzione *autovettore generalizzato* dell'operatore X relativo all'*autovalore generalizzato* x0,
-	appartenente allo spettro continuo. Questi autovettori generalizzati obbediranno alla condizione generalizzata di
-	ortonormalit'a
-	$$\langle x_{0}|x_{0}^{\prime}\rangle=\delta(x_{0}-x_{0}^{\prime})$$
-	)Zdx0 |x0ihx0| = 1 significa che anche in questo caso avremo una base generalizzata ortonormale che ci consente di riscrivere la funzione d'onda nello spazio delle coordinate come proiezione
-	
-	$$\int\mathrm{d}x_{0}\,|x_{0}\rangle\!\langle x_{0}|=1$$
-	$$\Psi(x)=\langle x|\Psi\rangle\quad\forall\,|\Psi\rangle\in{\mathcal{H}}$$
-	
-	Quanto detto si estende in modo ovvio alle 3D: detto X~ l'operatore associato alle coordinate (*x, y, z*), possiamo definire degli autostati generalizzati |~xi tali per cui
-	
-	$${\vec{X}}\left|{\vec{x_{0}}}\right\rangle={\vec{x_{0}}}\left|{\vec{x_{0}}}\right\rangle$$
-	X~ | ~x0i = ~x0 | ~x0i h~x0|~x00
-	$$\begin{array}{c c c}{{\langle\vec{x}_{0}|\vec{x}_{0}\rangle=\delta^{(3)}(\vec{x}_{0}-\vec{x}_{0}^{\prime})}}&{{}}&{{}}&{{\int\mathrm{d}\vec{x}_{0}\,|\vec{x}_{0}\rangle\langle\vec{x}_{0}|=1\,.}}\end{array}$$
-	
-	## 1.2.6 Operatore Impulso
-	
-	Anche in questo caso, per analizzare l'operatore momento, incominciamo da un sistema unidimensionale.
-	
-	Sappiamo gi'a che P agisce nello spazio delle coordinare tramite la derivata parziale introdotta nell'equazione 1.4, e possiamo intuire che, trattandosi di un operatore che descrive un'osservabile fisica, sar'a hermitiano autoaggiunto
-	
-	$$\langle\Psi|P\Phi\rangle=\langle P\Psi|\Phi\rangle$$
-	
-	Grazie all'equazione agli autovalori generalizzata 'e possibile ricavare autovettori e autovalori generalizzati, che soddisfano alle condizioni di ortonormalizzazione generalizzate
-	
-	$$P u_{p_{0}}(x)=-i\hbar{\frac{\partial u_{p_{0}}(x)}{\partial x}}=p_{0}u_{p_{0}}(x)\quad\longrightarrow\quad u_{p_{0}}(x)={\frac{1}{\sqrt{2\pi\hbar}}}e^{i{\frac{p_{0}}{\hbar}}x}$$
-	
-	$$\langle p_{0}|p_{0}^{\prime}\rangle=\delta(p_{0}-p_{0}^{\prime})$$
-	$$\int d p_{0}\left|p_{0}\right\rangle\left\langle p_{0}\right|=\mathbb{I}$$
-	
-	Come nel caso dell'operatore posizione, possiamo riscrivere la funzione d'onda nello spazio dei momenti come proiezione del ket costituito dalla funzione d'onda astratta sul bra hp|, che altro non 'e che la trasformata di Fourier della funzione d'onda stessa nello spazio delle coordinate Ψ( ˜ p) = hp|Ψi A questo punto enunciamo il *postulato di quantizzazione canonica*, che spiega come passare in maniera sistematica da un sistema classico nel formalismo hamiltoniano dipendente dalle coordinate (*q, p*), alla descrizione del corrispondente sistema quantistico, che quindi sar'a un sistema con analogo classico. Postulato 5. *Quantizzazione canonica* Alle coordinate qi associamo degli operatori autoaggiunti Qi, agli impulsi pi *associamo gli operatori autoaggiunti* Pi e alle parentesi di Poisson {·, ·} *associamo il commutatore* −i~[·, ·]
-	Sulla base di questo postulato possiamo scrivere le regole di commutazione canoniche (o di Heisenberg)
-	
-	$$[Q_{i},Q_{j}]=[P_{i},P_{j}]=0\qquad\qquad[Q_{i},P_{j}]=i\hbar\delta_{i j}$$
-	$$(1.7)$$
-	[Qi, Qj ] = [Pi, Pj ] = 0 [Qi, Pj ] = i~δij (1.7)
-	Accanto a P introduciamo anche P, operatore complemento di P, in modo tale che
-	si dimostra facilmente che 'e anch'esso hermitiano e idempotente
-	e che entrambi si tratta di operatori limitati
-	in cui la presenza dell'unit'a immaginaria 'e necessaria perch´e il commutatore di due operatori autoaggiunti hermitiani sia hermitiano e non anti-hermitiano, come si pu'o facilmente dimostrare. C''e un'ambiguit'a nel passaggio da MC a MQ che emerge nel momento in cui la funzione dipende da prodotti di queste due osservabili e non da Q e P separatamente; infatti sulla base delle relazioni di commutazione fondamentali i due elementi non commutano, e per di pi'u il prodotto non 'e nemmeno autoaggiunto
-	
-	$$X P=P X+i\hbar\ \ \ \ \ \ \ \ \ \ \ (X P)^{+}=P X\neq X P$$
-	$$(1.8)$$
-	
-	Allora quello che si fa per ovviare a questo problema 'e applicare una *procedura di simmetrizzazione*, cio'e ogni
-	volta che incontriamo un prodotto consideriamo la combinazione simmetrica autoaggiunta
-	$$\frac{X P+P X}{2}$$
-	2(1.8)
-	in cui abbiamo anche introdotto un fattore di normalizzazione. Questo risultato vale solo se siamo in coordinate cartesiane, e solo per sistemi con analogo classico; se vogliamo considerare altre tipologie di sistemi dobbiamo introdurre dei fattori che discendono da considerazioni sperimentali e/o principi di simmetria del sistema.
-	
-	Svolgiamo un piccolo esercizio. Consideriamo una particella priva di spin in una dimensione e calcoliamo come agisce l'operatore posizione X sulla sua funzione d'onda espressa nella rappresentazione degli impulsi
-	
-	$$X\bar{\Psi}(p)=\,\langle p|X|\Psi\rangle=\int\mathrm{d}x\,\langle p|X|x\rangle\,\langle x|\Psi\rangle=\int\mathrm{d}x\,x\frac{1}{\sqrt{2\pi\hbar}}e^{-\frac{i p x}{\hbar}}\Psi(x)=$$
-	
-	moltiplicando e dividendo per −i~ troviamo la derivata dell'esponenziale rispetto la coordinata p
-	
-	$$=i\hbar{\frac{\partial}{\partial p}}\left[{\frac{1}{\sqrt{2\pi\hbar}}}\int\mathrm{d}x\,e^{-{\frac{i p z}{\hbar}}}\Psi(x)\right]=i\hbar{\frac{\partial}{\partial p}}{\bar{\Psi}}(p)$$
-	
-	## 1.2.7 Operatore Di Proiezione
-	
-	In questo paragrafo introduciamo un tipo di operatori che chiamiamo proiettori (o *operatori di proiezione*), che hanno delle particolari caratteristiche che li differenziano dagli altri, per le quali godono di molta importanza nell'ambito della MQ.
-	
-	Consideriamo uno spazio di Hilbert H e un operatore lineare P di dominio D(P) denso in H, diremo che P 'e proiettore se soddisfa le seguenti richieste:
-	- 'e hermitiano, e dato che si tratta di un operatore di dominio denso in H, 'e anche simmetrico:
-	
-	$$\langle{\mathcal{P}}\Psi|\Phi\rangle=\langle\Psi|{\mathcal{P}}\Phi\rangle\quad\forall\,|\Psi\rangle\,,|\Phi\rangle\in{\mathcal{H}}$$
-	$${\mathcal{P}}{\overline{{{\mathcal{P}}}}}={\mathcal{P}}(1-{\mathcal{P}})=0$$
-	$${\mathcal{P}}+{\overline{{{\mathcal{P}}}}}=1$$
-	$$({\mathcal{P}})\qquad\longrightarrow$$
-	
-	- 'e idempotente: P
-	2 = P
-	
-	$${\overline{{\mathcal{P}}}}=\mathbb{I}-{\mathcal{P}}$$
-	P = 1 *− P D*(P) = D(P) −→ PP = P(1 − P) = 0 P + P = 1
-	$\mathcal{D}(\overline{\mathcal{P}})$ . 
-	$$\langle\overline{{{\cal P}}}\Psi|\Phi\rangle=\langle\Psi|\overline{{{\cal P}}}\Phi\rangle$$
-	$$\langle{\mathcal{P}}^{2}\Psi|\Psi\rangle=\langle{\mathcal{P}}\Psi|\Psi\rangle$$
-	
-	$\in\left|\right.F\quad\mathbf{x}\neq f$ . 
-	PΨΦ=ΨPΦP
-	$${\overline{{{\mathcal{P}}}}}^{2}=(\mathbb{I}-{\mathcal{P}})(\mathbb{I}-{\mathcal{P}})=\mathbb{I}-2{\mathcal{P}}+{\mathcal{P}}^{2}={\overline{{{\mathcal{P}}}}}$$
-	$$||{\mathcal{P}}\Psi||^{2}\equiv\langle{\mathcal{P}}|$$
-	||PΨ||2 *≡ hP*Ψ|PΨi =P
-	2ΨΨ= hPΨ|Ψ*i ||P*Ψ||2 ≡PΨPΨ=
-	$$||{\overline{{{\cal P}}}}\Psi||^{2}\equiv\left\langle{\overline{{{\cal P}}}}\Psi|{\overline{{{\cal P}}}}\Psi\right\rangle=\left\langle{\overline{{{\cal P}}}}^{2}\Psi\right|\Psi\right\rangle=\left\langle{\overline{{{\cal P}}}}\Psi|\Psi\right\rangle$$
-	
-	sommando queste due equazioni membro a membro otteniamo e sfruttando la linearit'a e l'hermicit'a degli operatori
-	
-	$||{\cal P}\Psi||^{2}+||\overline{{\cal P}}\Psi||^{2}=\left\langle({\cal P}+\overline{{\cal P}})\Psi|\Psi\right\rangle=\left\langle\Psi|\Psi\right\rangle=||\Psi||^{2}\quad\longrightarrow\quad||{\cal P}\Psi||\leq||\Psi||\quad\longrightarrow$
-	analogamente per P. Inoltre sono ortogonali, come si pu'o capire dal valore del loro prodotto:
-	PΨPΨ=PPΨΨ= 0 Detto ci'o, possiamo ampliare il dominio di entrambi gli operatori da D(P) denso in H, a D(P) = H senza fare azioni illecite o perdere di generalit'a dato che stiamo trattando operatori lineari con dominio denso.
-	
-	A questo punto verifichiamo che tutti i vettori del tipo |ΨP i = P |Ψi sono autovettori di P con autovalore 1 e per P con autovalore 0:
-	
-	$\langle T\rangle$
-	$\downarrow$ A. 
-	$\pm$ /. 
-	$\lambda$ ? 
-	$${\mathcal{P}}\left|\Psi_{\mathcal{P}}\right\rangle={\mathcal{P}}^{2}\left|\Psi\right\rangle={\mathcal{P}}\left|\Psi\right\rangle=+1\left|\Psi_{\mathcal{P}}\right\rangle$$
-	$$\overline{{{\mathcal{P}}}}\left|\Psi_{\mathcal{P}}\right\rangle=\overline{{{\mathcal{P}}}}\mathcal{P}\left|\Psi\right\rangle=0\left|\Psi_{\mathcal{P}}\right\rangle$$
-	2|Ψi = P |Ψi = +1 |ΨP i P |ΨP i = *PP |*Ψi = 0 |ΨP i
-	Allo stesso modo si pu'o verificare che |ΨP
-	i = P |Ψi 'e autovettore per P con autovalore 0 e per P con autovalore
-	+1. Abbiamo gi'a intuito grazie a queste considerazioni che lo spettro di un operatore di proiezione sar'a formato da soli due autovalori σ(P) = {0, 1}
-	e gli autovettori possono decomporre lo spazio di Hilbert come somma diretta dei loro due sottospazi di appartenenza H = H1 ⊕ H0 Facciamo alcuni esempi di operatori di proiezione:
-	- PΨ ≡ |ΨihΨ| che agisce come PΨ |Φi = |Ψi hΨ|Φi |Φ*i ∈ H*
-	quello che abbiamo fatto 'e la proiezione di un generico vettore dello spazio di Hilbert lungo una determinata direzione orientata.
-	
-	- Sia |Ψii i = {1*, ...q*} una base ortonormale per un certo sottospazio Hq ⊆ H. Possiamo definire il proiettore associato a questa base come la somma dei proiettori dell'esempio precedente
-	
-	$\mathcal{P}_{\Psi}\left|\Phi\right\rangle=\left|\Psi\right\rangle\left\langle\Psi|\Phi\right\rangle$. 
-	$|\Phi\rangle\in\mathcal{H}$. 
-	$${\mathcal{P}}_{q}=\sum_{i=1}^{q}|\Psi_{i}\rangle\!\langle\Psi_{i}|$$
-	in questo caso il vettore generico viene proiettato in un sottospazio dello spazio di Hilbert di dimensione maggiore di 1. L'introduzione di questo proiettore, in aggiunta al teorema spettrale, ci permette di arrivare alla *decomposizione spettrale* di un operatore autoaggiunto associato a un'osservabile fisica
-	
-	$$A=\sum_{k\in\sigma_{d}(A)}\sum_{i=1}^{d}a_{k,i}\,|a_{k,i}\rangle\!\langle a_{k,i}|+\int_{\sigma_{c}(A)}\mathrm{d}a\,a\,|a\rangle\!\langle a|$$
-	$$(1.9)$$
-	
-	- Consideriamo lo spazio di Hilbert pi'u semplice che possiamo incontrare: H = C
-	2, e gli operatori espressi come matrici quadrate
-	
-	$ P=\frac{1}{2}\left|\begin{array}{ccc}1&1\\ 1&1\end{array}\right|\qquad\qquad P'=\frac{1}{2}\left|\begin{array}{ccc}1&-1\\ -1&1\end{array}\right|$  ri e costrujamo una base ortonormale costitita da. 
-	verifichiamo che sono proiettori e costruiamo una base ortonormale costituita da autovettori di P, determinando anche le componenti del generico vettore v =
-	α β in tale base.
-	
-	Le matrici date sono reali e simmetriche, quindi descrivono operatori autoaggiunti; inoltre
-	
-	$$P^{2}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}\cdot{\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}={\frac{1}{4}}{\left|\begin{array}{l l}{2}&{2}\\ {2}&{2}\end{array}\right|}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}=P$$
-	
-	e analogamente per P
-	0, ne consegue che sono proiettori per cui i loro autovalori sono (0, 1), come si ricava anche applicando la procedura geometrica direttamente sulla matrice. In questo caso P
-	0svolge il ruolo di P gi'a introdotto in precedenza, infatti
-	
-	$$P P^{\prime}={\frac{1}{2}}{\left|\begin{array}{l l}{0}&{0}\\ {0}&{0}\end{array}\right|}\qquad\qquad P+P^{\prime}={\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}$$
-	
+$$\longrightarrow\quad(\Delta A)^{2}_{\Psi,a}(\Delta B)^{2}_{\Psi,b}=\frac{||\hat{A}\Psi||^{2}}{||\Psi||^{2}}\frac{||\hat{B}\Psi||^{2}}{||\Psi||^{2}}$$  
+
+Introduciamo per semplicit\'a altri due operatori e dimostriamo che sono hermitiani
+
+$$C=-i[A,B]=-i[\hat{A},\hat{B}]\qquad\qquad\{\hat{A},\hat{B}\}=\hat{A}\hat{B}+\hat{B}\hat{A}\quad\text{(anticommutatore)}.$$
+	
+	
+$$C^+=\big(\,-\,i[A,B]\big)^+=+i(AB-BA)^+=+i(B^+A^+-A^+B^+)=+i(BA-AB)=\big(\,-\,i[A,B]\big)=C$$
+
+$$\{\hat{A},\hat{B}\}^+=\big(\hat{A}\hat{B}+\hat{B}\hat{A}\big)^+=\hat{B}^+\hat{A}^++\hat{A}^+\hat{B}^+=\{\hat{A},\hat{B}\}$$
+
+Giungiamo alla dimostrazione che ci eravamo prefissati di dare
+
+
+
+
+\begin{align*}
+	\parallel\hat{A}\Psi\parallel^2 \; \parallel\hat{B}\Psi\parallel^2  
+	&\overbracket[0pt][0pt]{\geq}^{(a)}
+	\big| \braket[\big]{\hat{A}\Psi}{\hat{B}\Psi} \big|^2 \overbracket[0pt][0pt]{=}^{(b)} \big| \braket[\big]{\Psi}{\hat{A}\hat{B}\Psi} \big|^2 
+	\overbracket[0pt][0pt]{=}^{(c)} \bigg| \bra[\bigg]{\Psi} \frac{\{A, B\}}{2} \ket[\bigg]{\Psi} + \frac{i}{2} \bra{\Psi} C \ket{\Psi} \bigg|^2 =
+	\\
+	&\overbracket[0pt][0pt]{\geq}^{(d)} \frac{1}{4} \big( | \bra{\Psi}{A, B}\ket{\Psi} |^2 + \bra{\Psi} C \ket{\Psi} |^2 \big) \overbracket[0pt][0pt]{\geq}^{(e)} \frac{1}{4} | \bra{\Psi} C \ket{\Psi} |^2 
+	\\
+	&= \frac{1}{4} | \bra{\Psi} [A, B] \ket{\Psi} |^2 
+	\\
+	(\Delta A \Delta B)_\Psi 
+	&\geq \frac{1}{2} \frac{\bra{\Psi} [A, B] \ket{\Psi}} {||\Psi||^2} = \frac{ 1}{ 2 } | \langle [A, B] \rangle_\Psi |
+\end{align*}
+
+in cui nel passaggio (a) abbiamo usato la disuguaglianza di Schwartz, in (b) la propriet\'a di autoaggiuntezza, in	(c) abbiamo riscritto il prodotto dei due operatori come somma del loro commutatore e anticommutatore, in (d) abbiamo sfruttato il fatto che il quadrato della somma di due numeri di cui uno reale e l'altro puramente immaginario \'e dato dalla somma dei quadrati perch\'e sono ortogonali nel piano complesso, infine in (e) abbiamo minorato semplicemente togliendo opportunamente uno dei due addendi. $\square$
+	
+Nel caso particolare in cui consideriamo gli operatori posizione e momento dobbiamo fare le sostituzioni $A \to X$ e $B \to P_X$, inoltre sappiamo gi\'a che $[X, P] = i\hbar$, quindi si ricava facilmente che
+	
+$$(\Delta X\Delta P)\geq{\frac{\hbar}{2}}$$
+	
+Calcoliamo quando tale relazione satura come uguaglianza (nel caso particolare in cui $x = p = 0$). La prima disuguaglianza da considerare \'e quella di Schwarz:
+	
+$$||X\Psi||^{2}||P\Psi||^{2}\stackrel{{!}}{{=}}|\left\langle X\Psi|P\Psi\right\rangle|^{2}\quad\Longleftrightarrow\quad P\left|\Psi\right\rangle=\Gamma X\left|\Psi\right\rangle\quad\Gamma\in\mathbb{C}$$
+
+cio\'e vale l'uguaglianza quando i due vettori sono paralleli (uno 'e multiplo dell'altro mediante una costante moltiplicativa complessa). La seconda disuguaglianza 'e quella in cui si annulla l'anticommutatore tra le osservabili
+	
+$$|\braket{\Psi}{\{X,P\} \Psi}|^2 + |\braket{\Psi}{[X,P] \Psi}|^2 \stackrel{{!}}{{=}} |\braket{\Psi}{[X,P] \Psi}|^2 \iff \braket{\Psi}{XP\Psi} = -\braket{\Psi}{PX\Psi} = -\braket{XP\Psi}{\Psi}$$
+
+e sfruttando il risultato precedente
+
+$$\braket{\Psi}{\Gamma X^2 \Psi} = - \braket{\Gamma X^2 \Psi}{\Psi} \qquad \Rightarrow \qquad \Gamma\braket{\Psi}{X^2 \Psi} = -\Gamma^* \braket{X^2 \Psi}{\Psi} = -\Gamma \braket{\Psi}{X^2 \Psi} \qquad\Rightarrow $$
+
+$$\Rightarrow \qquad \Gamma=-\Gamma^* \qquad \Rightarrow \qquad \Gamma = i\gamma \qquad (\gamma\in \mathbb{R})$$
+
+cio\'e il fattore moltiplicativo deve essere puramente immaginario. Gli stati per cui questa relazione \'e soddisfatta si calcolano facilmente considerando l'equazione agli autovalori per l'operatore $P$:
+
+$$P\Psi = i\gamma X\Psi \qquad \Rightarrow \qquad −i\hbar \frac{\mathrm{d}\Psi}{\mathrm{d}x} = i\gamma x\Psi \qquad\Rightarrow\qquad \frac{\mathrm{d}\Psi}{\mathrm{d}x} = −\frac{\gamma x}{\hbar}\Psi$$
+	
+limitandoci ai soli $\gamma \geq 0$ per i quali la funzione d'onda \'e accettabile, cio\'e $\Psi \in L_2(\mathbb{R})$, otteniamo l'equazione di una gaussiana in una dimensione la cui larghezza \'e modulata da un fattore moltiplicativo $\propto \gamma$
+	
+$$\Psi(x)=A e^{-{\frac{\gamma x^{2}}{2\hbar}}}$$
+	
+	
+\subsubsection{Operatore posizione X}
+	
+Per definire questo basilare operatore della MQ, vediamo come agisce quando viene applicato ad una funzione d'onda, cio\'e consideriamo la sua equazione agli autovalori che abbiamo scritto in \ref{cap: 1.4}.
+
+Immaginiamo che il nostro sistema fisico sia definito in un certo intervallo $[a, b] \subseteq \mathbb{R}$ del tutto generale (pu\'o anche essere $[−\infty, +\infty]$ andando a coprire tutto $\mathbb{R}$), in questo caso lo spazio di Hilbert \'e $L_2([a, b])$.
+
+Il dominio di questo operatore $\mathcal{D}(X)$, per\'o, non pu\'o essere solamente l'insieme di tutte le funzioni modulo quadro integrabili, infatti questa richiesta non 'e sufficiente a garantire che anche $x\Psi(x)$ sia modulo quadro integrabile, dobbiamo essere pi\'u specifici. Come sappiamo, quello che sicuramente possiamo dire \'e che $\mathcal{D}(X)$ \'e denso in $\mathcal{H}$ qualsiasi sia l'intervallo $[a, b]$ (se per esempio la funzione ha supporto compatto, anche se moltiplicata per $x$ risulta avere supporto compatto), perch\'e si tratta di una richiesta necessaria nella definizione di osservabile fisica. Inoltre $X$ \'e anche hermitiano: se prendiamo due vettori $\ket{\Psi}$, $\ket{\Phi}$, allora il prodotto scalare soddisfa
+	
+$$\langle\Psi|X\Phi\rangle=\int_{a}^{b}\mathrm{d}x\;\Phi^{*}(x)X\Phi(x)=\int_{a}^{b}\mathrm{d}x\;(X\Psi(x))^{*}\Phi(x)=\langle X\Psi|\Phi\rangle$$  
+
+e dato che \'e anche di dominio denso, ne consegue che \'e simmetrico; si pu\'o dimostrare che \'e autoaggiunto e quindi vale anche l'uguaglianza del dominio con il suo aggiunto $\mathcal{D}(X) = \mathcal{D}(X^+)$.
+
+Affrontiamo ora il problema agli autovalori. Vogliamo trovare i \textit{ket} $\ket{x_0}$ che soddisfano l'equazione
+
+$$X\left|x_{0}\right\rangle=x_{0}\left|x_{0}\right\rangle$$
+
+Dato che in questo caso l'operatore ha spettro continuo, l'equazione agli autovalori non fornisce soluzioni perch\'e l'autovettore risultante non \'e in $\mathcal{H}$. Per trattare il problema in maniera rigorosa dovremmo discretizzare lo spazio dividendo l'asse reale in intervalli di larghezza $\varepsilon$ e prendere poi il limite in cui questa grandezza tende a 0.
+Operiamo comunque sfruttando la densit\'a del dominio dell'operatore; consideriamo la scrittura
+
+\begin{equation}
+	\label{eq:oper X}
+	\forall x_{0}\in[a,b]\quad\exists\Psi_{x_{0},n}\text{ successione }\subset\mathcal{D}(X)\quad\bigg{|}\quad\lim_{n\to\infty}\frac{\|(X-x_{0})\Psi_{x_{0},n}\|}{\|\Psi_{x_{0},n}\|^{2}}=0
+\end{equation} 
+
+ci chiediamo se un $x_{0}$ che soddisfa a questa relazione di limite, appartenga automaticamente allo spettro dell'operatore $X$. Per dimostrare quanto abbiamo appena detto calcoliamoci nel caso specifico (che non fa perdere generalit\'a) di $[a, b] = \mathbb{R}$ e prendiamo come termine generico della successione
+	
+$$\Psi_{x_{0},n}(x)={\left\{\begin{array}{l l}{n}&{|x-x_{0}|\leq{\frac{1}{2n}}}\\ {0}&{\text{altrove}}\end{array}\right.}$$
+
+in questo modo l'area sotto la funzione non cambia al variare di $n$, ed \'e evidente come tutte queste funzioni appartengano al dominio di $X$, dato che la loro norma assume un valore finito
+
+$$||\Psi_{x_{0},n}||^{2}=\int\mathrm{d}x\,|\Psi_{x_{0},n}|^{2}=\int_{-\frac{1}{2n}}^{+\frac{1}{2n}}\mathrm{d}n\,n^{2}=n$$
+
+Allora
+\begin{align*}
+	||(x-x_{0})\Psi_{x_{0},n}||^{2}
+	&=\int\mathrm{d}x\,(x-x_{0})^{2}|\Psi_{x_{0},n}|^{2}=\int_{-\frac{1}{2\pi}}^{+\frac{1}{2\pi}}\mathrm{d}x\,(x-x_{0})^{2}n^{2}
+	\\
+	&\leq\int_{-\frac{1}{2\pi}}^{+\frac{1}{2\pi}}\mathrm{d}x\,x^{2}n^{2}=\frac{1}{12n}=\frac{1}{12n^{2}}n=\frac{1}{12n^{2}}||\Psi_{x_{0},n}||^{2}\leq\frac{1}{4n^{2}}||\Psi_{x_{0},n}||^{2}
+	\\ 
+	\lim_{n\to\infty}\frac{||(X-x_{0})\Psi_{x_{0},n}||}{||\Psi_{x_{0},n}||^{2}}
+	&\leq\lim_{n\to\infty}\frac{1}{2n}=0
+\end{align*}
+
+Quindi $x_0$ appartiene formalmente allo spettro dell'operatore $X$. Quanto dimostrato pu\'o essere considerato come una definizione: $x_0$ \textit{appartiene allo spettro continuo dell'operatore in questione se riusciamo a trovare una successione di stati nel dominio dell'operatore tali che il limite in \ref{eq:oper X} tende a 0.} Tuttavia non \'e possibile definire lo stato limite che soddisfa all'equazione agli autovalori, infatti proprio per questo caso la norma non converge ad un elemento dello spazio di Hilbert, n\'e a un elemento del dominio
+	
+$$||\Psi_{x_{0},n}||={\sqrt{n}}\quad\longrightarrow\quad\operatorname*{lim}_{n\longrightarrow\infty}||\Psi_{x_{0},n}||=\infty$$
+
+Il problema viene completamente risolto introducendo la teoria delle distribuzioni, che ci permette di definire una convergenza pi\'u debole per la norma. Possiamo definire un funzionale lineare continuo che appartiene allo spazio delle distribuzioni $\Psi_{x_0,n} \in \mathcal{S}'$ e che agisce su una funzione di prova $\Phi$ appartenente allo spazio $\mathcal{S}$ (come sappiamo le funzioni di prova sono delle funzioni sufficientemente regolari che decrescono con una certa velocit\'a all'infinito). Questa combinazione permette al seguente integrale di convergere
+
+$$\Psi_{x_{0},n}(\Phi)=\langle\Psi_{x_{0},n}|\Phi\rangle=\int_{-\infty}^{+\infty}\mathrm{d}x\,\Psi_{x_{0},n}^{*}(x)\Psi(x)\ ,$$
+
+Per questi tre spazi introdotti finora, vale la catena di inclusioni $\mathcal{S} \subset \mathcal{H} \subset \mathcal{S}'$.
+
+In questo contesto possiamo considerare il limite \ref{eq:oper X} sotto una nuova luce
+
+$$\operatorname*{lim}_{n\to\infty}\langle\Psi_{x_{0},n}|\Phi\rangle=\langle\delta_{x_{0}}|\Phi\rangle=\int\mathrm{d}x\,\delta(x-x_{0})\Phi(x)=\Phi(x_{0})$$
+
+Non 'e difficile estendere l'azione di $X$ allo spazio pi\'u ampio delle distribuzioni $\mathcal{S}'$, imponendo formalmente ci\'o che abbiamo detto per lo spettro discreto, e cio\'e che
+
+$$\langle X\Psi|\Phi\rangle=\langle\Psi|X\Phi\rangle \qquad X\left|\Psi\right\rangle=x\left|\Psi\right\rangle\quad\longrightarrow \qquad\left|\Psi\right\rangle=\left|\delta_{x_{0}}\right\rangle=\left|x_{0}\right\rangle$$
+
+chiamiamo la soluzione \textit{autovettore generalizzato} dell'operatore $X$ relativo all'\textit{autovalore generalizzato} $x_0$, appartenente allo spettro continuo. Questi autovettori generalizzati obbediranno alla condizione generalizzata di ortonormalit\'a
+
+$$\langle x_{0}|x_{0}^{\prime}\rangle=\delta(x_{0}-x_{0}^{\prime}) \qquad \int \mathrm{d}x_0 \ket{x_0}\bra{x_0} = \mathbbm{1}$$
+
+significa che anche in questo caso avremo una base generalizzata ortonormale che ci consente di riscrivere la funzione d'onda nello spazio delle coordinate come proiezione
+
+$$\Psi(x)=\langle x|\Psi\rangle\quad\forall\,|\Psi\rangle\in{\mathcal{H}}$$
+
+Quanto detto si estende in modo ovvio alle 3D: detto $\vec{X}$ l'operatore associato alle coordinate $(x, y, z)$, possiamo definire degli autostati generalizzati $\ket{\vec{x}}$ tali per cui
+
+$${\vec{X}}\left|{\vec{x_{0}}}\right\rangle={\vec{x_{0}}}\left|{\vec{x_{0}}}\right\rangle
+\qquad \langle\vec{x}_{0}|\vec{x}_{0}\rangle=\delta^{(3)}(\vec{x}_{0}-\vec{x}_{0}^{\prime}) \qquad \int\mathrm{d}\vec{x}_{0}\,|\vec{x}_{0}\rangle\langle\vec{x}_{0}|=\mathbbm{1}$$
+	
+	
+\subsubsection{Operatore impulso}
+	
+Anche in questo caso, per analizzare l'operatore momento, incominciamo da un sistema unidimensionale.
+
+Sappiamo gi\'a che $P$ agisce nello spazio delle coordinare tramite la derivata parziale introdotta nell'equazione 1.4, e possiamo intuire che, trattandosi di un operatore che descrive un'osservabile fisica, sar'a hermitiano autoaggiunto
+
+$$\langle\Psi|P\Phi\rangle=\langle P\Psi|\Phi\rangle$$
+
+Grazie all'equazione agli autovalori generalizzata \'e possibile ricavare autovettori e autovalori generalizzati, che soddisfano alle condizioni di ortonormalizzazione generalizzate
+
+$$P u_{p_{0}}(x)=-i\hbar{\frac{\partial u_{p_{0}}(x)}{\partial x}}=p_{0}u_{p_{0}}(x)\quad\longrightarrow\quad u_{p_{0}}(x)={\frac{1}{\sqrt{2\pi\hbar}}}e^{i{\frac{p_{0}}{\hbar}}x}$$
+
+$$\langle p_{0}|p_{0}^{\prime}\rangle=\delta(p_{0}-p_{0}^{\prime}) \qquad\qquad \int d p_{0}\left|p_{0}\right\rangle\left\langle p_{0}\right|=\mathbb{I}$$
+
+Come nel caso dell'operatore posizione, possiamo riscrivere la funzione d'onda nello spazio dei momenti come proiezione del \textit{ket} costituito dalla funzione d'onda astratta sul \textit{bra} $\bra{p}$, che altro non \'e che la trasformata di Fourier della funzione d'onda stessa nello spazio delle coordinate 
+
+$$\tilde{\Psi}(p) = \braket{p}{\Psi}$$
+
+A questo punto enunciamo il \textit{postulato di quantizzazione canonica}, che spiega come passare in maniera sistematica da un sistema classico nel formalismo hamiltoniano dipendente dalle coordinate $(q, p)$, alla descrizione del corrispondente sistema quantistico, che quindi sar\'a un sistema con analogo classico. 
+
+\chapter{\textbf{Postulato 5. \textit{Quantizzazione canonica}}} 
+
+\textit{Alle coordinate $q_i$ associamo degli operatori autoaggiunti $Q_i$, agli impulsi $p_i$ associamo gli operatori autoaggiunti $P_i$ e alle parentesi di Poisson ${\cdot, \cdot}$ associamo il commutatore $-i\hbar[\cdot, \cdot]$}
+
+Sulla base di questo postulato possiamo scrivere le regole di commutazione canoniche (o di Heisenberg)
+\begin{equation}
+	[Q_{i},Q_{j}]=[P_{i},P_{j}]=0\qquad\qquad[Q_{i},P_{j}]=i\hbar\delta_{i j}
+\end{equation}
+
+in cui la presenza dell'unit\'a immaginaria \'e necessaria perch\'e il commutatore di due operatori autoaggiunti hermitiani sia hermitiano e non anti-hermitiano, come si pu\'o facilmente dimostrare. 
+
+C'\'e un'ambiguit\'a nel passaggio da MC a MQ che emerge nel momento in cui la funzione dipende da prodotti di queste due osservabili e non da $Q$ e $P$ separatamente; infatti sulla base delle relazioni di commutazione fondamentali i due elementi non commutano, e per di pi\'u il prodotto non \'e nemmeno autoaggiunto
+
+\begin{equation}
+	X P=P X+i\hbar\qquad\qquad (X P)^{+}=P X\neq X P
+\end{equation}
+
+Allora quello che si fa per ovviare a questo problema \'e applicare una \textit{procedura di simmetrizzazione}, cio\'e ogni volta che incontriamo un prodotto consideriamo la combinazione simmetrica autoaggiunta
+\begin{equation}
+	\frac{X P+P X}{2}
+\end{equation}
+
+in cui abbiamo anche introdotto un fattore di normalizzazione. Questo risultato vale solo se siamo in coordinate cartesiane, e solo per sistemi con analogo classico; se vogliamo considerare altre tipologie di sistemi dobbiamo introdurre dei fattori che discendono da considerazioni sperimentali e/o principi di simmetria del sistema.
+
+Svolgiamo un piccolo esercizio. Consideriamo una particella priva di spin in una dimensione e calcoliamo come agisce l'operatore posizione X sulla sua funzione d'onda espressa nella rappresentazione degli impulsi
+
+$$X\tilde{\Psi}(p)=\,\langle p|X|\Psi\rangle=\int\mathrm{d}x\,\langle p|X|x\rangle\,\langle x|\Psi\rangle=\int\mathrm{d}x\,x\frac{1}{\sqrt{2\pi\hbar}}e^{-\frac{i p x}{\hbar}}\Psi(x)=$$
+
+moltiplicando e dividendo per $-i\hbar$ troviamo la derivata dell'esponenziale rispetto la coordinata $p$
+
+$$=i\hbar{\frac{\partial}{\partial p}}\left[{\frac{1}{\sqrt{2\pi\hbar}}}\int\mathrm{d}x\,e^{-{\frac{i p z}{\hbar}}}\Psi(x)\right]=i\hbar{\frac{\partial}{\partial p}}{\tilde{\Psi}}(p)$$
+
+
+\subsubsection{Operatore di proiezione}
+
+In questo paragrafo introduciamo un tipo di operatori che chiamiamo proiettori (o \textit{operatori di proiezione}), che hanno delle particolari caratteristiche che li differenziano dagli altri, per le quali godono di molta importanza nell'ambito della MQ.
+
+Consideriamo uno spazio di Hilbert $\mathcal{H}$ e un operatore lineare $\mathcal{P}$ di dominio $\mathcal{D}(\mathcal{P})$ denso in $\mathcal{H}$, diremo che $\mathcal{P}$ \'e proiettore se soddisfa le seguenti richieste:
+\begin{itemize}
+\item \'e hermitiano, e dato che si tratta di un operatore di dominio denso in $\mathcal{H}$, \'e anche simmetrico:
+
+$$\langle{\mathcal{P}}\Psi|\Phi\rangle=\langle\Psi|{\mathcal{P}}\Phi\rangle\quad\forall\,|\Psi\rangle\,,|\Phi\rangle\in{\mathcal{H}}$$
+
+\item \'e idempotente: $\qquad \mathcal{P}^2 = \mathcal{P}$
+\end{itemize}
+
+Accanto a $\mathcal{P}$ introduciamo anche $\bar{\mathcal{P}}$, operatore complemento di $\mathcal{P}$, in modo tale che
+
+$${\overline{{\mathcal{P}}}}=\mathbbm{1}-{\mathcal{P}} \qquad\qquad \mathcal{D}(\overline{\mathcal{P}}) \mathcal{D}({\mathcal{P}})\qquad\longrightarrow\qquad {\mathcal{P}}{\overline{{{\mathcal{P}}}}}={\mathcal{P}}(1-{\mathcal{P}})=0 \qquad\qquad
+{\mathcal{P}}+{\overline{{{\mathcal{P}}}}}=1$$
+
+si dimostra facilmente che \'e anch'esso hermitiano e idempotente 
+
+$$\langle\overline{{{\cal P}}}\Psi|\Phi\rangle=\langle\Psi|\overline{{{\cal P}}}\Phi\rangle \qquad\qquad
+{\overline{{{\mathcal{P}}}}}^{2}=(\mathbb{I}-{\mathcal{P}})(\mathbb{I}-{\mathcal{P}})=\mathbb{I}-2{\mathcal{P}}+{\mathcal{P}}^{2}={\overline{{{\mathcal{P}}}}}$$
+
+e che entrambi si trattano di operatori limitati
+
+$$||\mathcal{P} \Psi||^2 \equiv \braket{\mathcal{P} \Psi}{\mathcal{P} \Psi} = \braket{\mathcal{P}^2 \Psi}{\Psi} = \braket{\mathcal{P} \Psi}{\Psi} \qquad\qquad 
+||\bar{\mathcal{P}} \psi||^2 \equiv \braket{\bar{\mathcal{P}} \Psi}{\bar{\mathcal{P}} \Psi} = \braket{\bar{\mathcal{P}}^2 \Psi}{\Psi} = \braket{\bar{\mathcal{P}} \Psi}{\Psi} $$
+
+sommando queste due equazioni membro a membro otteniamo e sfruttando la linearit\'a e l'hermicit\'a degli operatori
+
+$$||{\cal P}\Psi||^{2}+||\overline{{\cal P}}\Psi||^{2}=\left\langle({\cal P}+\overline{{\cal P}})\Psi|\Psi\right\rangle=\left\langle\Psi|\Psi\right\rangle=||\Psi||^{2}\quad\longrightarrow\quad||{\cal P}\Psi||\leq||\Psi||\quad\longrightarrow\quad\mathcal{P}\text{ limitato}$$
+
+analogamente per $\bar{\mathcal{P}}$. Inoltre sono ortogonali, come si pu\'o capire dal valore del loro prodotto:
+
+$$\braket{\mathcal{P}\Psi}{\bar{\mathcal{P}}\Psi} = \braket{\mathcal{P}\bar{\mathcal{P}}\Psi}{\Psi} = 0$$
+
+Detto ci\'o, possiamo ampliare il dominio di entrambi gli operatori da $\mathcal{D}(\mathcal{P})$ denso in $\mathcal{H}$, a $\mathcal{D}(\mathcal{P}) = \mathcal{H}$ senza fare azioni illecite o perdere di generalit\'a dato che stiamo trattando operatori lineari con dominio denso.
+
+A questo punto verifichiamo che tutti i vettori del tipo $\ket{\Psi_{\mathcal{P}}} = \bar{\mathcal{P}} \ket{\Psi}$ sono autovettori di $\mathcal{P}$ con autovalore 1 e per $\bar{\mathcal{P}}$ con autovalore 0:
+
+\begin{comment}
+	
+
+$\langle T\rangle$
+$\downarrow$ A. 
+$\pm$ /. 
+$\lambda$ ? 
+$${\mathcal{P}}\left|\Psi_{\mathcal{P}}\right\rangle={\mathcal{P}}^{2}\left|\Psi\right\rangle={\mathcal{P}}\left|\Psi\right\rangle=+1\left|\Psi_{\mathcal{P}}\right\rangle$$
+$$\overline{{{\mathcal{P}}}}\left|\Psi_{\mathcal{P}}\right\rangle=\overline{{{\mathcal{P}}}}\mathcal{P}\left|\Psi\right\rangle=0\left|\Psi_{\mathcal{P}}\right\rangle$$
+2|\Psii = P |\Psii = +1 |\PsiP i P |\PsiP i = *PP |*\Psii = 0 |\PsiP i
+Allo stesso modo si pu'o verificare che |\PsiP
+i = P |\Psii 'e autovettore per P con autovalore 0 e per P con autovalore
++1. Abbiamo gi'a intuito grazie a queste considerazioni che lo spettro di un operatore di proiezione sar'a formato da soli due autovalori σ(P) = {0, 1}
+e gli autovettori possono decomporre lo spazio di Hilbert come somma diretta dei loro due sottospazi di appartenenza H = H1 ⊕ H0 Facciamo alcuni esempi di operatori di proiezione:
+- P\Psi ≡ |\Psiih\Psi| che agisce come P\Psi |Φi = |\Psii h\Psi|Φi |Φ*i ∈ H*
+quello che abbiamo fatto 'e la proiezione di un generico vettore dello spazio di Hilbert lungo una determinata direzione orientata.
+
+- Sia |\Psiii i = {1*, ...q*} una base ortonormale per un certo sottospazio Hq ⊆ H. Possiamo definire il proiettore associato a questa base come la somma dei proiettori dell'esempio precedente
+
+$\mathcal{P}_{\Psi}\left|\Phi\right\rangle=\left|\Psi\right\rangle\left\langle\Psi|\Phi\right\rangle$. 
+$|\Phi\rangle\in\mathcal{H}$. 
+$${\mathcal{P}}_{q}=\sum_{i=1}^{q}|\Psi_{i}\rangle\!\langle\Psi_{i}|$$
+in questo caso il vettore generico viene proiettato in un sottospazio dello spazio di Hilbert di dimensione maggiore di 1. L'introduzione di questo proiettore, in aggiunta al teorema spettrale, ci permette di arrivare alla *decomposizione spettrale* di un operatore autoaggiunto associato a un'osservabile fisica
+
+$$A=\sum_{k\in\sigma_{d}(A)}\sum_{i=1}^{d}a_{k,i}\,|a_{k,i}\rangle\!\langle a_{k,i}|+\int_{\sigma_{c}(A)}\mathrm{d}a\,a\,|a\rangle\!\langle a|$$
+$$(1.9)$$
+
+- Consideriamo lo spazio di Hilbert pi'u semplice che possiamo incontrare: H = C
+2, e gli operatori espressi come matrici quadrate
+
+$ P=\frac{1}{2}\left|\begin{array}{ccc}1&1\\ 1&1\end{array}\right|\qquad\qquad P'=\frac{1}{2}\left|\begin{array}{ccc}1&-1\\ -1&1\end{array}\right|$  ri e costrujamo una base ortonormale costitita da. 
+verifichiamo che sono proiettori e costruiamo una base ortonormale costituita da autovettori di P, determinando anche le componenti del generico vettore v =
+α β in tale base.
+
+Le matrici date sono reali e simmetriche, quindi descrivono operatori autoaggiunti; inoltre
+
+$$P^{2}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}\cdot{\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}={\frac{1}{4}}{\left|\begin{array}{l l}{2}&{2}\\ {2}&{2}\end{array}\right|}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}=P$$
+
+e analogamente per P
+0, ne consegue che sono proiettori per cui i loro autovalori sono (0, 1), come si ricava anche applicando la procedura geometrica direttamente sulla matrice. In questo caso P
+0svolge il ruolo di P gi'a introdotto in precedenza, infatti
+
+$$P P^{\prime}={\frac{1}{2}}{\left|\begin{array}{l l}{0}&{0}\\ {0}&{0}\end{array}\right|}\qquad\qquad P+P^{\prime}={\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}$$
+
+
 	## 1.3. Misura Delle Osservabili Fisiche 19
 	
 	Ora vediamo come determinare gli autovettori per costruire una base ortonormale. Dato che abbiamo uno spazio bidimensionale, ci sar'a un autovettore linearmente indipendente associato all'autovalore 1, e uno per l'autovalore 0 ortogonale al primo. Avremo quindi, senza bisogno di conti elaborati
@@ -560,20 +654,20 @@ for any possible $\hat{A}$, $\hat{A}$, \(\hat{
 	(che ha dimensione maggiore di 1), ma non sappiamo di quale si tratta.
 	
 	Postulato 6. *Misura di un'osservabile* Supponiamo che immediatamente prima di una misura, a t
-	−, il sistema si trovi nello stato Ψ; a t effettuiamo la misura ideale di prima specie dell'osservabile A *(che per semplicit'a supponiamo a spettro discreto) e troviamo* come risultato ak ∈ σd(A)*. Lo stato del sistema immediatamente dopo la misura a* t
-	+ *'e proiettato in* Ψk, autostato relativo all'autovalore ak:
+	−, il sistema si trovi nello stato \Psi; a t effettuiamo la misura ideale di prima specie dell'osservabile A *(che per semplicit'a supponiamo a spettro discreto) e troviamo* come risultato ak ∈ σd(A)*. Lo stato del sistema immediatamente dopo la misura a* t
+	+ *'e proiettato in* \Psik, autostato relativo all'autovalore ak:
 	
 	$$|\Psi\rangle\longrightarrow|\Psi_{k}\rangle=\frac{{\mathcal{P}}_{k}\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{k}|\Psi\right\rangle}}$$
-	phΨ|Pk|Ψicon Pk =
+	ph\Psi|Pk|\Psiicon Pk =
 	$$\begin{array}{r l}{c o n}&{{}{\mathcal{P}}_{k}=\sum_{i=1}^{d_{k}}|a_{k,i}\rangle\!\langle a_{k,i}|}&{{}{\mathrm{~proie\!\!~tetore}}}\end{array}$$
 	
 	Questo lemma spiega il concetto importante del *collasso della funzione d'onda* come conseguenza della misura.
 	
 	Se l'osservabile ha uno spettro continuo non degenere, non possiamo prescindere dalla precisione finita dello strumento, quindi non potremo mai dire che siamo *esattamente* in un punto dello spettro, piuttosto diremo che siamo in un intervallo di larghezza ∆a centrato in quel valore. In questo caso lo stato dopo la misura lo possiamo costruire a partire dal proiettore P∆a(a0) relativo all'autostato A.
 	
-	|Ψ
+	|\Psi
 	$$\frac{{\mathcal{P}}_{\Delta a}(a_{0})\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{\Delta a}(a_{0})|\Psi\right\rangle}}$$
-	phΨ|P∆a(a0)|Ψicon P∆a(a0) = Z a0+ ∆a
+	ph\Psi|P∆a(a0)|\Psiicon P∆a(a0) = Z a0+ ∆a
 	$$\begin{array}{r l}{c o n}&{{}{\mathcal{P}}_{\Delta a}(a_{0})=\int_{a_{0}-{\frac{\Delta a}{2}}}^{a_{0}+{\frac{\Delta a}{2}}}\mathrm{d}a\,|a\rangle\!\langle a|}\end{array}$$
 	
 	![19_image_2.png](19_image_2.png)
@@ -582,7 +676,7 @@ for any possible $\hat{A}$, $\hat{A}$, \(\hat{
 	
 	![19_image_1.png](19_image_1.png)
 	
-	Le figure soprastanti mostrano cosa succede alla funzione d'onda. Prima della misura la funzione 'e nel suo stato iniziale Ψ(x) = hx|Ψi e ha come dominio tutto l'asse reale perch´e la particella potr'a trovarsi in qualsiasi punto; effettuando una misura ideale di prima specie il sistema 'e perturbato il meno possibile, per cui se la particella viene trovata all'interno dell'intervallo ∆x0, la funzione d'onda avr'a la stessa forma precedente in quell'intervallo, mentre nella regione esterna collasser'a a 0 (per cui dovr'a essere rinormalizzata in accordo con l'interpretazione probabilistica di Born della funzione d'onda).
+	Le figure soprastanti mostrano cosa succede alla funzione d'onda. Prima della misura la funzione 'e nel suo stato iniziale \Psi(x) = hx|\Psii e ha come dominio tutto l'asse reale perch´e la particella potr'a trovarsi in qualsiasi punto; effettuando una misura ideale di prima specie il sistema 'e perturbato il meno possibile, per cui se la particella viene trovata all'interno dell'intervallo ∆x0, la funzione d'onda avr'a la stessa forma precedente in quell'intervallo, mentre nella regione esterna collasser'a a 0 (per cui dovr'a essere rinormalizzata in accordo con l'interpretazione probabilistica di Born della funzione d'onda).
 	
 	## 1.3.1 Osservabili Compatibili
 	
@@ -603,17 +697,17 @@ for any possible $\hat{A}$, $\hat{A}$, \(\hat{
 	
 	$$|\Psi\rangle=\sum_{a_{k}\in\sigma(A)}|\Psi_{a_{k}}\rangle$$
 	
-	in cui |Ψak i 'e la proiezione del vettore sugli autospazi. Questo 'e ovviamente vero anche per l'operatore B
+	in cui |\Psiak i 'e la proiezione del vettore sugli autospazi. Questo 'e ovviamente vero anche per l'operatore B
 	
 	$$|\Psi_{a_{k}}\rangle=\sum_{b_{i}\in\sigma(B)}|\Psi_{b_{i}}(a_{k})\rangle$$
 	
-	In generale se A e B sono operatori autoaggiunti qualsiasi, gli |Ψbi
-	,(ak)i non rimangono pi'u autovettori dell'operatore A, questo per'o si verifica se A e B sono osservabili compatibili, quindi in questo caso sono loro autostati simultanei e li scriviamo come |Ψak,bi i. Allora possiamo riscrivere il vettore come
+	In generale se A e B sono operatori autoaggiunti qualsiasi, gli |\Psibi
+	,(ak)i non rimangono pi'u autovettori dell'operatore A, questo per'o si verifica se A e B sono osservabili compatibili, quindi in questo caso sono loro autostati simultanei e li scriviamo come |\Psiak,bi i. Allora possiamo riscrivere il vettore come
 	
 	$\Psi\rangle=\sum_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\Psi_{a_{k},b_{i}}\rangle\qquad\forall\,|\Psi\rangle\in\mathcal{H}$.  
-	Se non c''e degenerazione, cio'e l'intersezione degli autospazi relativi ad ak e bi 'e unidimensionale, abbiamo concluso la dimostrazione; se invece c''e degenerazione, 'e sufficiente decomporre ogni autovettore all'interno degli autospazi di dimensione maggiore di 1 come |ΨΦak,pi,τ i, e aggiungere una somma sull'indice τ che conta la degenerazione.
+	Se non c''e degenerazione, cio'e l'intersezione degli autospazi relativi ad ak e bi 'e unidimensionale, abbiamo concluso la dimostrazione; se invece c''e degenerazione, 'e sufficiente decomporre ogni autovettore all'interno degli autospazi di dimensione maggiore di 1 come |\PsiΦak,pi,τ i, e aggiungere una somma sull'indice τ che conta la degenerazione.
 	
-	⇐=: A e B possiedono una base di autovettori comuni |Ψak,bi,τ i, allora il generico stato Ψ si pu'o decomporre in
+	⇐=: A e B possiedono una base di autovettori comuni |\Psiak,bi,τ i, allora il generico stato \Psi si pu'o decomporre in
 	
 	$$|\Psi\rangle=\sum_{a_{k},b_{i},\tau}c_{a_{k},b_{i},\tau}\left|\Psi_{a_{k},b_{i},\tau}\right\rangle$$
 	
@@ -631,17 +725,17 @@ for any possible $\hat{A}$, $\hat{A}$, \(\hat{
 	
 	Teorema 1.3.2. A e B sono due osservabili compatibili ⇐⇒ commutano tra loro, cio'e [*A, B*] = 0.
 	
-	Dimostrazione. =⇒: facciamo agire AB sul generico stato |Ψi e sfruttiamo il risultato del teorema precedente considerando una base di autovettori comuni di A e B
+	Dimostrazione. =⇒: facciamo agire AB sul generico stato |\Psii e sfruttiamo il risultato del teorema precedente considerando una base di autovettori comuni di A e B
 	
 	$$AB\left|\Psi\right\rangle=AB\sum_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\left|\Psi_{a_{k},b_{i}}\right\rangle=\sum_{a_{k},b_{i}}a_{k}b_{i}\left|\Psi_{a_{k},b_{i}}\right\rangle=\sum_{a_{k},b_{i}}b_{i}a_{k}\left|\Psi_{a_{k},b_{i}}\right\rangle$$ $$=A\sum_{a_{k},b_{i}}b_{i}\left|\Psi_{a_{k},b_{i}}\right\rangle=BA\sum_{a_{k},b_{i}}\left|\Psi_{a_{k},b_{i}}\right\rangle=BA\left|\Psi\right\rangle\quad\longrightarrow\quad[A,B]=0$$
 	
 	⇐=: dato che A 'e autoaggiunto possiamo decomporre lo spazio di Hilbert nella somma dei suoi autospazi H =Lak∈σ(A) Hak
-	, quindi prendendo un qualsiasi vettore |Ψak i ∈ Hak vale la seguente catena di uguaglianze
+	, quindi prendendo un qualsiasi vettore |\Psiak i ∈ Hak vale la seguente catena di uguaglianze
 	
 	$$A B\left|\Psi_{a_{k}}\right\rangle=B A\left|\Psi_{a_{k}}\right\rangle=B a_{k}\left|\Psi_{a_{k}}\right\rangle=a_{k}\big(B\left|\Psi_{a_{k}}\right\rangle\big)$$
 	$$\square$$
 	
-	abbiamo ottenuto che B |Ψak i 'e autostato di A relativo all'autovalore ak, cio'e Hak
+	abbiamo ottenuto che B |\Psiak i 'e autostato di A relativo all'autovalore ak, cio'e Hak
 	'e invariante sotto l'azione di B. Possiamo quindi considerare la restrizione di B che agisce su Hak e che rimane un operatore autoaggiunto:
 	
 	$$\mathcal{H}_{a_{k}}=\bigoplus_{b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}\qquad\longrightarrow\qquad\mathcal{H}=\bigoplus_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}$$
@@ -669,6 +763,7 @@ for any possible $\hat{A}$, $\hat{A}$, \(\hat{
 	
 	$$|\Psi\rangle=\int\mathrm{d}x\,|x\rangle\underbrace{\langle x|\Psi\rangle}_{\Psi(x)}\qquad\qquad|\Psi\rangle=\int\mathrm{d}p\,|p\rangle\underbrace{\langle p|\Psi\rangle}_{\Psi(p)}$$
 	
-	Pi'u in generale, possiamo applicare questo ragionamento a qualsiasi ICOC A~ con autovettori |~ai, i quali formano una base generalizzata per H, allora la decomposizione del ket |Ψi 'e del tutto analoga ai casi specifici precedenti
+	Pi'u in generale, possiamo applicare questo ragionamento a qualsiasi ICOC A~ con autovettori |~ai, i quali formano una base generalizzata per H, allora la decomposizione del ket |\Psii 'e del tutto analoga ai casi specifici precedenti
 	
 	$$|\Psi\rangle=\int\mathrm{d}\vec{a}\,|\vec{a}\rangle\underbrace{\langle\vec{a}|\Psi\rangle}_{\Psi(\vec{a})}$$
+\end{comment}
