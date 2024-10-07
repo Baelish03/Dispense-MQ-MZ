@@ -5,3 +5,6 @@ MQ appunti lezione.out
 MQ appunti lezione.pdf
 MQ appunti lezione.synctex.gz
 MQ appunti lezione.toc
+*.fdb_latexmk
+1formalismo.log
+MQ appunti lezione.fls
