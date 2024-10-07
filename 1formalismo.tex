@@ -1,8 +1,5 @@
 \vspace{5em}
-\label{cap: formalismo}
-\textbf{\Large Capitolo \ref{cap: formalismo}} 
 \section{\huge Formalismo della MQ ad un determinato istante di tempo}
-
 
 L'obiettivo di questo capitolo \'e introdurre un formalismo generale che possa essere applicato a una vasta classe di sistemi per la descrizione degli stati e delle grandezze fisiche osservabili delle quali vogliamo saper calcolare i risultati della misura, la probabilit\'a che una loro misura fornisca un determinato valore e, a partire da questo, il valore medio in uno stato e la fluttuazione attorno un valore arbitrario. Tutto questo deve essere fatto in accordo con le caratteristiche fondamentali della MQ: l'interpretazione probabilistica, le relazioni di indeterminazione e la quantizzazione di certe grandezze fisiche.
 
@@ -278,7 +275,9 @@ $$|\Psi\rangle=\sum_{m}\Psi_{m}\,|\mu_{m}\rangle\quad|\Phi\rangle=\sum_{n}\Phi_{
 
 Il termine $O_{mn}$ \'e chiamato \textit{elemento di matrice dell'osservabile $O$ fra $\ket{\Psi}$ e $\ket{\Phi}$}, infatti formalmente un operatore \'e ben rappresentato da una matrice i cui elementi sono proprio questi termini, che in questo caso sono posizionati nella $m$-esima riga e $n$-esima colonna.
 
-\textbf{Postulato 3. \textit{Possibili risultati delle misure}} \textit{Gli unici risultati possibili per una misura dell'osservabile $A$ sono tutti e soli gli autovalori dell'operatore $A$, quindi vale}
+\textbf{Postulato 3. \textit{Possibili risultati delle misure}} 
+
+\textit{Gli unici risultati possibili per una misura dell'osservabile $A$ sono tutti e soli gli autovalori dell'operatore $A$, quindi vale}
 
 $$\sigma({\mathcal{A}})=\sigma(A)$$
 
@@ -292,11 +291,13 @@ $$\left(a_{m}-a_{n}\right)\left\langle a_{m}|a_{n}\right\rangle=\left\langle Aa_
 
 per definizione di $A$ hermitiano.
 
-Diremo che $A$ \'e \textit{non degenere} se non esistono due autovettori relativi allo stesso autovalore linearmente indipendenti; invece diremo che \'e \textit{degenere con grado di degenerazione} $d$ quando esistono $d$ autovettori $\{\ket{\Psi_\alpha^i}\}_{i=1,...,d}$ linearmente indipendenti relativi allo stesso autovalore, questi autovettori formano uno spazio di Hilbert $\mathcal{H}_d \subset \mathcal{H}$
+Diremo che $A$ \'e \textit{non degenere} se non esistono due autovettori relativi allo stesso autovalore linearmente indipendenti; invece diremo che \'e \textit{degenere con grado di degenerazione} $d$ quando esistono $d$ autovettori $ \{ \ket{\Psi_\alpha^i} \}_{i=1, \ldots, d} $ linearmente indipendenti relativi allo stesso autovalore, questi autovettori formano uno spazio di Hilbert $\mathcal{H}_d \subset \mathcal{H}$
 di dimensione $d$. 
 
 
-\textbf{Postulato 4. \textit{Probabilit\'a di ottenere un dato risultato da una misura}} \textit{La probabilit\'a che una misura di $A$ nello stato $\ket{\Psi}$ dia come risultato $a_k \in \sigma_d(A)$, con $\braket{a_k}{a_k} = 1$ e $A \ket{a_k} = a_k \ket{a_k}$, \'e data da}
+\textbf{Postulato 4. \textit{Probabilit\'a di ottenere un dato risultato da una misura}}
+
+\textit{La probabilit\'a che una misura di $A$ nello stato $\ket{\Psi}$ dia come risultato $a_k \in \sigma_d(A)$, con $\braket{a_k}{a_k} = 1$ e $A \ket{a_k} = a_k \ket{a_k}$, \'e data da}
 
 $$w(a_{k})={\frac{\mid\langle a_{k}|\Psi\rangle\mid^{2}}{\langle\Psi|\Psi\rangle}}$$
 
@@ -573,119 +574,106 @@ Detto ci\'o, possiamo ampliare il dominio di entrambi gli operatori da $\mathcal
 
 A questo punto verifichiamo che tutti i vettori del tipo $\ket{\Psi_{\mathcal{P}}} = \bar{\mathcal{P}} \ket{\Psi}$ sono autovettori di $\mathcal{P}$ con autovalore 1 e per $\bar{\mathcal{P}}$ con autovalore 0:
 
-\begin{comment}
+$${\mathcal{P}}\left|\Psi_{\mathcal{P}}\right\rangle={\mathcal{P}}^{2}\left|\Psi\right\rangle={\mathcal{P}}\left|\Psi\right\rangle=+1\left|\Psi_{\mathcal{P}}\right\rangle \qquad\qquad \overline{{{\mathcal{P}}}}\left|\Psi_{\mathcal{P}}\right\rangle=\overline{{{\mathcal{P}}}}\mathcal{P}\left|\Psi\right\rangle=0\left|\Psi_{\mathcal{P}}\right\rangle$$
+
+Allo stesso modo si pu\'o verificare che $\ket{\Psi_\bar{\mathcal{P}}} = \bar{\mathcal{P}} \ket{\Psi}$ \'e autovettore per $\mathcal{P}$ con autovalore $0$ e per $\bar{\mathcal{P}}$ con autovalore
++1. Abbiamo gi\'a intuito grazie a queste considerazioni che lo spettro di un operatore di proiezione sar\'a formato da soli due autovalori 
+
+$$\sigma(\mathcal{P}) = \{0, 1\}$$
+
+e gli autovettori possono decomporre lo spazio di Hilbert come somma diretta dei loro due sottospazi di appartenenza 
+
+$$\mathcal{H} = \mathcal{H}_1 \oplus \mathcal{H}_0$$
+
+acciamo alcuni esempi di operatori di proiezione:
+\begin{itemize}
+	\item $\mathcal{P}_\Psi \equiv \ket{\Psi}\bra{\Psi}$ che agisce come 
 	
-
-$\langle T\rangle$
-$\downarrow$ A. 
-$\pm$ /. 
-$\lambda$ ? 
-$${\mathcal{P}}\left|\Psi_{\mathcal{P}}\right\rangle={\mathcal{P}}^{2}\left|\Psi\right\rangle={\mathcal{P}}\left|\Psi\right\rangle=+1\left|\Psi_{\mathcal{P}}\right\rangle$$
-$$\overline{{{\mathcal{P}}}}\left|\Psi_{\mathcal{P}}\right\rangle=\overline{{{\mathcal{P}}}}\mathcal{P}\left|\Psi\right\rangle=0\left|\Psi_{\mathcal{P}}\right\rangle$$
-2|\Psii = P |\Psii = +1 |\PsiP i P |\PsiP i = *PP |*\Psii = 0 |\PsiP i
-Allo stesso modo si pu'o verificare che |\PsiP
-i = P |\Psii 'e autovettore per P con autovalore 0 e per P con autovalore
-+1. Abbiamo gi'a intuito grazie a queste considerazioni che lo spettro di un operatore di proiezione sar'a formato da soli due autovalori σ(P) = {0, 1}
-e gli autovettori possono decomporre lo spazio di Hilbert come somma diretta dei loro due sottospazi di appartenenza H = H1 ⊕ H0 Facciamo alcuni esempi di operatori di proiezione:
-- P\Psi ≡ |\Psiih\Psi| che agisce come P\Psi |Φi = |\Psii h\Psi|Φi |Φ*i ∈ H*
-quello che abbiamo fatto 'e la proiezione di un generico vettore dello spazio di Hilbert lungo una determinata direzione orientata.
-
-- Sia |\Psiii i = {1*, ...q*} una base ortonormale per un certo sottospazio Hq ⊆ H. Possiamo definire il proiettore associato a questa base come la somma dei proiettori dell'esempio precedente
-
-$\mathcal{P}_{\Psi}\left|\Phi\right\rangle=\left|\Psi\right\rangle\left\langle\Psi|\Phi\right\rangle$. 
-$|\Phi\rangle\in\mathcal{H}$. 
-$${\mathcal{P}}_{q}=\sum_{i=1}^{q}|\Psi_{i}\rangle\!\langle\Psi_{i}|$$
-in questo caso il vettore generico viene proiettato in un sottospazio dello spazio di Hilbert di dimensione maggiore di 1. L'introduzione di questo proiettore, in aggiunta al teorema spettrale, ci permette di arrivare alla *decomposizione spettrale* di un operatore autoaggiunto associato a un'osservabile fisica
-
-$$A=\sum_{k\in\sigma_{d}(A)}\sum_{i=1}^{d}a_{k,i}\,|a_{k,i}\rangle\!\langle a_{k,i}|+\int_{\sigma_{c}(A)}\mathrm{d}a\,a\,|a\rangle\!\langle a|$$
-$$(1.9)$$
-
-- Consideriamo lo spazio di Hilbert pi'u semplice che possiamo incontrare: H = C
-2, e gli operatori espressi come matrici quadrate
-
-$ P=\frac{1}{2}\left|\begin{array}{ccc}1&1\\ 1&1\end{array}\right|\qquad\qquad P'=\frac{1}{2}\left|\begin{array}{ccc}1&-1\\ -1&1\end{array}\right|$  ri e costrujamo una base ortonormale costitita da. 
-verifichiamo che sono proiettori e costruiamo una base ortonormale costituita da autovettori di P, determinando anche le componenti del generico vettore v =
-α β in tale base.
-
-Le matrici date sono reali e simmetriche, quindi descrivono operatori autoaggiunti; inoltre
-
-$$P^{2}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}\cdot{\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}={\frac{1}{4}}{\left|\begin{array}{l l}{2}&{2}\\ {2}&{2}\end{array}\right|}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}=P$$
-
-e analogamente per P
-0, ne consegue che sono proiettori per cui i loro autovalori sono (0, 1), come si ricava anche applicando la procedura geometrica direttamente sulla matrice. In questo caso P
-0svolge il ruolo di P gi'a introdotto in precedenza, infatti
-
-$$P P^{\prime}={\frac{1}{2}}{\left|\begin{array}{l l}{0}&{0}\\ {0}&{0}\end{array}\right|}\qquad\qquad P+P^{\prime}={\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}$$
-
-
-	## 1.3. Misura Delle Osservabili Fisiche 19
+	$$\mathcal{P}_\Psi \ket{\Phi} = \ket{\Psi} \braket{\Psi}{\Phi} \qquad \ket{\Phi} \in \mathcal{H}$$
 	
-	Ora vediamo come determinare gli autovettori per costruire una base ortonormale. Dato che abbiamo uno spazio bidimensionale, ci sar'a un autovettore linearmente indipendente associato all'autovalore 1, e uno per l'autovalore 0 ortogonale al primo. Avremo quindi, senza bisogno di conti elaborati
-	
-	$$\Phi_{1}={\frac{1}{\sqrt{2}}}\left(\begin{array}{c}{{1}}\\ {{1}}\end{array}\right)$$
-	Φ0 =1
-	$$\Phi_{0}=\frac{1}{\sqrt{2}}\left(\begin{array}{c}{{1}}\\ {{-1}}\end{array}\right)$$
-	
+	quello che abbiamo fatto \'e la proiezione di un generico vettore dello spazio di Hilbert lungo una determinata direzione orientata.
+
+	\item Sia $\ket{\Psi_i} \quad i = {1,...,q}$ una base ortonormale per un certo sottospazio $\mathcal{H}_q \subseteq \mathcal{H}$. Possiamo definire il proiettore associato a questa base come la somma dei proiettori dell'esempio precedente
+
+	$${\mathcal{P}}_{q}=\sum_{i=1}^{q}|\Psi_{i}\rangle\!\langle\Psi_{i}|$$
+
+	in questo caso il vettore generico viene proiettato in un sottospazio dello spazio di Hilbert di dimensione maggiore di 1. L'introduzione di questo proiettore, in aggiunta al teorema spettrale, ci permette di arrivare alla \textit{decomposizione spettrale} di un operatore autoaggiunto associato a un'osservabile fisica
+
+	\begin{equation}
+		A=\sum_{k\in\sigma_{d}(A)}\sum_{i=1}^{d}a_{k,i}\,|a_{k,i}\rangle\!\langle a_{k,i}|+\int_{\sigma_{c}(A)}\mathrm{d}a\,a\,|a\rangle\!\langle a|
+	\end{equation}
+
+	\item Consideriamo lo spazio di Hilbert pi\'u semplice che possiamo incontrare: $\mathcal{H} = \mathbb{C}^2$, e gli operatori espressi come matrici quadrate
+
+	$$ P=\frac{1}{2}\left|\begin{array}{ccc}1&1\\ 1&1\end{array}\right|\qquad\qquad P'=\frac{1}{2}\left|\begin{array}{ccc}1&-1\\ -1&1\end{array}\right|$$  
+
+	verifichiamo che sono proiettori e costruiamo una base ortonormale costituita da autovettori di $P$, determinando anche le componenti del generico vettore $v = \left( \begin{array}{c} \alpha \\ \beta\end{array}$ in tale base.
+	Le matrici date sono reali e simmetriche, quindi descrivono operatori autoaggiunti; inoltre
+
+	$$P^{2}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}\cdot{\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}={\frac{1}{4}}{\left|\begin{array}{l l}{2}&{2}\\ {2}&{2}\end{array}\right|}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}=P$$
+
+	e analogamente per $P^\prime$, ne consegue che sono proiettori per cui i loro autovalori sono $(0, 1)$, come si ricava anche applicando la procedura geometrica direttamente sulla matrice. In questo caso $P^\prime$ svolge il ruolo di $P$ gi\'a introdotto in precedenza, infatti
+
+	$$P P^{\prime}={\frac{1}{2}}{\left|\begin{array}{l l}{0}&{0}\\ {0}&{0}\end{array}\right|}\qquad\qquad P+P^{\prime}={\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}$$
+
+	Ora vediamo come determinare gli autovettori per costruire una base ortonormale. Dato che abbiamo uno spazio bidimensionale, ci sar\'a un autovettore linearmente indipendente associato all'autovalore 1, e uno per l'autovalore 0 ortogonale al primo. Avremo quindi, senza bisogno di conti elaborati
+
+	$$\Phi_{1}={\frac{1}{\sqrt{2}}}\left(\begin{array}{c}{{1}}\\ {{1}}\end{array}\right) \qquad\qquad	\Phi_{0}=\frac{1}{\sqrt{2}}\left(\begin{array}{c}{{1}}\\ {{-1}}\end{array}\right)$$
+
 	Quindi la decomposizione di un generico vettore:
 	
-	α β = 1 2  1 1 1 1  α β + 1 2 1 −1 −1 1  α β =  α+β 2 α+β 2 +  α−β 2 −α+β 2 = α + β √2Φ1 + α − β √2Φ0
-	$$\begin{array}{c}{{1}}\\ {{1}}\\ {{1}}\end{array}$$
-	* Consideramos lo spazio di Hilbert ${\cal H}={\mathbb{C}}^{3}$ e l'operatore $P=\frac{1}{3}$ * o determinante une base entrenormale in ${\cal H}$ constituite di av
-	1 1 1 1 1 1 1 1 1
+	$$\left( \begin{array}{c} \alpha \\ \beta \end{array} \right) = \frac{1}{2} \left| \begin{array}{c c} 1 & 1 \\ 1 & 1 \end{array} \right| \left( \begin{array}{c} \alpha \\ \beta \end{array} \right) + \frac{1}{2} \left| \begin{array}{c c} 1 & -1 \\ -1 & 1 \end{array} \right| \left( \begin{array}{c} \alpha \\ \beta \end{array} \right) = \left( \begin{array}{c} \frac{\alpha+\beta}{2} \\ \frac{\alpha+\beta}{2} \end{array} \right) + \left( \begin{array}{c} \frac{\alpha-\beta}{2} \\ \frac{-\alpha+\beta}{2} \end{array} \right) = $$
 	
-	. Verifichiamo che 'e un proiettore e determiniamone una base ortonormale in H costituita di autostati.
+	$$=\frac{\alpha+\beta}{\sqrt{2}} \Phi_{1} + \frac{\alpha-\beta}{\sqrt{2}} \Phi_{0}$$
+
+	\item Consideriamo lo spazio di Hilbert $\mathcal{H}={\mathbb{C}}^{3}$ e l'operatore $P = \frac{1}{3} \left| \begin{array}{c c c} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{array} \right|$. Verifichiamo che \'e un proiettore e determiniamone una base ortonormale in $\mathcal{H}$ costituita di autostati.
+	Analogamente al caso precedente, si tratta di una matrice reale e simmetrica, quindi \'e autoaggiunta, inoltre
 	
-	Analogamente al caso precedente, si tratta di una matrice reale e simmetrica, quindi 'e autoaggiunta, inoltre
+	$$P^{2}={\frac{1}{3}}\left|\begin{array}{ccc}1&1&1\\ 1&1&1\\ 1&1&1\end{array}\right|\cdot{\frac{1}{3}}\left|\begin{array}{ccc}1&1&1\\ 1&1&1\\ 1&1&1\end{array}\right|={\frac{1}{9}}\left|\begin{array}{ccc}3&3&3\\ 3&3&3\\ 3&3&3\end{array}\right|={\frac{1}{3}}\left|\begin{array}{ccc}1&1&1\\ 1&1&1\\ 1&1&1\end{array}\right| = P$$
 	
-	$$P^{2}={\frac{1}{3}}\left|\begin{array}{ccc}1&1&1\\ 1&1&1\\ 1&1&1\end{array}\right|\cdot{\frac{1}{3}}\left|\begin{array}{ccc}1&1&1\\ 1&1&1\\ 1&1&1\end{array}\right|={\frac{1}{9}}\left|\begin{array}{ccc}3&3&3\\ 3&3&3\\ 3&3&3\end{array}\right|={\frac{1}{3}}\left|\begin{array}{ccc}1&1&1\\ 1&1&1\\ 1&1&1\end{array}\right|$$
-	$\left|\begin{array}{l}\\ =P\\ \end{array}\right.$
-	Per determinare una base sar'a sufficiente cercare gli autovalori con il calcolo matriciale, troviamo:
-	λ = 0, 1 come ci si aspetta da un proiettore, e da questi troviamo gli autovettori
+	Per determinare una base sar\'a sufficiente cercare gli autovalori con il calcolo matriciale, troviamo:
+	
+	$$\lambda = 0, 1$$ 
+	
+	come ci si aspetta da un proiettore, e da questi troviamo gli autovettori
 	
 	$$\Phi_{0,1}=\frac{1}{\sqrt{2}}\left(\begin{array}{c}{{0}}\\ {{1}}\\ {{-1}}\end{array}\right)\qquad\Phi_{0,2}=\frac{1}{\sqrt{2}}\left(\begin{array}{c}{{1}}\\ {{0}}\\ {{-1}}\end{array}\right)\qquad\Phi_{3}=\frac{1}{\sqrt{3}}\left(\begin{array}{c}{{0}}\\ {{0}}\\ {{0}}\end{array}\right)$$
-	1
-	1
-	1
+\end{itemize}	
+
 	
-	## 1.3 Misura Delle Osservabili Fisiche
+\subsection{Misura delle osservabili fisiche}
+
+La domanda che ci poniamo ora \'e come l'operazione di misura di un'osservabile influisca sullo stato del sistema fisico che osserviamo.
+
+In MC siamo di fronte a una situazione ideale in cui le misure possono essere effettuate con precisione arbitraria, sono istantanee e non perturbano il sistema. In MQ, come vedremo, questo non si verifica.
+
+\textbf{Definizione 3.} \textit{Supponiamo di misurare l'osservabile $A$ all'istante $t$ e di ottenere come valore $a$. La misura effettuata \'e detta di prima specie se rimisurando l'osservabile all'istante $t + \mathrm{d}t$ immediatamente successivo, si ottiene con certezza (probabilit\'a 1) il valore $a$, e questo vale per ogni autovalore a dello spettro.
+
+Si dice ideale se perturba il meno possibile il sistema.}
+
+Quello che fa una misura di prima specie \'e \textit{proiettare il sistema nell'autostato relativo all'autovalore che \'e risultato dalla misura}; se l'autovalore \'e non degenere abbiamo la certezza dell'autostato, se \'e degenere \'e presente un'ambiguit\'a e possiamo solo dire che il sistema si trova in uno tra gli autostati possibili per quell'autospazio (che ha dimensione maggiore di 1), ma non sappiamo di quale si tratta.
+
+\textbf{Postulato 6. \textit{Misura di un'osservabile}} 
+
+\textit{Supponiamo che immediatamente prima di una misura, a $t^-$, il sistema si trovi nello stato $\Psi$; a $t$ effettuiamo la misura ideale di prima specie dell'osservabile $A$ (che per semplicit\'a supponiamo a spettro discreto) e troviamo come risultato $a_k \in \sigma_{d}(A)$. Lo stato del sistema immediatamente dopo la misura a $t^+$ \'e proiettato in $\Psi_k$, autostato relativo all'autovalore $a_k$:}
+
+$$|\Psi\rangle\longrightarrow|\Psi_{k}\rangle=\frac{{\mathcal{P}}_{k}\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{k}|\Psi\right\rangle}} \qquad\qquad \text{con} \qquad \mathcal{P}_k = \sum_{i=1}^{d_k} \ket{a_{k,i}} \bra{a_{k,i}} \quad \text{proiettore}$$
+
+Questo lemma spiega il concetto importante del \textit{collasso della funzione d'onda} come conseguenza della misura.
+
+Se l'osservabile ha uno spettro continuo non degenere, non possiamo prescindere dalla precisione finita dello strumento, quindi non potremo mai dire che siamo \textit{esattamente} in un punto dello spettro, piuttosto diremo che siamo in un intervallo di larghezza $\Delta a$ centrato in quel valore. In questo caso lo stato dopo la misura lo possiamo costruire a partire dal proiettore $P_{\Delta a}(a_0)$ relativo all'autostato A.
+
+$$\ket{\Psi^\prime} = \frac{{\mathcal{P}}_{\Delta a}(a_{0})\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{\Delta a}(a_{0})|\Psi\right\rangle}} \qquad\qquad \begin{array}{r l}\text{con}&{{}{\mathcal{P}}_{\Delta a}(a_{0})=\int_{a_{0}-{\frac{\Delta a}{2}}}^{a_{0}+{\frac{\Delta a}{2}}}\mathrm{d}a\,|a\rangle\!\langle a|}\end{array}$$
 	
-	La domanda che ci poniamo ora 'e come l'operazione di misura di un'osservabile influisca sullo stato del sistema fisico che osserviamo.
+\begin{center}
+	\includegraphics{immagini/19_image_2.png}
+\end{center}
 	
-	In MC siamo di fronte a una situazione ideale in cui le misure possono essere effettuate con precisione arbitraria, sono istantanee e non perturbano il sistema. In MQ, come vedremo, questo non si verifica.
+Le figure soprastanti mostrano cosa succede alla funzione d'onda. Prima della misura la funzione \'e nel suo stato iniziale $\Psi(x) = \braket{x}{\Psi}$ e ha come dominio tutto l'asse reale perch\'e la particella potr\'a trovarsi in qualsiasi punto; effettuando una misura ideale di prima specie il sistema \'e perturbato il meno possibile, per cui se la particella viene trovata all'interno dell'intervallo $\Delta x_0$, la funzione d'onda avr\'a la stessa forma precedente in quell'intervallo, mentre nella regione esterna collasser\'a a 0 (per cui dovr\'a essere rinormalizzata in accordo con l'interpretazione probabilistica di Born della funzione d'onda).
 	
-	Definizione 3. Supponiamo di misurare l'osservabile A all'istante t e di ottenere come valore a*. La misura* effettuata 'e detta di prima specie se rimisurando l'osservabile all'istante t + dt *immediatamente successivo, si* ottiene con certezza (probabilit'a 1) il valore a, e questo vale per ogni autovalore a dello spettro.
-	
-	Si dice ideale se perturba il meno possibile il sistema.
-	
-	Quello che fa una misura di prima specie 'e proiettare il sistema nell'autostato relativo all'autovalore che 'e risultato dalla misura; se l'autovalore 'e non degenere abbiamo la certezza dell'autostato, se 'e degenere 'e presente un'ambiguit'a e possiamo solo dire che il sistema si trova in uno tra gli autostati possibili per quell'autospazio
-	(che ha dimensione maggiore di 1), ma non sappiamo di quale si tratta.
-	
-	Postulato 6. *Misura di un'osservabile* Supponiamo che immediatamente prima di una misura, a t
-	−, il sistema si trovi nello stato \Psi; a t effettuiamo la misura ideale di prima specie dell'osservabile A *(che per semplicit'a supponiamo a spettro discreto) e troviamo* come risultato ak ∈ σd(A)*. Lo stato del sistema immediatamente dopo la misura a* t
-	+ *'e proiettato in* \Psik, autostato relativo all'autovalore ak:
-	
-	$$|\Psi\rangle\longrightarrow|\Psi_{k}\rangle=\frac{{\mathcal{P}}_{k}\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{k}|\Psi\right\rangle}}$$
-	ph\Psi|Pk|\Psiicon Pk =
-	$$\begin{array}{r l}{c o n}&{{}{\mathcal{P}}_{k}=\sum_{i=1}^{d_{k}}|a_{k,i}\rangle\!\langle a_{k,i}|}&{{}{\mathrm{~proie\!\!~tetore}}}\end{array}$$
-	
-	Questo lemma spiega il concetto importante del *collasso della funzione d'onda* come conseguenza della misura.
-	
-	Se l'osservabile ha uno spettro continuo non degenere, non possiamo prescindere dalla precisione finita dello strumento, quindi non potremo mai dire che siamo *esattamente* in un punto dello spettro, piuttosto diremo che siamo in un intervallo di larghezza ∆a centrato in quel valore. In questo caso lo stato dopo la misura lo possiamo costruire a partire dal proiettore P∆a(a0) relativo all'autostato A.
-	
-	|\Psi
-	$$\frac{{\mathcal{P}}_{\Delta a}(a_{0})\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{\Delta a}(a_{0})|\Psi\right\rangle}}$$
-	ph\Psi|P∆a(a0)|\Psiicon P∆a(a0) = Z a0+ ∆a
-	$$\begin{array}{r l}{c o n}&{{}{\mathcal{P}}_{\Delta a}(a_{0})=\int_{a_{0}-{\frac{\Delta a}{2}}}^{a_{0}+{\frac{\Delta a}{2}}}\mathrm{d}a\,|a\rangle\!\langle a|}\end{array}$$
-	
-	![19_image_2.png](19_image_2.png)
-	
-	![19_image_0.png](19_image_0.png)
-	
-	![19_image_1.png](19_image_1.png)
-	
-	Le figure soprastanti mostrano cosa succede alla funzione d'onda. Prima della misura la funzione 'e nel suo stato iniziale \Psi(x) = hx|\Psii e ha come dominio tutto l'asse reale perch´e la particella potr'a trovarsi in qualsiasi punto; effettuando una misura ideale di prima specie il sistema 'e perturbato il meno possibile, per cui se la particella viene trovata all'interno dell'intervallo ∆x0, la funzione d'onda avr'a la stessa forma precedente in quell'intervallo, mentre nella regione esterna collasser'a a 0 (per cui dovr'a essere rinormalizzata in accordo con l'interpretazione probabilistica di Born della funzione d'onda).
-	
-	## 1.3.1 Osservabili Compatibili
+
+\begin{comment}
+\subsubsection{Osservabili compatibili}
 	
 	Nel paragrafo precedente abbiamo considerato solamente osservabili a spettro non degenere, e abbiamo detto che immediatamente dopo la misura lo stato del sistema 'e completamente determinato perch´e 'e proiettato sull'autospazio relativo all'autovalore ak ∈ σd(A) trovato.
 	
