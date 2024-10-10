@@ -1,0 +1,361 @@
+\vspace{5em}
+\section{\huge Evoluzione temporale (o causale) di un sistema quantistico}
+
+Abbiamo gi\'a detto che in MQ si perde il determinismo che invece caratterizza la MC, cio\'e in certe situazioni non \'e possibile prevedere esattamente il risultato di una misura ma al massimo la probabilit\'a che una data misura dia un risultato particolare. Questo non ha nulla a che vedere con l'evoluzione temporale di un sistema che si trova in uno stato puro e isolato, infatti in questo caso c'\'e determinismo assoluto (causalit\'a) e siamo in grado di calcolare esattamente quale sar\'a lo stato del sistema ad un istante di tempo successivo $t$. Questo non significa che a quell'istante siamo in grado di misurare precisamente tutte le osservabili fisiche, perch\'e per queste varr\'a ancora l'interpretazione probabilistica.
+
+\begin{postulato} \textbf{Evoluzione temporale del sistema}
+
+	Esiste un operatore $H$ autoaggiunto associato all'energia totale del sistema che controlla l'evoluzione temporale attraverso l'equazione di Schr\"odinger dipendente dal tempo, che nello spazio di Hilbert astratto si scrive come
+	\begin{equation} 
+		i\hbar{\frac{\partial\left|\Psi(t)\right\rangle}{\partial t}}=H(t)\left|\Psi(t)\right\rangle
+	\end{equation}
+\end{postulato}
+
+Quindi in questo approccio l'evoluzione temporale \'e parametrizzata dal modo in cui il vettore di stato dipende dalla coordinata temporale.
+
+Ricordiamo che come conseguenza dell'equazione di Schr\"odinger abbiamo la conservazione della probabilit\'a nel tempo, che in prima battuta si legge come il fatto che la norma degli stati non dipende dal tempo. Possiamo dimostrare questa affermazione abbastanza facilmente restando in una dimensione:
+\begin{align*}
+	\frac{\mathrm{d}}{\mathrm{d}t}\left\langle\Psi(t)|\Psi(t)\right\rangle
+	&=\left(\frac{\mathrm{d}}{\mathrm{d}t}\left\langle\Psi(t)|\right\rangle|\Psi(t)\right)+|\Psi(t)\rangle\left(\frac{\mathrm{d}}{\mathrm{d}t}\left\langle\Psi(t)|\right\rangle\right)
+	\\ &=+\frac{i}{\hbar}\Big{(}\left\langle\,H\Psi(t)|\Psi(t)\right\rangle-\left\langle\Psi(t)|H\Psi(t)\right\rangle\,\Big{)}=0
+	\\
+	\left\langle\Psi(t)|\Psi(t)\right\rangle
+	&=\left\langle\Psi(t_{0})|\Psi(t_{0})\right\rangle
+\end{align*}
+
+in cui abbiamo moltiplicato e diviso per la quantit\'a $\frac{i}{\hbar}$ in modo da poter scrivere l'operatore hamiltoniano, che ricordiamo essere autoaggiunto. Ovviamente questo risultato vale anche nel caso tridimensionale, per il quale definiamo:
+
+$$\begin{array}{r l}{P({\vec{x}},t)
+	={\frac{|\Psi({\vec{x}},t)|^{2}}{||\Psi||^{2}}}}&{\text{densit\'a di probabilit\'a relativa alla posizione } \vec{x}}
+	\\ 
+	{d w({\vec{x}},t)=\rho({\vec{x}})\,\mathrm{d}^{3}{\vec{x}}} & \text{densit\'a di probabilit\'a infinitesima}
+	\\
+	{W=\int\mathrm{d}^{3}x\,\rho({\vec{x}},t)=1}&\text{probabilit\'a totale indipendente dal tempo}
+	\end{array}$$
+
+Vediamo come si pu\'o scrivere la conservazione della probabilit\'a. Consideriamo la forma generale dell'hamiltoniana data dall'equazione 1.5 in cui per\'o il potenziale dipende dal tempo
+
+\begin{equation} 
+	H={\frac{\vec{P}^{2}}{2m}}+V(\vec{X},t)
+\end{equation}
+
+se la esplicitiamo nello spazio delle coordinate otteniamo l'equazione di Schr\"odinger dipendente dal tempo, di cui scriviamo anche la complessa coniugata:
+
+$$i\hbar\frac{\partial}{\partial t}\Psi(\vec{x},t)=-\frac{\hbar^{2}}{2m}\vec{\nabla}^{2}\Psi(\vec{x},t)+V(\vec{x},t)\Psi(\vec{x},t)\qquad-i\hbar\frac{\partial}{\partial t}\Psi^{*}(\vec{x},t)=-\frac{\hbar^{2}}{2m}\vec{\nabla}^{2}\Psi^{*}(\vec{x},t)+V(\vec{x},t)\Psi^{*}(\vec{x},t)$$
+
+moltiplichiamo la prima equazione per $\Psi$ e la seconda per $\Psi$ e sottraiamo membro a membro
+
+$$i\hbar(\underbrace{\dot{\Psi}\Psi^{*}+\Psi\dot{\Psi}^{*}}_{\frac{\partial\rho}{\partial t}})=-\underbrace{\frac{\hbar}{2m}(\Psi^{*}\vec{\nabla}^{2}\Psi-\Psi\vec{\nabla}^{2}\Psi^{*})}_{-\vec{\nabla} \vec{J}}.$$
+	
+La conservazione della probabilit\'a assume le sembianze di una formula gi\'a vista nel caso elettromagnetico, cio\'e l'equazione di continuit\'a della corrente
+
+$${\frac{\partial\rho}{\partial t}}+\vec{\nabla}\vec{j}(\vec{x},t)=0$$	
+
+
+\begin{comment}
+		
+
+
+
+
+	
+	## 2.1 Operatori Unitari
+	
+	Definizione 6. Un operatore U nello spazio di Hilbert H *associato al nostro sistema quantistico, si dice unitario* se sono soddisfatte le seguenti due condizioni:
+	- 'e isometrico, ovvero conserva il prodotto scalare ∀ |Ψi, |Φi hUΨ|UΦi = hΨ|Φi
+	- *dominio e codominio coincidono con lo spazio di Hilbert* D(U) = C(U) = H
+	Data questa definizione di operatore unitario (non 'e l'unica, per esempio i matematici dicono che 'e sufficiente che dominio e codominio siano densi in H), derivano alcune importanti propriet'a che rendono questi operatori fondamentali nello studio dei sistemi in MQ:
+	1. U ammette un inverso U
+	−1: questa dimostrazione scaturisce automaticamente una volta verificato che la relazione |Ψ*i −→* U |Ψi 'e biunivoca, cio'e che U |Ψi = U |Φ*i −→ |*Ψi = |Φi
+	
+	U |Ψi = U |Φi
+	$\langle U\Psi-U\Phi|U\Psi-U\Phi\rangle=\langle U\Psi|U\Psi\rangle+\langle U\Phi|U\Phi\rangle-\langle U\Phi|U\Psi\rangle-\langle U\Psi|U\Phi\rangle$  $\langle\Psi|\Psi\rangle+\langle\Phi|\Phi\rangle-\langle\Phi|\Psi\rangle-\langle\Psi|\Phi\rangle=\langle\Psi-\Phi|\Psi-\Phi\rangle=||\,|\Psi-\Phi\rangle\,||^{2}\longrightarrow|\Psi\rangle=|\Phi\rangle$
+	quindi esiste un inverso ed 'e evidente che anche questo 'e unitario, 2. U 'e lineare: definiamo il vettore |Ψi = α1 |Ψ1i + α2 |Ψ2i e dimostriamo che l'azione di U su |Ψi 'e lineare.
+	
+	Prendendo un qualsiasi |Φ*i ∈ H* possiamo scrivere la seguente catena di uguaglianze
+	
+	hΦ|UΨi =U
+	$$\begin{array}{l}{{\left\langle U^{-1}\Phi\right|\Psi\rangle=\left\langle U^{-1}\Phi\right|\left(\alpha_{1}\left|\Psi_{1}\right.\right)+\alpha_{2}\left|\Psi_{2}\right.\right\rangle}}\\ {{\left.\alpha_{1}\left\langle U^{-1}\Phi\right|\Psi_{1}\right\rangle+\alpha_{2}\left\langle U^{-1}\Phi\right|\Psi_{2}\right\rangle=U\big(\alpha_{1}\left.\left\langle\Phi\right|\Psi_{1}\right\rangle+\alpha_{2}\left.\left\langle\Phi\right|\Psi_{2}\right\rangle\big)}}\end{array}$$
+	= α1 Da quanto detto finora si estrapola che U
+	+ = U
+	−1,
+	
+	3. U 'e limitato:
+	$$\langle U\Psi|U\Psi\rangle=\left\langle U^{+}U\Psi\right|\Psi\rangle=\langle\Psi|\Psi\rangle$$
+	ed essendo un operatore anche lineare, 'e continuo nello spazio di Hilbert.
+	
+	4. gli autovalori di U hanno modulo unitario: detto |Ψi un autovettore di U associato all'autovalore λ:
+	
+	5. due autovettori di U unitario corrispondenti ad autovalori distinti sono ortogonali: detti |Ψ1i e |Ψ2i
+	autovettori relativi a λ1, λ2, con λ1 6= λ2:
+	$$\langle\Psi_{1}|\Psi_{2}\rangle=\langle U\Psi_{1}|U\Psi_{2}\rangle=\lambda_{1}^{*}\lambda_{2}\,,$$
+	−→ (1 − λ
+	∗
+	1λ2)hΨ1|Ψ2i = 0 *⇐⇒ h*Ψ1|Ψ2i = 0
+	$$\lambda_{1}^{*}\lambda_{2}\neq1$$
+	$$\begin{array}{l l l}{{\theta_{2}\rangle=\lambda_{1}^{*}\lambda_{2}\left\langle\Psi_{1}|\Psi_{2}\right\rangle}}&{{}}&{{|\lambda_{1}|=|\lambda_{2}|=1}}&{{\quad m a}}\end{array}$$
+	Un modo equivalente per caratterizzare un operatore unitario 'e dire che il prodotto con il suo aggiunto (sia a destra che a sinistra) restituisce l'unit'a U
+	+U = UU + = 1 (2.3)
+	se ci capitasse di dover verificare con questa equazione che un operatore sia unitario, in uno spazio di dimensione finita basta verificare che una delle due uguaglianze sia verificata, nel caso di spazi con dimensione infinita devono essere verificate entrambe.
+	
+	## 2.2 Evoluzione Temporale In Visuale Di Schr¨Odinger
+	
+	La visuale di Schr¨odinger della MQ si focalizza sullo studio dell'evoluzione degli stati del sistema, quindi
+	matematicamente dei vettori espressi sottoforma di ket che li descrivono. Il punto di partenza per la discussione
+	dell'operatore di evoluzione temporale 'e l'equazione agli autovalori dipendente dal tempo che abbiamo scritto
+	in 2.1, in cui supponiamo che l'hamiltoniana abbia una dipendenza esplicita dal tempo (questo 'e il caso pi'u
+	generale, se non fosse cos'ı i risultati si semplificherebbero notevolmente). Questa 'e un'equazione differenziale al primo ordine nella coordinata temporale, quindi per determinare univocamente una sua soluzione serve una sola
+	condizione al contorno che 'e il vettore di stato all'istante iniziale t0. Inoltre 'e lineare ed omogenea nel vettore
+	|Ψ(t)i, questo significa che vale il principio di sovrapposizione, esattamente come ci aspettiamo.
+	La mappa |Ψ(t0)*i → |*Ψ(t)i definisce un operatore lineare U = U(*t, t*0) che 'e appunto l'*operatore di evoluzione*
+	temporale:
+	$$|\Psi(t)\rangle=U(t,t_{0})\,|\Psi(t_{0})\rangle\qquad\qquad U(t_{0},t_{0})=1\,.$$
+	Inserendo tale scrittura nell'equazione di Schr¨odinger, otteniamo l'equazione differenziale cui soddisfa questo
+	Instructions the covariant differentiation of conformal, Neumann curvature and structure on boundary operator: $$i\hbar\frac{\partial\left|\Psi(t)\right>}{\partial t}=H(t)\left|\Psi(t)\right>=i\hbar\frac{\partial}{\partial t}U(t,t_0)\left|\Psi(t_0)\right>=H(t)U(t,t_0)\left|\Psi(t_0)\right>\longrightarrow$$ $$\longrightarrow\quad i\hbar\frac{\partial U(t,t_0)}{\partial t}=H(t)U(t,t_0)\tag{2.4}$$  Integrando etotanimo un'altra exprescione che incorpera sia l'equatione diferenziale che la condicione inicialmente esta la transformada de la (2.4). 
+	$$\int_{t_{0}}^{t}\mathrm{d}t^{\prime}\,i\hbar\frac{\partial U(t^{\prime},t_{0})}{\partial t}=\int_{t_{0}}^{t}\mathrm{d}t^{\prime}\,H(t^{\prime})U(t^{\prime},t_{0})\quad\longrightarrow\quad i\hbar\big{(}U(t,t_{0})-1\big{)}=\int_{t_{0}}^{t}\mathrm{d}t^{\prime}\,H(t^{\prime})U(t^{\prime},t_{0})$$ $$U(t,t_{0})-1=-\frac{i}{\hbar}\int_{t_{0}}^{t}\mathrm{d}t^{\prime}\,H(t^{\prime})U(t^{\prime},t_{0})\tag{2.5}$$  Vediano un altra importante caracteristica dell'operatore di evoluzione temporale $U$. Ricerviamo la definiciones
+	
+	che abbiamo dato inizialmente di stato evoluto come:
+	$$(2.4)$$
+	$$|\Psi(t)\rangle=U(t,t^{\prime})\,|\Psi(t^{\prime})\rangle$$
+	nulla ci vieta di considerare |Ψ(t 0)i come l'evoluzione di un altro stato |Ψ(t 00)i mediante lo stesso operatore, ma dipendente da degli opportuni parametri:
+	
+	$$|\Psi(t^{\prime})\rangle=U(t^{\prime},t^{\prime\prime})\,|\Psi(t^{\prime\prime})\rangle$$
+	
+	allora sostituendo all'equazione precedente otteniamo una formula per l'evoluzione considerando step intermedi, che deve necessariamente essere uguale a quella globale senza frammentazione dell'asse temporale
+	
+	$\Psi(t)\rangle=U(t,t^{\prime})U(t^{\prime},t^{\prime\prime})\,|\Psi(t^{\prime\prime})\rangle\quad\stackrel{{!}}{{=}}U(t,t^{\prime\prime})\,|\Psi(t^{\prime\prime})\rangle\quad\longrightarrow\quad U(t,t^{\prime\prime})=U(t,t^{\prime})U(t^{\prime},t^{\prime\prime})$.  
+	questa relazione ha un importante significato: l'evoluzione temporale dipende solamente dagli istanti iniziale e
+	finale considerati, non dal valore assoluto dell'intervallo temporale in questione; in particolare se poniamo in
+	questa formula t
+	00 = t, dall'equazione 2.3 risulta:
+	$$\mathbb{1}=U(t,t^{\prime})U(t^{\prime},t)=U(t^{\prime},t)U(t,t^{\prime})\quad\longrightarrow\quad U(t,t^{\prime})=U^{-1}(t^{\prime},t)\quad\mathrm{in}\quad t^{\prime}=t^{\prime}.$$
+	0, t) inversione temporale
+	Chiediamoci ora cosa succede se l'intervallo temporale su cui consideriamo l'evoluzione 'e infinitesimo dt e
+	sviluppiamo l'equazione di Schr¨odinger per questo caso:
+	Momente in non-singular par "quotee" $$\begin{array}{lcl}d\left|\Psi(t)\right>&=&\left|\Psi(t+dt)\right>-\left|\Psi(t)\right>=-\dfrac{i}{\hbar}H(t)\left|\Psi(t)\right>\mathrm{d}t\\ \text{risolvendo per}&\left|\Psi(t+dt)\right>&\\ &\left|\Psi(t+dt)\right>&=&\left(1-\dfrac{i}{\hbar}H(t)\right)\left|\Psi(t)\right>\stackrel{!}{=}U(t+dt,t)\left|\Psi(t)\right>\\ &U(t+dt,t)&=&\left(1-\dfrac{i}{\hbar}H(t)\right)dt\\ \end{array}$$ l'usquelizione di de operatori diveri como cojumolero derivate o integral. 
+	
+	abbiamo riscritto l'uguaglianza di due operatori diversi senza coinvolgere derivate o integrali, quindi possiamo interpretare il secondo membro dell'ultima equazione come l'operatore che d'a l'evoluzione temporale del sistema per un tempo infinitesimo, in questo caso si dice che H 'e *generatore delle traslazioni temporali*. Poich´e H 'e autoaggiunto e definito in un dominio denso in H, esiste un teorema matematico che dice che il corrispondente operatore infinitesimo U 'e unitario, e da questo si pu'o dedurre sotto opportune ipotesi che anche l'operatore di evoluzione temporale per un intervallo di tempo finito 'e unitario:
+	
+	$$U^{+}(t+dt,t)=\left(1+\frac{i}{\hbar}H(t)\right)\mathrm{d}t\quad\longrightarrow\quad UU^{+}=U^{+}U=1+\mathcal{O}\big{(}t^{2}\big{)}\quad\longrightarrow\quad U^{+}(t,t^{\prime})=U^{-1}(t,t^{\prime})=U(t^{\prime},t)$$
+	
+	in cui abbiamo scartato i termini di ordine superiore al primo dato che lavoriamo con infinitesimi al primo ordine.
+	
+	## 2.2.1 Evoluzione Temporale Per Sistemi Conservativi
+	
+	I sistemi conservativi sono quelli per cui vale la conservazione dell'energia e in cui le forze che agiscono non dipendono dal tempo, di conseguenza nemmeno l'energia/hamiltoniana. Per questi sistemi il tempo 'e *omogeneo*, cio'e non non esiste un istante privilegiato (sono tutti equivalenti) e le leggi della fisica non dipendono dall'intervallo considerato, quindi facendo evolvere il sistema in intervalli di lunghezza uguale, ci aspettiamo che l'evoluzione temporale sia la stessa, cio'e che l'operatore U(*t, t*0) dipenda solamente da un'unica variabile τ = t − t0 e che continuino a valere le stesse propriet'a studiate al paragrafo precedente
+	
+	$$U(\tau),\qquad U(0)=\mathbb{I}\,,\qquad U(\tau_{1})U(\tau_{2})=U(\tau_{1}+\tau_{2})$$
+	$$[U(\tau)]^{-1}=U(-\tau)$$
+	$\begin{array}{cc}\left|\Psi(t)\right>=U(t-t_0)\left|\Psi(t_0)\right>&A(t)=A(t_0)\end{array}$  or $\grave{\lambda}$, the stati iniciali-diversi-damos-lucos-s-stat. 
+	Consideriamo l'equazione di Schr¨odinger per l'operatore U che abbiamo trovato in 2.4, ora l'hamiltoniana che compare 'e indipendente dal tempo e la soluzione 'e piuttosto semplice da trovare avendo a disposizione la
+	condizione iniziale
+	$$i\hbar{\frac{\mathrm{d}}{\mathrm{d}\tau}}U(\tau)=H U(\tau)\quad\longrightarrow\quad U(t-t_{0})=e^{-i{\frac{H}{\hbar}}(t-t_{0})}$$
+	dato che l'hamiltoniana 'e autoaggiunta, si pu'o dimostrare che questo operatore 'e unitario e definito su tutto H.
+	La caratteristica principale dell'evoluzione temporale nella visuale di Schr¨odinger, la si pu'o estrapolare osservando
+	quello che abbiamo fatto finora: gli stati evolvono mediante l'operatore U(τ ) ma le osservabili/operatori/strumenti
+	di misura restano fisse:
+	|Ψ(t)i = U(t − t0)|Ψ(t0)i A(t) = A(t0) (2.6)
+	Un fatto importante da notare 'e che stati iniziali diversi danno luogo a stati finali diversi, questo perch´e
+	l'evoluzione temporale 'e una mappa invertibile quindi non deve presentare punti di intersezione tra curve
+	differenti
+	$$|\Psi(t_{0})\rangle\neq|\Phi(t_{0})\rangle\quad\longrightarrow\quad|\Psi(t)\rangle\neq|\Phi(t)\rangle$$
+	le traiettorie nello spazio delle fasi devono essere sempre distinte e non devono intersecarsi per non incappare in ambiguit'a nel momento in cui invertiamo la relazione, cio'e la mappa dev'essere biettiva.
+	Consideriamo ora uno stato qualsiasi in un istante iniziale |Ψ(t0)i; la ricetta appena trovata ci suggerisce
+	che l'evoluzione causale 'e data da
+	$$|\Psi(t)\rangle=e^{-i{\frac{H}{\hbar}}(t-t_{0})}\,|\Psi(t_{0})\rangle$$
+	(t−t0)|Ψ(t0)i (2.7)
+	Proviamo a trovare la scrittura esplicita in termini degli autostati dell'hamiltoniana |En, rni (sappiamo che
+	essendo una base ortonormale vale hEn, rn|Em, rmi = δmn, con rn l'indice che conta la degenerazione). Quello
+	che dobbiamo fare 'e decomporre lo stato iniziale e scriverlo come combinazione degli autovettori:
+	$$(2.6)$$
+	$$(2.7)$$
+	$$|\Psi(t_{0})\rangle=\sum_{E_{n}\in\sigma(H)}\sum_{r_{n}}|E_{n},r_{n}\rangle\left\langle E_{n},r_{n}|\Psi(t_{0})\right\rangle\quad\longrightarrow$$ $$\longrightarrow|\Psi(t)\rangle=\sum_{E_{n}\in\sigma(H)}e^{-\frac{i}{\hbar}E_{n}(t-t_{0})}\sum_{r_{n}}|E_{n},r_{n}\rangle\left\langle E_{n},r_{n}|\Psi(t_{0})\right\rangle$$
+	$$(2.8)$$
+	Per il caso di spettro continuo si procede generalizzando la somma sugli autovalori discreti all'integrale sullo spettro continuo, con l'accortezza di mantenere la degenerazione discreta:
+	
+	$$|\Psi(t_{0})\rangle=\int_{\sigma(H)}dE\sum_{r}|E,r\rangle\left\langle E,r|\Psi(t_{0})\right\rangle\quad\longrightarrow\quad|\Psi(t)\rangle=\int_{\sigma(H)}e^{-\frac{i}{\hbar}E(t-t_{0})}\sum_{r}|E,r\rangle\left\langle E,r|\Psi(t_{0})\right\rangle dE$$  Chiedamosj quando il valor medio di una grandeza fisica overvable non dipende del tempo. Consideremos
+	l'equazione di Schr¨odinger dipendente dal tempo e la sua complessa coniugata:
+	$$\begin{array}{r c l}{{\left[\begin{array}{c c}{{}}&{{i\hbar{\frac{\mathrm{d}\left|\Psi\right\rangle}{\mathrm{d}t}}=H\left|\Psi\right\rangle}}\\ {{}}&{{-i\hbar{\frac{\mathrm{d}\left|\Psi\right\rangle}{\mathrm{d}t}}=H\left\langle\Psi\right|}}\end{array}\right.}}&{{\longrightarrow}}&{{i\hbar{\frac{\mathrm{d}}{\mathrm{d}t}}\left\langle\Psi|A|\Psi\right\rangle=\left\langle\Psi|[A,H]|\Psi\right\rangle}}\end{array}$$
+	
+	Ci sono due situazioni in cui la richiesta viene rispettata:
+	1. ∀Ψ quando [*A, H*] = 0, che corrisponde alla situazione in cui ci sono delle simmetrie dinamiche, cio'e la grandezza A 'e conservata.
+	
+	2. ∀A se |Ψi 'e un autostato dell'hamiltoniano, cio'e 'e un cos'ı detto stato stazionario.
+	
+	## 2.3 Trasformazioni Unitarie
+	
+	Sono un particolare tipo di trasformazioni che a partire da un certo stato |Ψ(t)i forniscono |Ψ0(t)i, e a partire dall'operatore A forniscono A0; dunque agiscono sia sugli stati che sugli operatori. Dato un operatore U nello spazio di Hilbert H, la trasformazione unitaria 'e definita come
+	
+	$$\forall\left|\Psi\right\rangle\quad\left|\Psi^{\prime}\right\rangle=U\left|\Psi\right\rangle$$
+	$$\forall A\quad A^{\prime}=U A U^{+}$$
+	0i = U |Ψi ∀A A0 = UAU +
+	Le trasformazioni unitarie costituiscono delle simmetrie del formalismo, ma non dinamiche perch´e a priori non lasciano invariata l'hamiltoniana e non implicano che le equazioni della dinamica mantengono la stessa forma; significano semplicemente che esistono diversi modi equivalenti per descrivere la stessa fisica.
+	
+	Le trasformazioni unitarie lasciano invariati:
+	- i prodotti scalari: hΦ
+	0|Ψ0i = hUΦ|UΨi = hΦ|Ψi
+	- gli elementi di matrice: hΦ
+	0|A0|Ψ0i = hUΦ|UAU +|UΨi = hΦ|U
+	+UAU +U|Ψi = hΦ|A|Ψi
+	- la condizione di autoaggiuntezza degli operatori: A = A+ −→ (A0)
+	+ = (UAU +)
+	+ = UAU + = A+
+	- lo spettro delle osservabili: A0|a 0 k i = UAU +U |aki = akU |aki = ak |a 0 k i
+	- le relazioni algebriche tra gli operatori: AB = C A0B0 = UAU +UBU + = UABU + = UCU + = C
+	0 Ci sono delle precisazioni da fare su questo tipo di trasformazioni. La prima 'e che non stiamo parlando di evoluzione temporale, nonostante abbiamo scelto di usare lo stesso simbolo, infatti come sappiamo quest'ultima evolve o gli stati o le osservabili separatamente, mentre qui stiamo trasformando entrambe queste entit'a contemporaneamente. Inoltre le trasformazioni unitarie non esauriscono tutte le simmetrie del formalismo della MQ che soddisfano alle richieste che abbiamo appena elencato, pi'u avanti introdurremo delle trasformazioni dette antiunitarie che realizzano quanto abbiamo appena detto e che si differenziano da quelle unitarie per la antilinearit'a.
+	
+	## 2.4 Evoluzione Temporale In Visuale Di Heisenberg
+	
+	Studiamo ora la versione complementare a quella di Schr¨odinger, cio'e la visuale di Heisenberg che ovviamente porta allo stesso risultato. Consideriamo sistemi conservativi in cui H non dipende dal tempo; nella visuale di Schr¨odinger sappiamo gi'a come trasformano lo stato |Ψ(t0)i e l'operatore A(t0) grazie alle relazioni in 2.6. Come si pu'o immaginare, nella visuale di Heisenberg succede l'opposto:
+	
+	$$\Psi_{h}(t))=|\Psi(t_{0})\rangle A_{h}(t)=U(t_{0}-t)A(t_{0})U^{+}(t_{0}-t)=[U(t-t_{0})]^{+}A(t_{0})U(t-t_{0})\tag{2.9}$$
+	
+	Dato che descrivono la stessa fisica, queste due visuali devono essere legate da una trasformazione unitaria che 'e evidente essere la trasformazione generata dall'operatore unitario di traslazione temporale, allora
+	
+	$$|\Psi(t)\rangle_{s}=U(t-t_{0})\,|\Psi(t_{0})\rangle$$
+	|Ψ(t)is = U(t − t0)|Ψ(t0)i As(t) = U(t − t0)Ah(t)U
+	$$A_{s}(t)=U(t-t_{0})A_{h}(t)U^{+}(t-t_{0})$$
+	
+	in cui Hs = Hh perch´e l'operatore U 'e scritto in funzione dell'hamiltoniana stessa e quindi commuta con essa.
+	
+	Cerchiamo ora di ricavare l'equazione di Heisenberg, cio'e l'equivalente dell'equazione differenziale di Schr¨odinger che determina l'evoluzione temporale dell'osservabile, in cui l'operatore A non 'e esplicitamente dipendente dal tempo.
+	
+	d dt |Ψh(t)i = 0 per gli stati i~ d dt Ah(t) = i~ d dt U +(t − t0)AsU(t − t0) = i~ dU +(t − t0) dtAsU(t − t0) + i~U +(t − t0)As dU(t − t0) dt ricordando che i~ d dt U(t − t0) = HU(t − t0) = −U +(t − t0)HAsU(t − t0) + U +(t − t0)AsHU(t − t0) = U +(t − t0)AsU(t − t0) · H − H · U +(t − t0)AsU(t − t0) = [Ah, H] i~ dA(t)h dt= [Ah, H] equazione di Heisenberg (2.10)
+	$$(2.10)$$
+	Se consideriamo grandezze fisiche con dipendenza esplicita dal tempo As(t) = As(*q, p, ..., t*), l'equazione di Heisenberg acquista un termine aggiuntivo ed 'e facile dimostrare che assume la seguente forma:
+	
+	$$i\hbar{\frac{\mathrm{d}A_{h}(t)}{\mathrm{d}t}}=[A_{h},H]-i\hbar\left[{\frac{\partial A(t)}{\partial t}}\right]_{h}\qquad\qquad\mathrm{con}\quad{\frac{\partial A_{s}(t)}{\partial t}}=i\hbar U^{+}(t-t_{0}){\frac{\partial A_{h}(t)}{\partial t}}U(t-t_{0})$$
+	
+	Questo 'e quanto ci serve per discutere l'evoluzione temporale in visuale di Heisenberg di sistemi indipendenti dal tempo.
+	
+	## 2.4.1 Evoluzione Temporale Per Sistemi Non Conservativi
+	
+	Discutiamo ora il caso generale in cui estendiamo la dipendenza degli operatori anche dalla coordinata temporale esplicitamente. Riprendiamo la formula integrale che avevamo trovato per l'operatore U(*t, t*0) nell'equazione 2.5:
+	se l'hamiltoniana fosse indipendente dal tempo la soluzione di questo problema sarebbe banale, quindi escludiamo questo caso e risolviamo l'equazione pi'u complessa con un procedimento iterativo, notando che l'operatore U 'e presente in entrambi i membri. In questo caso l'hamiltoniana viene trattata come il parametro su cui espandere e il risultato all'ordine successivo si trova inserendo il precedente nell'equazione generale:
+	
+	U (0) = 1 U (1) = 1 − i~ R t t0 dt1H(t1) U (2) = 1 − i ~ Z t t0 dt1H(t1) +− i~ 2 R t t0 dt1 R t1 t0 dt2H(t1)H(t2) | {z } U(t−t0) U (n)(t − t0) = U (n−1)(t − t0) + − i~ nZ t t0 Z t1 t0 ... Z tn−1 t0 | {z } n volte dtn H(t, t1)H(t, t2)...H(t, tn) | {z } n volte
+	
+	in cui stiamo implicitamente considerando la catena di disuguaglianze t0 < tn < tn−1 < ... < t2 < t1.
+	
+	Possiamo arrivare a una forma molto pi'u simmetrica introducendo il *prodotto cronologico tra operatori*, che definiamo con l'operatore T tale per cui:
+	
+	$$T H(t_{1})H(t_{2})\equiv\left\{\begin{array}{l l}{{H(t_{1})H(t_{2})}}&{{\mathrm{se}\ t_{2}<t_{1}}}\\ {{H(t_{2})H(t_{1})}}&{{\mathrm{se}\ t_{1}<t_{2}}}\end{array}\right.$$
+	
+	notiamo subito che possiamo riscriverlo in termini della funzione gradino di Heaviside centrata nell'origine
+	
+	$$\theta(t)=\left\{\begin{array}{l l l}{{1}}&{{\approx t>0}}\\ {{0}}&{{\approx t<0}}\end{array}\right.\quad\longrightarrow\quad T H(t_{1})H(t_{2})=\theta(t_{1}-t_{2})H(t_{1})H(t_{2})+\theta(t_{2}-t_{1})H(t_{2})H(t_{1})$$
+	
+	L'introduzione di questo tipo di funzione 'e necessaria perch´e in generale le hamiltoniane valutate a istanti di tempo diversi non commutano tra loro. Dimostriamo che effettivamente vale l'uguaglianza
+	
+	$$\int_{t_{0}}^{t}d t_{1}\int_{t_{0}}^{t_{1}}d t_{2}H(t_{1})H(t_{2})=\frac{1}{2}\int_{t_{0}}^{t}d t_{1}\int_{t_{0}}^{t}d t_{2}T H(t_{1})H(t_{2})\quad\quad\quad\quad t_{1}>t_{2}$$
+	
+	![28_image_0.png](28_image_0.png)
+	
+	Graficamente la regione in cui stiamo svolgendo il primo integrale 'e rappresentata dal triangolo che sta sopra la bisettrice in figura. Questo stesso integrale si pu'o scrivere in modo alternativo come
+	
+	$$\int_{t_{0}}^{t}\mathrm{d}t_{2}\int_{t_{2}}^{t}\mathrm{d}t_{1}\,H(t_{1})H(t_{2})\qquad t_{1}>t_{2}\qquad\mathrm{o~anche~come}$$
+	$$\int_{t_{0}}^{t}\mathrm{d}t_{1}\int_{t_{1}}^{t}\mathrm{d}t_{2}\,H(t_{2})H(t_{1})\qquad t_{2}>t_{1}$$
+	
+	Ora sfruttiamo le propriet'a della θ di Heaviside e estendiamo l'integrale a tutto il quadrato
+	
+	$$\frac{1}{2}\left[\int_{t_{0}}^{t}\!\mathrm{d}t_{1}\int_{t_{1}}^{t}\!\mathrm{d}t_{2}\,\theta(t_{1}-t_{2})H(t_{1})H(t_{2})+\int_{t_{0}}^{t}\!\mathrm{d}t_{1}\int_{t_{1}}^{t}\!\mathrm{d}t_{2}\,\theta(t_{2}-t_{1})H(t_{2})H(t_{1})\right]=\frac{1}{2}\int_{t_{0}}^{t}\!\mathrm{d}t_{1}\int_{t_{0}}^{t}\!\mathrm{d}t_{2}\,TH(t_{1})H(t_{2})$$  Since $t_{0}$ is a constant, we can obtain a limit as a function of $t_{0}$ will be included.  
+	Se vogliamo essere pi'u precisi e considerare non solo i primi ordini, ma arrivare fino all'n-esimo, dobbiamo riformulare la definizione di prodotto cronologico in modo opportuno
+	
+	$$\theta(t_{1},...t_{n})=\theta(t_{1}-t_{2})\theta(t_{2}-t_{3})...\theta(t_{n-1}-t_{n})\quad\longrightarrow\quad TH(t_{1})...H(t_{n})=\sum_{p}\theta(t_{p_{1}},...t_{p_{n}})H(t_{p_{1}})H(t_{p_{2}})...H(t_{p_{n}})$$
+	
+	in cui p1, p2*, ..., p*n sono le permutazioni possibili della striscia (1, 2*, ..., n*); allora l'operatore di evoluzione temporale all'ordine n si scrive come:
+	
+	$$U^{(n)}(t,t_{0})=U^{(n-1)}+\frac{1}{n!}\left(-\frac{i}{\hbar}\right)^{n}\int_{t_{0}}^{t}\mathrm{d}t_{1}\int_{t_{0}}^{t}d t t_{2}...\int_{t_{0}}^{t}\mathrm{d}t_{n}\,H(t_{1})H(t_{2})...H(t_{n})\,.$$
+	
+	formalmente questa 'e una serie esponenziale (non 'e garantito che converga), allora in notazione sintetica possiamo scrivere l'espressione formale dell'operatore di evoluzione temporale nel caso in cui l'hamiltoniana dipenda dal tempo
+	
+	$$U(t,t_{0})=T e^{-{\frac{i}{\hbar}}\int_{t_{0}}^{t}\mathrm{d}t^{\prime}H(t^{\prime})}$$
+	
+	## 2.5 Limite Classico E Teorema Di Ehrenfest
+	
+	Naturalmente tutto quello che abbiamo detto finora deve essere concorde con quanto viene accettato dalla teoria della MC, dunque nel limite in cui il parametro caratterizzante la MQ (cio'e ~ opportunamente definito) tende a 0, dobbiamo ritrovare le equazioni classiche, e in particolare quelle di Hamilton per l'evoluzione delle osservabili.
+	
+	Per studiare il comportamento della MQ nel limite classico, consideriamo come al solito una particella priva di spin in una dimensione, lavoriamo in visuale di Heisenberg e dunque partiamo dalla sua equazione generale trovata in 2.10 per un operatore autoaggiunto A = A(*Q, P*) = f(*Q, P*), che sia funzione di Q e P ma non esplicitamente del tempo. Abbiamo sempre considerato l'hamiltoniana come funzione di P e Q della forma H = H(*Q, P*) = P
+	2 2m + V (Q), adesso facciamo una piccola semplificazione e consideriamola come un polinomio
+	
+	$$H=\sum_{m,n}a_{m n}P^{m}Q^{n}=\sum_{m,n}a_{m n}(P^{n}Q^{m}+Q^{m}P^{n})$$
+	
+	in cui abbiamo preso una combinazione simmetrica di QP per essere coerenti con la MC e il principio di simmetrizzazione. Manipoliamo tale scrittura calcolando alcuni commutatori
+	
+	$$[Q,H]=QH-HQ=\sum_{m,n}a_{mn}\big{(}QP^{n}Q^{m}+Q^{m}QP^{n}-P^{n}QQ^{m}-Q^{m}P^{n}Q\big{)}=0$$  $$\sum_{m,n}a_{mn}\big{(}[Q,P^{n}]Q^{m}+Q^{m}[Q,P^{n}]\big{)}=\sum_{m,n}a_{mn}\big{\{}[Q,P^{n}],Q^{m}\big{\}}$$
+	
+	(Q e Qm commutano, quindi possiamo invertire l'ordine di applicazione) sapendo che vale: [*Q, f*(P)] =
+	i~
+	df(P )
+	dP −→ [*Q, P* n] = i~
+	dP
+	n dP[*P, Q*m] = −i~
+	dQm dQ
+	:
+	
+	$$[Q,H]=\sum_{m,n}a_{m n}\left\{i\hbar\frac{\mathrm{d}P^{m}}{\mathrm{d}P},Q^{m}\right\}=i\hbar\sum_{m,n}a_{m n}\frac{\mathrm{d}}{\mathrm{d}P}\{P^{n},Q^{m}\}=i\hbar\frac{\partial H}{\partial P}$$
+	Un risultato simetrico si troya per $[P,H].$ Otteniano facilement I'evoluzone degli operator $$i\hbar\frac{\mathrm{d}Q}{\mathrm{d}t}=[Q,H]=i\hbar\frac{\partial H}{\partial P}\qquad\qquad\qquad i\hbar\frac{\mathrm{d}P}{\mathrm{d}t}=[P,H]=-i\hbar\frac{\partial H}{\partial Q}$$. 
+	La conclusione 'e immediata, infatti notiamo subito che queste due equazioni sono formalmente identiche alle equazioni canoniche di Hamilton dell'equazione 1.1; presentano per'o una differenza sostanziale: in MC abbiamo funzioni numeriche reali del tempo, in MQ abbiamo a che fare con operatori autoaggiunti dipendenti dal tempo, quindi per stabilire una corrispondenza biunivoca dobbiamo aggiungere qualcosa alla nostra trattazione.
+	
+	Consideriamo un pacchetto d'onda abbastanza stretto in modo che rappresenti al meglio una particella classica, e uno stato generico Ψ; il valore classico delle osservabili 'e dato dal valore di aspettazione degli operatori:
+	
+	$$q_{c}\equiv\langle Q\rangle$$
+	$$p_{c}\equiv\langle P\rangle$$
+	qc ≡ hQi pc ≡ hPi
+	Facciamo la derivata temporale di queste quantit'a, quindi applichiamo direttamente le equazioni di Hamilton, facendo attenzione alla presenza del valor medio (in visuale di Heisenberg gli stati non dipendono dal tempo quindi possiamo portare il valor medio dentro e fuori l'operazione di derivata):
+	
+	$${\frac{\mathrm{d}\left\langle Q\right\rangle}{\mathrm{d}t}}=\left\langle{\frac{\mathrm{d}Q}{\mathrm{d}t}}\right\rangle=\left\langle{\frac{\partial H}{\partial P}}\right\rangle\qquad\qquad{\frac{\mathrm{d}\left\langle P\right\rangle}{\mathrm{d}t}}=\left\langle{\frac{\mathrm{d}P}{\mathrm{d}t}}\right\rangle=\left\langle{\frac{\partial H}{\partial Q}}\right\rangle.$$
+	
+	Quelle che abbiamo appena scritto altro non sono che le *equazioni di Ehrenfest*. Nonostante sembrino in accordo con la MC, possiamo dimostrare che in realt'a dobbiamo ancora ritoccare qualche dettaglio, infatti:
+	
+	$\left<\dfrac{\partial H}{\partial P}\right>\neq\dfrac{\partial H\big(\left<Q\right>,\left<P\right>\big)}{\partial\left<P\right>}\qquad\qquad-\left<\dfrac{\partial H}{\partial Q}\right>\neq-\dfrac{\partial H\big(\left<Q\right>,\left<P\right>\big)}{\partial\left<Q\right>}$  or wilciloreo la postre tratentioreo. Data la solite hamiltoniano de ... 
+	Dunque procediamo per migliorare la nostra trattazione. Data la solita hamiltoniana di una particella libera, possiamo calcolare
+	
+	$${\frac{\partial H}{\partial P}}={\frac{P}{m}}\qquad\qquad{\frac{\partial H}{\partial Q}}=V^{\prime}(Q)\quad\longrightarrow\quad{\frac{\mathrm{d}Q}{\mathrm{d}t}}={\frac{P}{m}}\qquad\qquad{\frac{\mathrm{d}P}{\mathrm{d}t}}=-V^{\prime}(Q)$$
+	
+	Passando ai valori medi
+	
+	$${\frac{\operatorname{d}\langle Q\rangle}{\operatorname{d}t}}={\frac{\langle P\rangle}{m}}\qquad\qquad{\frac{\operatorname{d}\langle P\rangle}{\operatorname{d}t}}=-\,\langle V^{\prime}(Q)\rangle\neq{\frac{\operatorname{d}V(\langle Q\rangle)}{\operatorname{d}\langle Q\rangle}}=V^{\prime}(\langle Q\rangle)$$
+	
+	la prima equazione corrisponde perfettamente al caso classico, ma la seconda no. Risolviamo questo problema introducendo come variabili le fluttuazioni che avevamo gi'a incontrato in precedenza:
+	
+	$\dot{Q}=Q-\langle Q\rangle\qquad\dot{P}=P-\langle P\rangle\quad\longrightarrow\quad\langle\dot{Q}\rangle=\langle\dot{P}\rangle=0,\quad\langle\dot{Q}^{2}\rangle=\Delta Q=\sigma_{Q}^{2},\quad\langle\dot{P}^{2}\rangle=\Delta P=\sigma_{P}^{2}$
+	Queste scritture ci permettono di alleggerire la notazione dei conti che seguono, infatti ora sviluppiamo in serie di Taylor il potenziale e anche la sua derivata prima attorno al valore Q = hQi e chiamiamo ogni funzione del valor medio delle osservabili fc = f(hQi,hPi), in cui il pedice vuole evidenziarne l'aspetto classico.
+	
+	V (Q) = V (hQi) + V 0(hQi)Qˆ + 1 2 V 00(hQi)Qˆ2 + ... = Vc + V 0 cQˆ + 1 2 V 00 c Qˆ2 + ... V 0(Q) = V 0 c + V 00 c Qˆ + 1 2 V 000 c Qˆ2 + ... −→ hV 0(Q)i = V 0(hQi) + 0 + 12 V 000 c σ 2 Q d hPi dt= −V 0 c − 1 2 V 000 c σ 2 Q + ...d hQi dt= −V 0 c La corrispondenza che cerchiamo si realizza quando il termine aggiuntivo di ordine superiore nella prima equazione
+	risulta trascurabile, cio'e per ~ → 0 che si verifica simultaneamente a σQ, σP → 0. Ci sono anche situazioni limite
+	in cui questo termine si annulla matematicamente per il valore che assume la derivata terza, per il quale la MC
+	risulta essere lineare: la particella libera V = *cost*, l'oscillatore armonico semplice V =
+	1
+	2KQ2, una forza esterna
+	costante V = −F Q.
+	
+	## 2.6 Relazione Di Indeterminazione Tempo-Energia
+	
+	Sulla base del principio di indeterminazione di Heisenberg che vale tra le componenti delle coordinate e degli impulsi, ci chiediamo se anche per entrambe le prime componenti dei quadrivettori posizione e momento, cio'e il tempo e l'energia, esiste una relazione simile, che possiamo gi'a supporre essere del tipo
+	
+	$$(\Delta t)(\Delta E)\geq{\frac{\hbar}{2}}$$
+	
+	La risposta alla domanda 'e ovviamente affermativa e la relazione proposta 'e corretta, ma notiamo subito un problema intrinseco a questa definizione. C''e da chiedersi quale significato assuma la quantit'a ∆t, dato che non pu'o essere una fluttuazione temporale come invece succede per la fluttuazione energetica ∆E.
+	
+	Lavoriamo in visuale di Heisenberg e ricordiamo la relazione generalizzata di indeterminazione e la sua scrittura nel caso particolare in cui B = H e gli operatori non dipendano dal tempo:
+	
+	$$(\Delta A)_{\Psi}(\Delta B)_{\Psi}\geq\frac{1}{2}|\,\langle[A,B]\rangle\,|\qquad e\qquad(\Delta A)_{\Psi}(\Delta E)_{\Psi}\geq\frac{1}{2}|\,\langle[A,H]\rangle\,|$$
+	$$i\hbar{\frac{\mathrm{d}A}{\mathrm{d}t}}=[A,H]\quad\longrightarrow\quad(\Delta A)_{\Psi}(\Delta E)_{\Psi}\geq{\frac{\hbar}{2}}\left|\left\langle{\frac{\mathrm{d}A}{\mathrm{d}t}}\right\rangle\right|={\frac{\hbar}{2}}{\frac{\mathrm{d}}{\mathrm{d}t}}\left\langle A\right\rangle_{\Psi}\quad\longrightarrow\quad\left|{\frac{(\Delta A)_{\Psi}}{{\frac{\mathrm{d}t}{\mathrm{d}t}}\left\langle A\right\rangle_{\Psi}}}\right|\Delta E)_{\Psi}\geq{\frac{\hbar}{2}}$$
+	
+	in cui la frazione messa in evidenza ha palesemente le dimensioni di un tempo, per questo la chiamiamo τA
+	e la interpretiamo come il tempo caratteristico del sistema nello stato Ψ. Se il sistema si trova in uno stato stazionario, la fluttuazione attorno il valor medio 'e nulla e quindi la disuguaglianza 'e soddisfatta perch´e stiamo prendendo il limite in cui il tempo tende a ∞.
+	
+	Vediamo cosa succede alla probabilit'a PΨ(a).
+	
+	![30_image_1.png](30_image_1.png)
+	
+	![30_image_0.png](30_image_0.png)
+	
+	Dopo un lasso di tempo ∆t il sistema 'e evoluto e il pacchetto d'onda ha modificato sia la sua forma che la posizione del picco. Possiamo calcolare la differenza tra i valori medi in questi due casi e ricavare quanto vale ∆t
+	
+	$$\mid\langle A\rangle_{t+\Delta t}-\langle A\rangle_{t}\mid\;=\;\left|{\frac{\mathrm{d}\,\langle A\rangle}{\mathrm{d}t}}\right|\left|\Delta t\right|\quad\longrightarrow\quad\left|\Delta t\right|\;=\;{\frac{\mid\langle A\rangle_{t+\Delta t}-\langle A\rangle_{t}\mid}{{\frac{\mathrm{d}\,\langle A\rangle}{\mathrm{d}t}}}}$$
+	
+	Se scegliamo un intervallo di tempo in cui il valor medio di A si 'e spostato di una quantit'a dell'ordine di ∆A,
+	allora ∆t = τA. Possiamo interpretare fisicamente τA come quel tempo che deve trascorrere per capire se 'e cambiato qualcosa nel sistema, cio'e se 'e variato il valor medio dell'osservabile.
+\end{comment}
