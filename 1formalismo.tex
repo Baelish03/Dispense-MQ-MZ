@@ -106,9 +106,10 @@ Quanto appena detto deriva dal fatto che possiamo dimostrare che tutti gli spazi
 
 Detto questo, enunciamo il primo postulato della MQ:
 
-\textbf{\textit{Postulato 1. Degli stati}} 
+\begin{postulato}  \textbf{Degli stati}
 
-\textit{Ogni sistema quantistico $\mathcal{S}$ pu\'o essere associato ad uno spazio di Hilbert astratto $\mathcal{H}$, e ogni stato (puro) $\Sigma$ del sistema pu\'o essere associato a un raggio vettore complesso $\hat{\Psi} \in \mathcal{H}$.}
+Ogni sistema quantistico $\mathcal{S}$ pu\'o essere associato ad uno spazio di Hilbert astratto $\mathcal{H}$, e ogni stato (puro) $\Sigma$ del sistema pu\'o essere associato a un raggio vettore complesso $\hat{\Psi} \in \mathcal{H}$.
+\end{postulato}
 
 Introduciamo quindi la nozione importante di \textit{raggio vettore}, che \'e definito come la classe di equivalenza dei vettori che puntano nella stessa direzione
 
@@ -157,7 +158,10 @@ In generale dobbiamo distinguere tra l'osservabile fisica e l'operatore matemati
 
 Misurando questa osservabile, otteniamo certi valori che racchiudiamo in un insieme chiamato \textit{spettro}:
 
-\textbf{Definizione 1.} \textit{Lo spettro di un'osservabile, che scriviamo come $\sigma(\mathcal{A})$, \'e l'insieme dei valori che possiamo ottenere con una misura di $\mathcal{A}$ prendendo in considerazione tutti i possibili stati del sistema}.
+\begin{definizione}
+	
+	Lo spettro di un'osservabile, che scriviamo come $\sigma(\mathcal{A})$, \'e l'insieme dei valori che possiamo ottenere con una misura di $\mathcal{A}$ prendendo in considerazione tutti i possibili stati del sistema.
+\end{definizione}
 
 Ovviamente si deve verificare che $\sigma \mathcal{A} \subseteq \mathbb{R}$ dato che stiamo parlando di misure fisicamente eseguibili (di certo non potremmo trovare un valore complesso). Lo spettro di un'osservabile pu\'o essere sia \textit{puramente discreto} (come per esempio quello per una particella senza spin in una buca di potenziale infinita), oppure \textit{puramente continuo} (per una particella libera); in alcune occasioni pu\'o presentarsi uno \textit{spettro misto} dato dalla somma di una parte discreta e di una continua (\'e il caso della particella in una buca di potenziale di profondit\'a finita),
 quindi in generale scriviamo 
@@ -166,14 +170,17 @@ $$\sigma(\mathcal{A}) = \sigma_d(\mathcal{A}) + \sigma_{c}(\mathcal{A})$$
 
 Vediamo ora cosa possiamo dire sul valore medio dell'osservabile $\mathcal{A}$ nello stato $\Sigma$. Diamone una definizione matematica operativa 
 
-\textbf{Definizione 2.} \textit{Consideriamo un numero $N$ molto grande di copie del sistema nello stesso stato}\footnote{Questo concetto \'e piuttosto sottile, non \'e totalmente corretto dire che si effettuano $N$ misure sullo stesso sistema nello stesso stato, questo perch\'e lo studio degli effetti della misura in MQ \'e una questione delicata e tutt'ora non risolta}
-\textit{, ed effettuiamo $N$ misure dell'osservabile $\mathcal{A}$ che forniscono un certo risultato, allora il valore medio di $\mathcal{A}$ \'e:}
+\begin{definizione}
+	
+Consideriamo un numero $N$ molto grande di copie del sistema nello stesso stato\footnote{Questo concetto \'e piuttosto sottile, non \'e totalmente corretto dire che si effettuano $N$ misure sullo stesso sistema nello stesso stato, questo perch\'e lo studio degli effetti della misura in MQ \'e una questione delicata e tutt'ora non risolta}
+, ed effettuiamo $N$ misure dell'osservabile $\mathcal{A}$ che forniscono un certo risultato, allora il valore medio di $\mathcal{A}$ \'e:
 
 $$\langle A\rangle_{\Sigma}\equiv\operatorname*{lim}_{N\rightarrow\infty}{\frac{a_{1}+...+a_{N}}{N}}$$
 
-\textit{Accanto al valore medio possiamo considerare anche la fluttuazione quadratica media attorno un certo numero arbitrario reale, definita come}
+Accanto al valore medio possiamo considerare anche la fluttuazione quadratica media attorno un certo numero arbitrario reale, definita come
 
 $$(\Delta\mathcal{A})_{a} \equiv \sqrt{\langle (\mathcal{A} - a)^2 \rangle}$$
+\end{definizione}
 
 
 
@@ -191,6 +198,7 @@ In MQ la trattazione assume un aspetto pi\'u complicato perch\'e non possiamo tr
 Iniziamo la trattazione sullo spettro vedendo un esempio semplice. Consideriamo una particella priva di spin che si muove lungo la direzione $x$. Il suo stato \'e descritto dalla funzione $\Psi(x) \in L_2(\mathbb{R})$ e le osservabili fondamentali sono la posizione $X$ e la corrispondente componente dell'impulso $P_X$, a cui sappiamo sono associati degli operatori che agiscono su una funzione come:
 
 \begin{equation}
+	\label{eq:oss in mq}
 	X\left|\Psi\right\rangle=x\left|\Psi\right\rangle\longrightarrow X\Psi(x)=x\Psi(x)\qquad\qquad P\left|\Psi\right\rangle=p\left|\Psi\right\rangle\longrightarrow P_{x}\Psi(x)=-i\hbar\frac{\mathrm{d}\Psi(x)}{\mathrm{d}x}
 \end{equation}
 
@@ -203,11 +211,12 @@ A partire da questi due operatori possiamo esprimere qualsiasi altra grandezza m
 che rappresenta l'energia totale della particella nella sua componente cinetica e potenziale.
 
 
-\textbf{Postulato 2. \textit{Delle osservabili}} 
+\begin{postulato} \textbf{Delle osservabili}
 
-\textit{Ad ogni osservabile $\mathcal{A}$ del sistema quantistico sar\'a associato un operatore lineare e autoaggiunto che chiamiamo $A \in \mathcal{H}$. Il valor medio di questa osservabile nello stato $\Sigma$ \'e dato partendo da un qualsiasi vettore $\Psi$ nello spazio di Hilbert che rappresenta lo stato}
+Ad ogni osservabile $\mathcal{A}$ del sistema quantistico sar\'a associato un operatore lineare e autoaggiunto che chiamiamo $A \in \mathcal{H}$. Il valor medio di questa osservabile nello stato $\Sigma$ \'e dato partendo da un qualsiasi vettore $\Psi$ nello spazio di Hilbert che rappresenta lo stato
 
 $$\langle A\rangle_{\Sigma}=\frac{\langle\Psi|A|\Psi\rangle}{\langle\Psi|\Psi\rangle}$$
+\end{postulato}
 
 Dopo aver ricordato che un operatore 'e autoaggiunto se 'e uguale al suo aggiunto, cio'e se si verifica che
 
@@ -275,11 +284,12 @@ $$|\Psi\rangle=\sum_{m}\Psi_{m}\,|\mu_{m}\rangle\quad|\Phi\rangle=\sum_{n}\Phi_{
 
 Il termine $O_{mn}$ \'e chiamato \textit{elemento di matrice dell'osservabile $O$ fra $\ket{\Psi}$ e $\ket{\Phi}$}, infatti formalmente un operatore \'e ben rappresentato da una matrice i cui elementi sono proprio questi termini, che in questo caso sono posizionati nella $m$-esima riga e $n$-esima colonna.
 
-\textbf{Postulato 3. \textit{Possibili risultati delle misure}} 
+\begin{postulato} \textbf{Possibili risultati delle misure}
 
-\textit{Gli unici risultati possibili per una misura dell'osservabile $A$ sono tutti e soli gli autovalori dell'operatore $A$, quindi vale}
+Gli unici risultati possibili per una misura dell'osservabile $A$ sono tutti e soli gli autovalori dell'operatore $A$, quindi vale
 
 $$\sigma({\mathcal{A}})=\sigma(A)$$
+\end{postulato}
 
 Questo postulato in realt\'a si potrebbe dimostrare, facendo vedere come $\sigma(\mathcal{A}) \subseteq \sigma(A)$ e poi $\sigma(\mathcal{A}) \supseteq \sigma(A)$, che porta inevitabilmente all'uguaglianza. Nel caso discreto lo spettro \'e definito come l'insieme degli autovalori che soddisfano l'equazione agli autovalori per l'operatore che descrive l'osservabile:
 
@@ -295,11 +305,12 @@ Diremo che $A$ \'e \textit{non degenere} se non esistono due autovettori relativ
 di dimensione $d$. 
 
 
-\textbf{Postulato 4. \textit{Probabilit\'a di ottenere un dato risultato da una misura}}
+\begin{postulato} \textbf{Probabilit\'a di ottenere un dato risultato da una misura}
 
-\textit{La probabilit\'a che una misura di $A$ nello stato $\ket{\Psi}$ dia come risultato $a_k \in \sigma_d(A)$, con $\braket{a_k}{a_k} = 1$ e $A \ket{a_k} = a_k \ket{a_k}$, \'e data da}
+La probabilit\'a che una misura di $A$ nello stato $\ket{\Psi}$ dia come risultato $a_k \in \sigma_d(A)$, con $\braket{a_k}{a_k} = 1$ e $A \ket{a_k} = a_k \ket{a_k}$, \'e data da
 
 $$w(a_{k})={\frac{\mid\langle a_{k}|\Psi\rangle\mid^{2}}{\langle\Psi|\Psi\rangle}}$$
+\end{postulato}
 
 A seconda della tipologia di spettro che presenta l'osservabile, possiamo distinguere tre differenti casistiche per la base ortonormale, e di conseguenza tre scritture per tale probabilit\'a:
 \begin{itemize}
@@ -501,9 +512,10 @@ $$\tilde{\Psi}(p) = \braket{p}{\Psi}$$
 
 A questo punto enunciamo il \textit{postulato di quantizzazione canonica}, che spiega come passare in maniera sistematica da un sistema classico nel formalismo hamiltoniano dipendente dalle coordinate $(q, p)$, alla descrizione del corrispondente sistema quantistico, che quindi sar\'a un sistema con analogo classico. 
 
-\textbf{Postulato 5. \textit{Quantizzazione canonica}}
+\begin{postulato} \textbf{Quantizzazione canonica}
 
-\textit{Alle coordinate $q_i$ associamo degli operatori autoaggiunti $Q_i$, agli impulsi $p_i$ associamo gli operatori autoaggiunti $P_i$ e alle parentesi di Poisson ${\cdot, \cdot}$ associamo il commutatore $-i\hbar[\cdot, \cdot]$}
+Alle coordinate $q_i$ associamo degli operatori autoaggiunti $Q_i$, agli impulsi $p_i$ associamo gli operatori autoaggiunti $P_i$ e alle parentesi di Poisson ${\cdot, \cdot}$ associamo il commutatore $-i\hbar[\cdot, \cdot]$
+\end{postulato}
 
 Sulla base di questo postulato possiamo scrivere le regole di commutazione canoniche (o di Heisenberg)
 \begin{equation}
@@ -576,7 +588,7 @@ A questo punto verifichiamo che tutti i vettori del tipo $\ket{\Psi_{\mathcal{P}
 
 $${\mathcal{P}}\left|\Psi_{\mathcal{P}}\right\rangle={\mathcal{P}}^{2}\left|\Psi\right\rangle={\mathcal{P}}\left|\Psi\right\rangle=+1\left|\Psi_{\mathcal{P}}\right\rangle \qquad\qquad \overline{{{\mathcal{P}}}}\left|\Psi_{\mathcal{P}}\right\rangle=\overline{{{\mathcal{P}}}}\mathcal{P}\left|\Psi\right\rangle=0\left|\Psi_{\mathcal{P}}\right\rangle$$
 
-Allo stesso modo si pu\'o verificare che $\ket{\Psi_\bar{\mathcal{P}}} = \bar{\mathcal{P}} \ket{\Psi}$ \'e autovettore per $\mathcal{P}$ con autovalore $0$ e per $\bar{\mathcal{P}}$ con autovalore
+Allo stesso modo si pu\'o verificare che $\ket{\Psi_{\bar{\mathcal{P}}}} = \bar{\mathcal{P}} \ket{\Psi}$ \'e autovettore per $\mathcal{P}$ con autovalore $0$ e per $\bar{\mathcal{P}}$ con autovalore
 +1. Abbiamo gi\'a intuito grazie a queste considerazioni che lo spettro di un operatore di proiezione sar\'a formato da soli due autovalori 
 
 $$\sigma(\mathcal{P}) = \{0, 1\}$$
@@ -607,7 +619,7 @@ acciamo alcuni esempi di operatori di proiezione:
 
 	$$ P=\frac{1}{2}\left|\begin{array}{ccc}1&1\\ 1&1\end{array}\right|\qquad\qquad P'=\frac{1}{2}\left|\begin{array}{ccc}1&-1\\ -1&1\end{array}\right|$$  
 
-	verifichiamo che sono proiettori e costruiamo una base ortonormale costituita da autovettori di $P$, determinando anche le componenti del generico vettore $v = \left( \begin{array}{c} \alpha \\ \beta\end{array}$ in tale base.
+	verifichiamo che sono proiettori e costruiamo una base ortonormale costituita da autovettori di $P$, determinando anche le componenti del generico vettore $v = \left( \begin{array}{c} \alpha \\ \beta\end{array} \right)$ in tale base.
 	Le matrici date sono reali e simmetriche, quindi descrivono operatori autoaggiunti; inoltre
 
 	$$P^{2}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}\cdot{\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}={\frac{1}{4}}{\left|\begin{array}{l l}{2}&{2}\\ {2}&{2}\end{array}\right|}={\frac{1}{2}}{\left|\begin{array}{l l}{1}&{1}\\ {1}&{1}\end{array}\right|}=P$$
@@ -647,17 +659,20 @@ La domanda che ci poniamo ora \'e come l'operazione di misura di un'osservabile 
 
 In MC siamo di fronte a una situazione ideale in cui le misure possono essere effettuate con precisione arbitraria, sono istantanee e non perturbano il sistema. In MQ, come vedremo, questo non si verifica.
 
-\textbf{Definizione 3.} \textit{Supponiamo di misurare l'osservabile $A$ all'istante $t$ e di ottenere come valore $a$. La misura effettuata \'e detta di prima specie se rimisurando l'osservabile all'istante $t + \mathrm{d}t$ immediatamente successivo, si ottiene con certezza (probabilit\'a 1) il valore $a$, e questo vale per ogni autovalore a dello spettro.
+\begin{definizione}	
+	Supponiamo di misurare l'osservabile $A$ all'istante $t$ e di ottenere come valore $a$. La misura effettuata \'e detta di prima specie se rimisurando l'osservabile all'istante $t + \mathrm{d}t$ immediatamente successivo, si ottiene con certezza (probabilit\'a 1) il valore $a$, e questo vale per ogni autovalore a dello spettro.
 
-Si dice ideale se perturba il meno possibile il sistema.}
+	Si dice ideale se perturba il meno possibile il sistema.
+\end{definizione}
 
 Quello che fa una misura di prima specie \'e \textit{proiettare il sistema nell'autostato relativo all'autovalore che \'e risultato dalla misura}; se l'autovalore \'e non degenere abbiamo la certezza dell'autostato, se \'e degenere \'e presente un'ambiguit\'a e possiamo solo dire che il sistema si trova in uno tra gli autostati possibili per quell'autospazio (che ha dimensione maggiore di 1), ma non sappiamo di quale si tratta.
 
-\textbf{Postulato 6. \textit{Misura di un'osservabile}} 
+\begin{postulato} \textbf{Misura di un'osservabile}
 
-\textit{Supponiamo che immediatamente prima di una misura, a $t^-$, il sistema si trovi nello stato $\Psi$; a $t$ effettuiamo la misura ideale di prima specie dell'osservabile $A$ (che per semplicit\'a supponiamo a spettro discreto) e troviamo come risultato $a_k \in \sigma_{d}(A)$. Lo stato del sistema immediatamente dopo la misura a $t^+$ \'e proiettato in $\Psi_k$, autostato relativo all'autovalore $a_k$:}
+Supponiamo che immediatamente prima di una misura, a $t^-$, il sistema si trovi nello stato $\Psi$; a $t$ effettuiamo la misura ideale di prima specie dell'osservabile $A$ (che per semplicit\'a supponiamo a spettro discreto) e troviamo come risultato $a_k \in \sigma_{d}(A)$. Lo stato del sistema immediatamente dopo la misura a $t^+$ \'e proiettato in $\Psi_k$, autostato relativo all'autovalore $a_k$:
 
 $$|\Psi\rangle\longrightarrow|\Psi_{k}\rangle=\frac{{\mathcal{P}}_{k}\,|\Psi\rangle}{\sqrt{\left\langle\Psi|{\mathcal{P}}_{k}|\Psi\right\rangle}} \qquad\qquad \text{con} \qquad \mathcal{P}_k = \sum_{i=1}^{d_k} \ket{a_{k,i}} \bra{a_{k,i}} \quad \text{proiettore}$$
+\end{postulato}
 
 Questo lemma spiega il concetto importante del \textit{collasso della funzione d'onda} come conseguenza della misura.
 
@@ -672,93 +687,97 @@ $$\ket{\Psi^\prime} = \frac{{\mathcal{P}}_{\Delta a}(a_{0})\,|\Psi\rangle}{\sqrt
 Le figure soprastanti mostrano cosa succede alla funzione d'onda. Prima della misura la funzione \'e nel suo stato iniziale $\Psi(x) = \braket{x}{\Psi}$ e ha come dominio tutto l'asse reale perch\'e la particella potr\'a trovarsi in qualsiasi punto; effettuando una misura ideale di prima specie il sistema \'e perturbato il meno possibile, per cui se la particella viene trovata all'interno dell'intervallo $\Delta x_0$, la funzione d'onda avr\'a la stessa forma precedente in quell'intervallo, mentre nella regione esterna collasser\'a a 0 (per cui dovr\'a essere rinormalizzata in accordo con l'interpretazione probabilistica di Born della funzione d'onda).
 	
 
-\begin{comment}
 \subsubsection{Osservabili compatibili}
 	
-	Nel paragrafo precedente abbiamo considerato solamente osservabili a spettro non degenere, e abbiamo detto che immediatamente dopo la misura lo stato del sistema 'e completamente determinato perch´e 'e proiettato sull'autospazio relativo all'autovalore ak ∈ σd(A) trovato.
-	
-	Il caso non banale 'e quando ak 'e degenere, infatti dopo la misura possiamo solamente sapere che lo stato del sistema sta nell'autospazio multidimensionale relativo ad ak. Quindi per determinare univocamente lo stato 'e necessario misurare altre grandezze fisiche, con il requisito che non deteriorino l'informazione acquisita misurando A, ma anzi, la migliorino. Le osservabili per cui questo succede sono dette *osservabili compatibili* con A. Diamone la definizione operativa:
-	Definizione 4. Immaginiamo che A e B siano grandezze fisiche a spettro discreto. Al tempo t *effettuiamo* una misura di A e otteniamo il risultato ak ∈ σd(A); subito dopo, cio'e prima che il sistema possa evolvere temporalmente in modo non banale, al tempo t
-	+ facciamo una misura di B *ottenendo il risultato* bi ∈ σd(B),
-	allora B 'e compatibile con A se ripetendo la misura di A *all'istante* t
-	++ *otteniamo con certezza il valore* ak,
-	∀ak, bi e ∀ *stato (cio'e non deve essere una particolare coincidenza).*
+Nel paragrafo precedente abbiamo considerato solamente osservabili a spettro non degenere, e abbiamo detto che immediatamente dopo la misura lo stato del sistema \'e completamente determinato perch\'e \'e proiettato sull'autospazio relativo all'autovalore $a_k \in \sigma_{d}(A)$ trovato.
+
+Il caso non banale \'e quando $a_k$ \'e degenere, infatti dopo la misura possiamo solamente sapere che lo stato del sistema sta nell'autospazio multidimensionale relativo ad $a_k$. Quindi per determinare univocamente lo stato 'e necessario misurare altre grandezze fisiche, con il requisito che non deteriorino l'informazione acquisita misurando $\mathcal{A}$, ma anzi, la migliorino. Le osservabili per cui questo succede sono dette \textit{osservabili compatibili} con $A$. Diamone la definizione operativa:
+
+\begin{definizione}
+	Immaginiamo che $\mathcal{A}$ e $\mathcal{B}$ siano grandezze fisiche a spettro discreto. Al tempo $t$ effettuiamo una misura di $A$ e otteniamo il risultato $a_k \in \sigma_{d}(A)$; subito dopo, cio\'e prima che il sistema possa evolvere temporalmente in modo non banale, al tempo $t^+$ facciamo una misura di $B$ ottenendo il risultato $b_i \in \sigma_{d}(B)$, allora $B$ \'e compatibile con $A$ se ripetendo la misura di $A$ all'istante $t^{++}$ otteniamo con certezza il valore $a_k$, $\forall a_k, b_i$ e $\forall$ stato (cio\'e non deve essere una particolare coincidenza).
+\end{definizione} 
+
 	Vediamo come tradurre nel linguaggio matematico della MQ questo risultato. Enunciamo e dimostriamo a tal proposito due teoremi.
 	
-	Teorema 1.3.1. A e B sono due osservabili compatibili ⇐⇒ *esiste una base ortonormale di autovettori comuni,*
-	cio'e simultaneamente autovettori di A e B.
+\begin{theorem}
+	$A$ e $B$ sono due osservabili compatibili $\iff$ esiste una base ortonormale di autovettori comuni,
+	cio\'e simultaneamente autovettori di $A$ e $B$.
+\end{theorem}
 	
-	Dimostrazione. =⇒: sappiamo che A e B essendo associati ad osservabili sono operatori autoaggiunti, allora qualsiasi vettore dello spazio di Hilbert pu'o essere decomposto in autostati dell'operatore A perch´e esiste sempre una base ortonormale di autovettori di questo operatore per H
+\textit{Dimostrazione}. $\Longrightarrow$: sappiamo che $A$ e $B$ essendo associati ad osservabili sono operatori autoaggiunti, allora qualsiasi vettore dello spazio di Hilbert pu\'o essere decomposto in autostati dell'operatore $A$ perch\'e esiste sempre una base ortonormale di autovettori di questo operatore per $\mathcal{H}$
+
+$$|\Psi\rangle=\sum_{a_{k}\in\sigma(A)}|\Psi_{a_{k}}\rangle$$
+
+in cui $\ket{\Psi_{a_k}}$ \'e la proiezione del vettore sugli autospazi. Questo \'e ovviamente vero anche per l'operatore $B$
+
+$$|\Psi_{a_{k}}\rangle=\sum_{b_{i}\in\sigma(B)}|\Psi_{b_{i}}(a_{k})\rangle$$
+
+In generale se $A$ e $B$ sono operatori autoaggiunti qualsiasi, gli $\ket{\Psi_{b_i}(a_k)}$ non rimangono pi\'u autovettori dell'operatore $A$, questo per\'o si verifica se $A$ e $B$ sono osservabili compatibili, quindi in questo caso sono loro autostati simultanei e li scriviamo come $\ket{\Psi_{a_k, b_i}}$. Allora possiamo riscrivere il vettore come
+
+$$\Psi\rangle=\sum_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\Psi_{a_{k},b_{i}}\rangle\qquad\forall\,|\Psi\rangle\in\mathcal{H}$$.  
+
+Se non c'\'e degenerazione, cio\'e l'intersezione degli autospazi relativi ad $a_k$ e $b_i$ \'e unidimensionale, abbiamo concluso la dimostrazione; se invece c'\'e degenerazione, \'e sufficiente decomporre ogni autovettore all'interno degli autospazi di dimensione maggiore di 1 come $\ket{\Psi\Phi_{a_, p_i, \tau}}$, e aggiungere una somma sull'indice $\tau$ che conta la degenerazione.
+
+$\Longleftarrow$: $A$ e $B$ possiedono una base di autovettori comuni $\ket{\Psi_{a_k, b_i, \tau}}$, allora il generico stato $\Psi$ si pu\'o decomporre in
+
+$$|\Psi\rangle=\sum_{a_{k},b_{i},\tau}c_{a_{k},b_{i},\tau}\left|\Psi_{a_{k},b_{i},\tau}\right\rangle$$
+
+Quello che fa la misura dell'osservabile $A$ \'e eliminare la sommatoria sul suo spettro dato che \'e stato trovato solamente il valore $a_k$, cio\'e seleziona la proiezione ortogonale sull'autospazio relativo all'autovalore $a_k$. Succede lo stesso se effettuiamo la misura di $B$ e otteniamo come risultato $b_i$
+
+$$\text{misura di } A\to\quad\sum_{b_{i},\tau}c_{a_{k},b_{i},\tau}\,|\,\Psi_{a_{k},b_{i},\tau}\rangle \qquad\qquad \text{misura di } B\to\quad\sum_{\tau}c_{a_{k},b_{i},\tau}\,|\,\Psi_{a_{k},p_{i},\tau}\rangle$$
+
+quindi resta solamente la somma sulla degenerazione residua. Ovviamente questi autovettori appartengono all'autospazio di $A$ relativo all'autovalore $a_k$, quindi effettuando una nuova misura di $A$ non possiamo che trovare $a_k$, e questa \'e esattamente la definizione che abbiamo dato per $A$ e $B$ osservabili compatibili. $\qquad\square$
 	
-	$$|\Psi\rangle=\sum_{a_{k}\in\sigma(A)}|\Psi_{a_{k}}\rangle$$
+Un modo equivalente per enunciare questo risultato \'e di dire che se due osservabili sono compatibili possiamo decomporre l'intero spazio di Hilbert come la somma diretta degli autospazi relativi ai due operatori $\mathcal{H}_{a_k, b_i} = \mathcal{H}_{a_k} \cap \mathcal{H}_{b_i}$
+
+\begin{equation} 
+	\mathcal{H}=\bigoplus_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}
+\end{equation}
+
+Inoltre questo teorema si pu\'o estendere anche a operatori con spettro continuo, ricordando di considerare il problema agli autovalori generalizzato nello spazio delle distribuzioni, e di rimpiazzare le somme con gli integrali.
 	
-	in cui |\Psiak i 'e la proiezione del vettore sugli autospazi. Questo 'e ovviamente vero anche per l'operatore B
+\begin{theorem}
+	$A$ e $B$ sono due osservabili compatibili $\iff$ commutano tra loro, cio\'e $[A, B] = 0$.
+\end{theorem} 
 	
-	$$|\Psi_{a_{k}}\rangle=\sum_{b_{i}\in\sigma(B)}|\Psi_{b_{i}}(a_{k})\rangle$$
+\textit{Dimostrazione}. $\Longrightarrow$: facciamo agire $AB$ sul generico stato $\ket{\Psi}$ e sfruttiamo il risultato del teorema precedente considerando una base di autovettori comuni di $A$ e $B$
+
+\begin{align*} 
+AB\left|\Psi\right\rangle
+&=AB\sum_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\left|\Psi_{a_{k},b_{i}}\right\rangle=\sum_{a_{k},b_{i}}a_{k}b_{i}\left|\Psi_{a_{k},b_{i}}\right\rangle=\sum_{a_{k},b_{i}}b_{i}a_{k}\left|\Psi_{a_{k},b_{i}}\right\rangle
+\\ &=A\sum_{a_{k},b_{i}}b_{i}\left|\Psi_{a_{k},b_{i}}\right\rangle=BA\sum_{a_{k},b_{i}}\left|\Psi_{a_{k},b_{i}}\right\rangle=BA\left|\Psi\right\rangle\quad\longrightarrow\quad[A,B]=0
+\end{align*}
+
+$\Longleftarrow$: dato che $A$ \'e autoaggiunto possiamo decomporre lo spazio di Hilbert nella somma dei suoi autospazi $\mathcal{H} = \bigoplus_{a_k \in \sigma(A)} \mathcal{H}_{a_k}$, quindi prendendo un qualsiasi vettore $\ket{\Psi_{a_k}} \in \mathcal{H}_{a_k}$ vale la seguente catena di uguaglianze
+
+$$A B\left|\Psi_{a_{k}}\right\rangle=B A\left|\Psi_{a_{k}}\right\rangle=B a_{k}\left|\Psi_{a_{k}}\right\rangle=a_{k}\big(B\left|\Psi_{a_{k}}\right\rangle\big)$$
+$$\square$$
+
+abbiamo ottenuto che $B \ket{\Psi_{a_k}}$ \'e autostato di $A$ relativo all'autovalore $a_k$, cio\'e $\mathcal{H}_{a_k}$ \'e invariante sotto l'azione di $B$. Possiamo quindi considerare la restrizione di $B$ che agisce su $\mathcal{H}_{a_k}$ e che rimane un operatore autoaggiunto:
 	
-	In generale se A e B sono operatori autoaggiunti qualsiasi, gli |\Psibi
-	,(ak)i non rimangono pi'u autovettori dell'operatore A, questo per'o si verifica se A e B sono osservabili compatibili, quindi in questo caso sono loro autostati simultanei e li scriviamo come |\Psiak,bi i. Allora possiamo riscrivere il vettore come
+$$\mathcal{H}_{a_{k}}=\bigoplus_{b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}\qquad\longrightarrow\qquad\mathcal{H}=\bigoplus_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}} \qquad\square$$
 	
-	$\Psi\rangle=\sum_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\Psi_{a_{k},b_{i}}\rangle\qquad\forall\,|\Psi\rangle\in\mathcal{H}$.  
-	Se non c''e degenerazione, cio'e l'intersezione degli autospazi relativi ad ak e bi 'e unidimensionale, abbiamo concluso la dimostrazione; se invece c''e degenerazione, 'e sufficiente decomporre ogni autovettore all'interno degli autospazi di dimensione maggiore di 1 come |\PsiΦak,pi,τ i, e aggiungere una somma sull'indice τ che conta la degenerazione.
+Anche in questo caso il teorema si pu\'o estendere facilmente al caso continuo con il consueto metodo.
+
+Se $A$ e $B$ sono limitati questo teorema \'e valido rigorosamente perch\'e gli operatori possono essere definiti in tutto $\mathcal{H}$, per cui $\mathcal{D}(A) = \mathcal{D}(B) = \mathcal{D}(AB) = \mathcal{D}(BA)$. Per operatori illimitati ci possono essere casi patologici/particolari con problemi di dominio che non considereremo mai.
+
+Introduciamo ora un concetto molto importante per lo studio di un sistema quantistico: l'\textit{insieme completo di osservabili compatibili}, chiamato pi\'u semplicemente \textit{ICOC}. La caratteristica di questo set di osservabili \'e che se effettuiamo una loro misura simultanea, identifichiamo il sistema in modo univoco, senza l'ambiguit\'a che era presente nel caso dello spettro degenere.
+
+\begin{definizione}
+Consideriamo un vettore di $N$ grandezze fisiche misurabili $\vec{\mathcal{A}} = (\mathcal{A}_1, \ldots, \mathcal{A}_N )$ a cui associamo i rispettivi operatori $\vec{A} = (A_1, A_2, ..., A_N )$ a spettro discreto. Supponiamo che queste osservabili siano compatibili tra loro, e facciamo una misura di prima specie ottenendo come risultato il vettore $\vec{a} = (a_1, ..., a_N )$; sappiamo che lo spazio $\mathcal{H}_A = \mathcal{H}_{a_1,...,a_N}$ sar\'a dato dall'intersezione degli autospazi delle osservabili relativi ai diversi autovalori.
+
+Le osservabili saranno un ICOC se questo autospazio \'e non degenere, cio\'e se ha dimensione unitaria.
+\end{definizione}
+
+In generale, un insieme di osservabili deve verificare le seguenti due propriet\'a per essere un ICOC: gli operatori commutano tra loro, e specificare un insieme di autovalori trovati con le misure determina univocamente lo stato del sistema. Quindi un modo equivalente per dire che un insieme di osservabili compatibili \'e completo \'e dire che \textit{esiste un'unica base ortonormale (a meno di fattori di fase) costituita tutta di autovettori simultanei di tutti gli operatori che costituiscono l'ICOC}.
 	
-	⇐=: A e B possiedono una base di autovettori comuni |\Psiak,bi,τ i, allora il generico stato \Psi si pu'o decomporre in
-	
-	$$|\Psi\rangle=\sum_{a_{k},b_{i},\tau}c_{a_{k},b_{i},\tau}\left|\Psi_{a_{k},b_{i},\tau}\right\rangle$$
-	
-	Quello che fa la misura dell'osservabile A 'e eliminare la sommatoria sul suo spettro dato che 'e stato trovato solamente il valore ak, cio'e seleziona la proiezione ortogonale sull'autospazio relativo all'autovalore ak. Succede lo steso se effettuiamo la misura di B e otteniamo come risultato bi
-	
-	misura di $A\to\quad\sum_{b_{i},\tau}c_{a_{k},b_{i},\tau}\,|\,\Psi_{a_{k},b_{i},\tau}\rangle$ misura di $B\to\quad\sum_{\tau}c_{a_{k},b_{i},\tau}\,|\,\Psi_{a_{k},p_{i},\tau}\rangle$
-	quindi resta solamente la somma sulla degenerazione residua. Ovviamente questi autovettori appartengono all'autospazio di A relativo all'autovalore ak, quindi effettuando una nuova misura di A non possiamo che trovare ak, e questa 'e esattamente la definizione che abbiamo dato per A e B osservabili compatibili.
-	
-	Un modo equivalente per enunciare questo risultato 'e di dire che se due osservabili sono compatibili possiamo decomporre l'intero spazio di Hilbert come la somma diretta degli autospazi relativi ai due operatori Hak,bi =
-	Hak ∩ Hbi
-	
-	$$\mathcal{H}=\bigoplus_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}$$
-	$\texttt{1.3.2}$
-	Inoltre questo teorema si pu'o estendere anche a operatori con spettro continuo, ricordando di considerare il problema agli autovalori generalizzato nello spazio delle distribuzioni, e di rimpiazzare le somme con gli integrali.
-	
-	Teorema 1.3.2. A e B sono due osservabili compatibili ⇐⇒ commutano tra loro, cio'e [*A, B*] = 0.
-	
-	Dimostrazione. =⇒: facciamo agire AB sul generico stato |\Psii e sfruttiamo il risultato del teorema precedente considerando una base di autovettori comuni di A e B
-	
-	$$AB\left|\Psi\right\rangle=AB\sum_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\left|\Psi_{a_{k},b_{i}}\right\rangle=\sum_{a_{k},b_{i}}a_{k}b_{i}\left|\Psi_{a_{k},b_{i}}\right\rangle=\sum_{a_{k},b_{i}}b_{i}a_{k}\left|\Psi_{a_{k},b_{i}}\right\rangle$$ $$=A\sum_{a_{k},b_{i}}b_{i}\left|\Psi_{a_{k},b_{i}}\right\rangle=BA\sum_{a_{k},b_{i}}\left|\Psi_{a_{k},b_{i}}\right\rangle=BA\left|\Psi\right\rangle\quad\longrightarrow\quad[A,B]=0$$
-	
-	⇐=: dato che A 'e autoaggiunto possiamo decomporre lo spazio di Hilbert nella somma dei suoi autospazi H =Lak∈σ(A) Hak
-	, quindi prendendo un qualsiasi vettore |\Psiak i ∈ Hak vale la seguente catena di uguaglianze
-	
-	$$A B\left|\Psi_{a_{k}}\right\rangle=B A\left|\Psi_{a_{k}}\right\rangle=B a_{k}\left|\Psi_{a_{k}}\right\rangle=a_{k}\big(B\left|\Psi_{a_{k}}\right\rangle\big)$$
-	$$\square$$
-	
-	abbiamo ottenuto che B |\Psiak i 'e autostato di A relativo all'autovalore ak, cio'e Hak
-	'e invariante sotto l'azione di B. Possiamo quindi considerare la restrizione di B che agisce su Hak e che rimane un operatore autoaggiunto:
-	
-	$$\mathcal{H}_{a_{k}}=\bigoplus_{b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}\qquad\longrightarrow\qquad\mathcal{H}=\bigoplus_{a_{k}\in\sigma(A),b_{i}\in\sigma(B)}\mathcal{H}_{a_{k},b_{i}}$$
-	
-	Anche in questo caso il teorema si pu'o estendere facilmente al caso continuo con il consueto metodo.
-	
-	Se A e B sono limitati questo teorema 'e valido rigorosamente perch´e gli operatori possono essere definiti in tutto H, per cui D(A) = D(B) = D(AB) = D(BA). Per operatori illimitati ci possono essere casi patologici/particolari con problemi di dominio che non considereremo mai.
-	
-	Introduciamo ora un concetto molto importante per lo studio di un sistema quantistico: l'*insieme completo di* osservabili compatibili, chiamato pi'u semplicemente *ICOC*. La caratteristica di questo set di osservabili 'e che se effettuiamo una loro misura simultanea, identifichiamo il sistema in modo univoco, senza l'ambiguit'a che era presente nel caso dello spettro degenere.
-	
-	Definizione 5. *Consideriamo un vettore di N grandezze fisiche misurabili* A~ = (A1, ..., AN ) a cui associamo i rispettivi operatori A~ = (A1, A2, ..., AN ) *a spettro discreto. Supponiamo che queste osservabili siano compatibili* tra loro, e facciamo una misura di prima specie ottenendo come risultato il vettore ~a = (a1, ..., aN )*; sappiamo che* lo spazio HA = Ha1,...,aN sar'a dato dall'intersezione degli autospazi delle osservabili relativi ai diversi autovalori.
-	
-	Le osservabili saranno un ICOC se questo autospazio 'e non degenere, cio'e se ha dimensione unitaria.
-	
-	In generale, un insieme di osservabili deve verificare le seguenti due propriet'a per essere un ICOC: gli operatori commutano tra loro, e specificare un insieme di autovalori trovati con le misure determina univocamente lo stato del sistema. Quindi un modo equivalente per dire che un insieme di osservabili compatibili 'e completo 'e dire che esiste un'unica base ortonormale (a meno di fattori di fase) costituita tutta di autovettori simultanei di tutti gli operatori che costituiscono l'ICOC.
-	
-	Facciamo un esempio concreto. Per una particella priva di spin in una dimensione spaziale, X 'e un ICOC,
-	perch´e sappiamo che esiste una base ortonormale generalizzata priva di degenerazione di oggetti del tipo ξx0
-	(x) = δ(x−x0) per la quale 'e possibile scrivere qualsiasi stato del sistema. Allo stesso modo P 'e ICOC perch´e conoscere la decomposizione della trasformata di Fourier della funzione d'onda nello spazio delle P equivale ad avere l'informazione completa sullo stato del sistema. Si pu'o dimostrare che l'hamiltoniamo non 'e un ICOC,
-	perch´e 'e quadratico nelle P, quindi per ogni valore di energia abbiamo una duplice degenerazione dello spettro delle onde piane, risulta quindi necessario un altro operatore, per esempio P, che ci permette di rimuovere tale degenerazione conoscendo il segno del momento.
-	
-	Avere un ICOC ci consente di dare una rappresentazione degli stati in termini di opportune funzioni d'onda.
-	
-	Prendiamo l'esempio precedente, H = L2(R) e X e P che sono due ICOC separatamente, con base generalizzata di vettori che soddisfano alle equazioni astratte in 1.4 Ogni elemento di H lo possiamo scrivere mediante le relazioni di completezza generalizzate per lo spettro continuo
-	
-	$$|\Psi\rangle=\int\mathrm{d}x\,|x\rangle\underbrace{\langle x|\Psi\rangle}_{\Psi(x)}\qquad\qquad|\Psi\rangle=\int\mathrm{d}p\,|p\rangle\underbrace{\langle p|\Psi\rangle}_{\Psi(p)}$$
-	
-	Pi'u in generale, possiamo applicare questo ragionamento a qualsiasi ICOC A~ con autovettori |~ai, i quali formano una base generalizzata per H, allora la decomposizione del ket |\Psii 'e del tutto analoga ai casi specifici precedenti
-	
-	$$|\Psi\rangle=\int\mathrm{d}\vec{a}\,|\vec{a}\rangle\underbrace{\langle\vec{a}|\Psi\rangle}_{\Psi(\vec{a})}$$
-\end{comment}
+Facciamo un esempio concreto. Per una particella priva di spin in una dimensione spaziale, $X$ \'e un ICOC,
+perch\'e sappiamo che esiste una base ortonormale generalizzata priva di degenerazione di oggetti del tipo $\xi_{x_0}(x) = \delta(x-x_0)$ per la quale \'e possibile scrivere qualsiasi stato del sistema. Allo stesso modo $P$ \'e ICOC perch\'e conoscere la decomposizione della trasformata di Fourier della funzione d'onda nello spazio delle $P$ equivale ad avere l'informazione completa sullo stato del sistema. Si pu\'o dimostrare che l'hamiltoniamo non \'e un ICOC, perch\'e \'e quadratico nelle $P$, quindi per ogni valore di energia abbiamo una duplice degenerazione dello spettro delle onde piane, risulta quindi necessario un altro operatore, per esempio $P$, che ci permette di rimuovere tale degenerazione conoscendo il segno del momento.
+
+Avere un ICOC ci consente di dare una rappresentazione degli stati in termini di opportune funzioni d'onda. Prendiamo l'esempio precedente, $H = L_2(\mathbb{R})$ e $X$ e $P$ che sono due ICOC separatamente, con base generalizzata di vettori che soddisfano alle equazioni astratte in \ref{eq:oss in mq}. Ogni elemento di $\mathcal{H}$ lo possiamo scrivere mediante le relazioni di completezza generalizzate per lo spettro continuo
+
+$$|\Psi\rangle=\int\mathrm{d}x\,|x\rangle\underbrace{\langle x|\Psi\rangle}_{\Psi(x)}\qquad\qquad|\Psi\rangle=\int\mathrm{d}p\,|p\rangle\underbrace{\langle p|\Psi\rangle}_{\Psi(p)}$$
+
+Pi\'u in generale, possiamo applicare questo ragionamento a qualsiasi ICOC $\vec{A}$ con autovettori $\ket{\vec{a}}$, i quali formano una base generalizzata per $\mathcal{H}$, allora la decomposizione del \textit{ket} $\ket{\Psi}$ \'e del tutto analoga ai casi specifici precedenti
+
+$$|\Psi\rangle=\int\mathrm{d}\vec{a}\,|\vec{a}\rangle\underbrace{\langle\vec{a}|\Psi\rangle}_{\Psi(\vec{a})}$$
